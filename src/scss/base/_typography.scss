@@ -2,6 +2,16 @@
 // Typography
 // ============================================
 
+// Font Face Declaration
+@font-face {
+  font-family: 'Author Variable';
+  src: url('../assets/fonts/AuthorVariable-Bold.woff2') format('woff2'),
+       url('../assets/fonts/AuthorVariable-Bold.woff') format('woff');
+  font-weight: 200 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   font-family: var(--font-family-primary);
   font-size: var(--font-size-base);

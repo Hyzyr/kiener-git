@@ -29,14 +29,18 @@ A professional, modular SCSS template for HTML/CSS projects using modern best pr
 │   │   └── main.css
 │   ├── js/                     # JavaScript source
 │   │   └── main.js
+│   ├── assets/                 # Images, fonts, icons
+│   │   ├── fonts/
+│   │   ├── icons/
+│   │   └── images/
 │   ├── index.html              # Landing page
 │   └── components.html         # Component showcase
 ├── dist/                       # 🚀 Production build (gitignored)
 │   ├── css/main.css            # Minified CSS
 │   ├── js/main.min.js          # Minified JS
+│   ├── assets/                 # Auto-copied assets
 │   ├── index.html              # Minified HTML
 │   └── components.html         # Minified HTML
-├── assets/                     # Images, fonts, icons
 ├── package.json
 └── README.md
 ```
@@ -50,35 +54,43 @@ A professional, modular SCSS template for HTML/CSS projects using modern best pr
 npm install -g sass terser html-minifier-terser
 ```
 
+No `node_modules` folder needed! Tools are installed globally.
+
 #### 2. Development Mode
 ```bash
 npm run dev:scss
+# or
+npm run dev
 ```
-Opens `src/index.html` in browser - CSS auto-recompiles on save.
+Opens `src/index.html` in browser - CSS auto-recompiles on save to `src/css/main.css`.
 
 #### 3. Production Build
 ```bash
 npm run build
 ```
-Creates optimized files in `dist/` folder (minified CSS, JS, HTML).
+Creates optimized files in `dist/` folder:
+- Minified CSS, JS, HTML
+- Auto-copies assets from `src/assets/` to `dist/assets/`
+- Cleans old build first
 
 ### For Beginners (Use Pre-compiled CSS)
 
 Just open `src/index.html` in your browser! The CSS is already compiled in `src/css/main.css`.
 
-### 4. Customize for Your Project
+## ⚙️ Customize for Your Project
 
-1. **Update Variables** (`css/scss/abstracts/_variables.scss`):
+1. **Update Variables** (`src/scss/abstracts/_variables.scss`):
    - Replace colors with your brand colors
    - Update font families
    - Adjust spacing, borders, shadows
+   - Uncomment dark mode support if needed
 
-2. **Import Your Fonts** (`index.html`):
+2. **Import Your Fonts** (`src/index.html`):
    ```html
    <link href="https://fonts.googleapis.com/css2?family=YourFont&display=swap" rel="stylesheet">
    ```
 
-3. **Configure Breakpoints** (`css/scss/abstracts/_variables.scss`):
+3. **Configure Breakpoints** (`src/scss/abstracts/_variables.scss`):
    ```scss
    $breakpoints: (
      'sm': 640px,
@@ -87,15 +99,8 @@ Just open `src/index.html` in your browser! The CSS is already compiled in `src/
      'xl': 1280px
    );
    ```
-
-## 🎨 Features
-
-### Modern SCSS Architecture
-- ✅ **@use/@forward** instead of deprecated @import
-- ✅ **CSS Custom Properties** for theming
-- ✅ **Modular structure** for maintainability
-- ✅ **BEM-inspired** naming convention
-- ✅ **No build tool lock-in** - works with or without npm
+global tools
+- ✅ **No node_modules** - clean project structure
 
 ### 21 Components Included
 - **Navigation**: Header, Footer, Breadcrumb
@@ -103,6 +108,24 @@ Just open `src/index.html` in your browser! The CSS is already compiled in `src/
 - **Content**: Hero, Content Block, Contact Card
 - **UI Elements**: Button, Input, Card, Badge
 - **Layout**: Container, Grid
+
+### Modern CSS Features
+- ✅ View Transitions API for smooth page navigation
+- ✅ Custom scrollbar styling
+- ✅ Text wrapping (balance, pretty)
+- ✅ Container queries support
+- ✅ Hardware acceleration mixins
+- ✅ Cubic bezier easing functions (snap, smooth, swift)
+- ✅ Dark mode ready (uncomment to enable)
+
+### Best Practices
+- ✅ Modern CSS Reset
+- ✅ Accessibility built-in
+- ✅ Print styles
+- ✅ Responsive design (mobile-first)
+- ✅ Focus management
+- ✅ Lazy image loading optimization
+- ✅ Autofill styling
 
 ### Best Practices
 - ✅ Modern CSS Reset
@@ -167,26 +190,30 @@ Example: Creating a modal component
   }
 }
 ```
+npm run dev           # Alias for dev:scss
 
-Then import in `main.scss`:
-```scss
-@use 'components/modal';
-```
-
-## 📦 NPM Scripts
-
-```bash
-# Development
-npm run dev:scss      # Watch SCSS, auto-compile to src/css/
-
-# Production Build (creates dist/ folder)
+# Production Build
+npm run clean         # Delete dist/ folder
+npm run copy:assets   # Copy src/assets/ to dist/assets/
 npm run build:scss    # Minified CSS
 npm run build:js      # Minified JS
 npm run build:html    # Minified HTML
-npm run build         # Build everything (CSS + JS + HTML)
+npm run build         # Full build (clean + copy + minify all)
 ```
 
 ## 🎯 Workflow
+
+### Development
+1. Edit files in `src/` folder
+2. Run `npm run dev` to watch SCSS changes
+3. Open `src/index.html` in browser (or use Live Server)
+4. CSS auto-updates in `src/css/main.css` on save
+
+### Production Deployment
+1. Run `npm run build`
+2. Upload `dist/` folder to your server
+3. All files are minified and optimized
+4. Assets automatically copi
 
 ### Development
 1. Edit files in `src/` folder
@@ -206,10 +233,7 @@ Example: Creating a modal component
 ```scss
 // src/scss/components/_modal.scss
 @use '../abstracts/mixins' as *;
-
-.modal {
-  @include absolute-cover;
-  @include flex-center;
+@include hardware-accelerate; // GPU acceleration
   background: rgba(0, 0, 0, 0.5);
   z-index: var(--z-modal);
   
@@ -219,6 +243,7 @@ Example: Creating a modal component
     border-radius: var(--border-radius-lg);
     max-width: 500px;
     width: 90%;
+    @include ease-swift(transform, 300ms);
   }
 }
 ```
@@ -228,28 +253,50 @@ Then import in `src/scss/main.scss`:
 @use 'components/modal';
 ```
 
-## 🎯 Customization Checklist
+## 📚 Available Mixins
 
-- [ ] Update color variables in `_variables.scss`
-- [ ] Replace font families
-- [ ] Adjust spacing scale
-- [ ] Configure breakpoints
-- [ ] Update container max-width
-- [ ] Customize component styles
-- [ ] Add your project-specific components
-- [ ] Remove unused components
-- [ ] Test responsiveness
-- [ ] Add your logo/branding
-
-## 📚 Documentation
-
-### Available Mixins
-
+### Responsive
 - `respond-to($breakpoint)` - Media queries
+- `mobile-only`, `tablet-up`, `desktop-up` - Quick breakpoints
+- `container-query($size)` - Container queries
+
+### Layout
 - `flex-center` - Center with flexbox
 - `flex-between` - Space between with flexbox
+- `flex-column` - Flex column
 - `grid($columns, $gap)` - CSS Grid
 - `grid-auto-fit($min-width)` - Responsive grid
+- `grid-auto-fill($min-width)` - Fill grid
+- `absolute-center` - Center absolutely
+- `absolute-cover` - Cover parent
+
+### Images & Media
+- `cover-image` - Object-fit cover
+- `contain-image` - Object-fit contain
+- `aspect-ratio($width, $height)` - Aspect ratio
+- `bg-cover` - Background cover
+
+### Typography
+- `truncate($lines)` - Text truncation (1 or multi-line)
+
+### Utilities
+- `transition($property, $duration)` - Custom transition
+- `ease-snap($property, $duration)` - Bouncy easing
+- `ease-smooth($property, $duration)` - Material Design easing
+- `ease-swift($property, $duration)` - Fast entrance easing
+- `hardware-accelerate` - GPU rendering
+- `gpu-accelerate` - Transform optimization
+- `reset-list` - Remove list styling
+- `reset-button` - Remove button styling
+- `visually-hidden` - Screen reader only
+- `no-select` - Disable text selection
+- `hide-scrollbar` - Hide scrollbar
+- `custom-scrollbar($size, $track-color, $thumb-color)` - Custom scrollbar
+- `focus-ring($color, $width, $offset)` - Focus outline
+
+### Pseudo Elements
+- `pseudo($display, $pos, $content)` - Base pseudo element
+- `overlay($background)` - Overlay effectve grid
 - `cover-image` - Object-fit cover
 - `truncate($lines)` - Text truncation
 - `transition($property, $duration)` - Transitions
