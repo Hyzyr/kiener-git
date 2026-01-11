@@ -1,0 +1,63 @@
+@use '../abstracts/mixins' as *;
+
+// ============================================
+// Breadcrumb Component
+// ============================================
+
+.breadcrumb {
+  @include reset-list;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 1rem 0;
+  font-size: var(--font-size-sm);
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    a {
+      color: var(--color-grey-600);
+      transition: var(--transition-fast);
+
+      &:hover {
+        color: var(--color-primary-600);
+      }
+    }
+
+    &--active {
+      color: var(--color-grey-900);
+      font-weight: var(--font-weight-medium);
+    }
+
+    &:not(:last-child)::after {
+      content: '/';
+      color: var(--color-grey-400);
+      margin-left: 0.5rem;
+    }
+  }
+
+  // Icon separator variant
+  &--icon {
+    .breadcrumb__item:not(:last-child)::after {
+      content: '›';
+      font-size: 1.25em;
+    }
+  }
+
+  // Compact variant
+  &--compact {
+    font-size: var(--font-size-xs);
+    gap: 0.25rem;
+
+    .breadcrumb__item {
+      gap: 0.25rem;
+
+      &:not(:last-child)::after {
+        margin-left: 0.25rem;
+      }
+    }
+  }
+}

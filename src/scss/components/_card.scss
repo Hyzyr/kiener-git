@@ -1,0 +1,73 @@
+@use '../abstracts/mixins' as *;
+
+// ============================================
+// Card Component
+// ============================================
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white);
+  border: var(--border-width-thin) solid var(--color-grey-200);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  transition: var(--transition-base);
+
+  &:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+  }
+
+  &__image {
+    width: 100%;
+    @include aspect-ratio(16, 9);
+    overflow: hidden;
+
+    img {
+      @include cover-image;
+    }
+  }
+
+  &__body {
+    padding: var(--spacing-lg);
+    flex: 1;
+  }
+
+  &__title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-grey-900);
+  }
+
+  &__text {
+    color: var(--color-grey-600);
+    margin-bottom: var(--spacing-md);
+  }
+
+  &__footer {
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-top: var(--border-width-thin) solid var(--color-grey-200);
+    @include flex-between;
+  }
+
+  // Variants
+  &--flat {
+    border: none;
+    box-shadow: var(--shadow-md);
+  }
+
+  &--outline {
+    background-color: transparent;
+    border-color: var(--color-grey-300);
+  }
+
+  &--horizontal {
+    flex-direction: row;
+
+    .card__image {
+      width: 40%;
+      aspect-ratio: auto;
+    }
+  }
+}

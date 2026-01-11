@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Component Library - All Reusable Components">
+  <title>Component Library</title>
+  
+  <!-- Compiled CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  
+  <style>
+    .demo-section {
+      padding: 3rem 0;
+      border-bottom: 2px solid var(--color-grey-100);
+    }
+    .demo-section:last-child {
+      border-bottom: none;
+    }
+    .demo-grid {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin: 1.5rem 0;
+    }
+    .demo-block {
+      background: var(--color-grey-50);
+      padding: 2rem;
+      border-radius: var(--border-radius-lg);
+      text-align: center;
+    }
+    .component-title {
+      font-size: var(--font-size-3xl);
+      margin-bottom: 1rem;
+      color: var(--color-primary-600);
+    }
+    .component-subtitle {
+      font-size: var(--font-size-xl);
+      margin: 2rem 0 1rem;
+      color: var(--color-grey-700);
+    }
+    .code-preview {
+      background: var(--color-grey-900);
+      color: var(--color-grey-100);
+      padding: 1rem;
+      border-radius: var(--border-radius-md);
+      font-family: var(--font-family-mono);
+      font-size: 0.875rem;
+      overflow-x: auto;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav style="background: var(--color-primary-600); color: white; padding: 1rem 0; position: sticky; top: 0; z-index: 100;">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h1 style="margin: 0; font-size: var(--font-size-xl);">Component Library</h1>
+        <a href="index.html" style="color: white; text-decoration: underline;">Back to Home</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    
+    <!-- Typography Section -->
+    <section class="demo-section">
+      <h2 class="component-title">Typography</h2>
+      <p class="text-muted">Heading and text styles for content hierarchy</p>
+      
+      <div style="margin-top: 2rem;">
+        <h1>Heading 1 - Main Page Title</h1>
+        <h2>Heading 2 - Section Title</h2>
+        <h3>Heading 3 - Subsection Title</h3>
+        <h4>Heading 4 - Component Title</h4>
+        <h5>Heading 5 - Small Title</h5>
+        <h6>Heading 6 - Tiny Title</h6>
+        
+        <p style="margin-top: 2rem;">This is a regular paragraph with <strong>bold text</strong>, <em>italic text</em>, and <a href="#">a link</a>. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        
+        <p><small>Small text for disclaimers and fine print</small></p>
+        
+        <p>Inline <code>code snippet</code> for technical documentation.</p>
+        
+        <pre><code>// Code block example
+function greet(name) {
+  return `Hello, ${name}!`;
+}</code></pre>
+        
+        <blockquote style="margin-top: 1rem;">
+          "This is a blockquote for emphasizing important quotes or testimonials."
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- Buttons Section -->
+    <section class="demo-section">
+      <h2 class="component-title">Buttons</h2>
+      <p class="text-muted">Various button styles and states for user interactions</p>
+      
+      <h3 class="component-subtitle">Button Variants</h3>
+      <div class="demo-grid">
+        <button class="btn btn--primary">Primary Button</button>
+        <button class="btn btn--secondary">Secondary Button</button>
+        <button class="btn btn--outline">Outline Button</button>
+        <button class="btn btn--ghost">Ghost Button</button>
+      </div>
+      
+      <h3 class="component-subtitle">Button Sizes</h3>
+      <div class="demo-grid" style="align-items: center;">
+        <button class="btn btn--primary btn--sm">Small Button</button>
+        <button class="btn btn--primary">Default Button</button>
+        <button class="btn btn--primary btn--lg">Large Button</button>
+      </div>
+      
+      <h3 class="component-subtitle">Button States</h3>
+      <div class="demo-grid">
+        <button class="btn btn--primary">Normal</button>
+        <button class="btn btn--primary" disabled>Disabled</button>
+      </div>
+      
+      <h3 class="component-subtitle">Block Button</h3>
+      <button class="btn btn--primary btn--block">Full Width Block Button</button>
+      
+      <div class="code-preview">
+&lt;button class="btn btn--primary"&gt;Primary Button&lt;/button&gt;
+&lt;button class="btn btn--secondary"&gt;Secondary Button&lt;/button&gt;
+&lt;button class="btn btn--outline"&gt;Outline Button&lt;/button&gt;
+&lt;button class="btn btn--ghost"&gt;Ghost Button&lt;/button&gt;
+      </div>
+    </section>
+
+    <!-- Form Inputs Section -->
+    <section class="demo-section">
+      <h2 class="component-title">Form Inputs</h2>
+      <p class="text-muted">Input fields, textareas, and form controls</p>
+      
+      <h3 class="component-subtitle">Text Input</h3>
+      <div class="form-group">
+        <label for="demo-input-1">Label</label>
+        <input type="text" id="demo-input-1" class="input" placeholder="Enter text...">
+        <span class="help-text">This is helper text to guide the user</span>
+      </div>
+      
+      <h3 class="component-subtitle">Input States</h3>
+      <div class="grid grid--3-cols">
+        <div class="form-group">
+          <label>Default State</label>
+          <input type="text" class="input" placeholder="Normal input">
+        </div>
+        <div class="form-group">
+          <label>Error State</label>
+          <input type="text" class="input input--error" value="Invalid input">
+          <span class="error-text">This field has an error</span>
+        </div>
+        <div class="form-group">
+          <label>Success State</label>
+          <input type="text" class="input input--success" value="Valid input">
+        </div>
+      </div>
+      
+      <h3 class="component-subtitle">Textarea</h3>
+      <div class="form-group">
+        <label for="demo-textarea">Message</label>
+        <textarea id="demo-textarea" class="textarea" placeholder="Enter your message..."></textarea>
+      </div>
+      
+      <h3 class="component-subtitle">Checkbox & Radio</h3>
+      <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+        <div>
+          <p style="font-weight: 600; margin-bottom: 0.5rem;">Checkboxes</p>
+          <label class="checkbox">
+            <input type="checkbox" checked>
+            <span>Option 1</span>
+          </label>
+          <label class="checkbox">
+            <input type="checkbox">
+            <span>Option 2</span>
+          </label>
+          <label class="checkbox">
+            <input type="checkbox">
+            <span>Option 3</span>
+          </label>
+        </div>
+        
+        <div>
+          <p style="font-weight: 600; margin-bottom: 0.5rem;">Radio Buttons</p>
+          <label class="radio">
+            <input type="radio" name="demo-radio" checked>
+            <span>Choice A</span>
+          </label>
+          <label class="radio">
+            <input type="radio" name="demo-radio">
+            <span>Choice B</span>
+          </label>
+          <label class="radio">
+            <input type="radio" name="demo-radio">
+            <span>Choice C</span>
+          </label>
+        </div>
+      </div>
+      
+      <div class="code-preview">
+&lt;div class="form-group"&gt;
+  &lt;label for="input-1"&gt;Label&lt;/label&gt;
+  &lt;input type="text" id="input-1" class="input" placeholder="Enter text..."&gt;
+  &lt;span class="help-text"&gt;Helper text&lt;/span&gt;
+&lt;/div&gt;
+      </div>
+    </section>
+
+    <!-- Cards Section -->
+    <section class="demo-section">
+      <h2 class="component-title">Cards</h2>
+      <p class="text-muted">Flexible content containers with various styles</p>
+      
+      <h3 class="component-subtitle">Card Variants</h3>
+      <div class="grid grid--3-cols">
+        <!-- Default Card -->
+        <div class="card">
+          <div class="card__image">
+            <img src="https://via.placeholder.com/400x225/287330/ffffff?text=Default+Card" alt="Default Card">
+          </div>
+          <div class="card__body">
+            <h4 class="card__title">Default Card</h4>
+            <p class="card__text">Basic card with border. Perfect for content display with subtle styling.</p>
+          </div>
+          <div class="card__footer">
+            <span class="text-muted">Footer Info</span>
+            <button class="btn btn--primary btn--sm">Action</button>
+          </div>
+        </div>
+
+        <!-- Flat Card -->
+        <div class="card card--flat">
+          <div class="card__image">
+            <img src="https://via.placeholder.com/400x225/34bf42/ffffff?text=Flat+Card" alt="Flat Card">
+          </div>
+          <div class="card__body">
+            <h4 class="card__title">Flat Card</h4>
+            <p class="card__text">Elevated card with shadow, no border. Great for modern, clean designs.</p>
+          </div>
+        </div>
+
+        <!-- Outline Card -->
+        <div class="card card--outline">
+          <div class="card__image">
+            <img src="https://via.placeholder.com/400x225/666666/ffffff?text=Outline+Card" alt="Outline Card">
+          </div>
+          <div class="card__body">
+            <h4 class="card__title">Outline Card</h4>
+            <p class="card__text">Transparent background with border. Ideal for secondary content.</p>
+          </div>
+        </div>
+      </div>
+      
+      <h3 class="component-subtitle">Card Without Image</h3>
+      <div class="grid grid--2-cols">
+        <div class="card">
+          <div class="card__body">
+            <h4 class="card__title">Simple Content Card</h4>
+            <p class="card__text">Cards don't always need images. Use them for text-heavy content, notifications, or data display.</p>
+          </div>
+        </div>
+        
+        <div class="card card--flat">
+          <div class="card__body">
+            <h4 class="card__title">Stat Card</h4>
+            <p class="card__text">Perfect for dashboards and data visualization with key metrics.</p>
+          </div>
+          <div class="card__footer">
+            <a href="#" style="color: var(--color-primary-600);">View Details →</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="code-preview">
+&lt;div class="card"&gt;
+  &lt;div class="card__image"&gt;
+    &lt;img src="image.jpg" alt="Card"&gt;
+  &lt;/div&gt;
+  &lt;div class="card__body"&gt;
+    &lt;h4 class="card__title"&gt;Card Title&lt;/h4&gt;
+    &lt;p class="card__text"&gt;Card description&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="card__footer"&gt;
+    &lt;button class="btn btn--primary btn--sm"&gt;Action&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+      </div>
+    </section>
+
+    <!-- Grid System Section -->
+    <section class="demo-section">
+      <h2 class="component-title">Grid System</h2>
+      <p class="text-muted">Responsive grid layouts for organizing content</p>
+      
+      <h3 class="component-subtitle">2 Column Grid</h3>
+      <div class="grid grid--2-cols">
+        <div class="demo-block">Column 1</div>
+        <div class="demo-block">Column 2</div>
+      </div>
+      
+      <h3 class="component-subtitle">3 Column Grid</h3>
+      <div class="grid grid--3-cols">
+        <div class="demo-block">Column 1</div>
+        <div class="demo-block">Column 2</div>
+        <div class="demo-block">Column 3</div>
+      </div>
+      
+      <h3 class="component-subtitle">4 Column Grid</h3>
+      <div class="grid grid--4-cols">
+        <div class="demo-block">Column 1</div>
+        <div class="demo-block">Column 2</div>
+        <div class="demo-block">Column 3</div>
+        <div class="demo-block">Column 4</div>
+      </div>
+      
+      <h3 class="component-subtitle">Auto-Fit Grid (Responsive)</h3>
+      <div class="grid grid--auto-fit">
+        <div class="demo-block">Item 1</div>
+        <div class="demo-block">Item 2</div>
+        <div class="demo-block">Item 3</div>
+        <div class="demo-block">Item 4</div>
+        <div class="demo-block">Item 5</div>
+      </div>
+      
+      <div class="code-preview">
+&lt;div class="grid grid--3-cols"&gt;
+  &lt;div&gt;Column 1&lt;/div&gt;
+  &lt;div&gt;Column 2&lt;/div&gt;
+  &lt;div&gt;Column 3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="grid grid--auto-fit"&gt;
+  &lt;div&gt;Auto-sizing item&lt;/div&gt;
+  ...
+&lt;/div&gt;
+      </div>
+    </section>
+
+    <!-- Utility Classes Section -->
+    <section class="demo-section">
+      <h2 class="component-title">Utility Classes</h2>
+      <p class="text-muted">Helper classes for quick styling</p>
+      
+      <h3 class="component-subtitle">Text Alignment</h3>
+      <p class="text-left">Left aligned text</p>
+      <p class="text-center">Center aligned text</p>
+      <p class="text-right">Right aligned text</p>
+      
+      <h3 class="component-subtitle">Text Transform</h3>
+      <p class="text-bold">Bold text weight</p>
+      <p class="text-uppercase">uppercase text</p>
+      <p class="text-lowercase">LOWERCASE TEXT</p>
+      <p class="text-truncate" style="max-width: 300px;">This is a very long text that will be truncated with ellipsis when it overflows</p>
+      
+      <h3 class="component-subtitle">Text Colors</h3>
+      <p class="text-primary">Primary color text</p>
+      <p class="text-secondary">Secondary color text</p>
+      <p class="text-success">Success color text</p>
+      <p class="text-warning">Warning color text</p>
+      <p class="text-error">Error color text</p>
+      <p class="text-muted">Muted color text</p>
+      
+      <h3 class="component-subtitle">Background Colors</h3>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <div class="bg-primary" style="padding: 1rem; border-radius: var(--border-radius-md); color: white;">Primary BG</div>
+        <div class="bg-secondary" style="padding: 1rem; border-radius: var(--border-radius-md); color: white;">Secondary BG</div>
+        <div class="bg-light" style="padding: 1rem; border-radius: var(--border-radius-md);">Light BG</div>
+        <div class="bg-white" style="padding: 1rem; border-radius: var(--border-radius-md); border: 1px solid var(--color-grey-300);">White BG</div>
+      </div>
+      
+      <h3 class="component-subtitle">Spacing</h3>
+      <div style="background: var(--color-grey-50); padding: 1rem; border-radius: var(--border-radius-md);">
+        <div class="mb-3 bg-white" style="padding: 1rem;">Element with mb-3 (margin-bottom)</div>
+        <div class="pt-4 pb-4 bg-white" style="padding-inline: 1rem;">Element with pt-4 pb-4 (padding top & bottom)</div>
+      </div>
+      
+      <h3 class="component-subtitle">Display Utilities</h3>
+      <div style="background: var(--color-grey-50); padding: 1rem; border-radius: var(--border-radius-md);">
+        <div class="d-flex" style="gap: 1rem; margin-bottom: 1rem;">
+          <div class="bg-white" style="padding: 1rem; flex: 1;">Flex Item 1</div>
+          <div class="bg-white" style="padding: 1rem; flex: 1;">Flex Item 2</div>
+        </div>
+        <div class="flex-center bg-white" style="padding: 2rem;">Centered with flexbox</div>
+      </div>
+      
+      <div class="code-preview">
+&lt;!-- Text utilities --&gt;
+&lt;p class="text-center text-bold text-primary"&gt;Centered, bold, primary text&lt;/p&gt;
+
+&lt;!-- Spacing utilities --&gt;
+&lt;div class="mt-4 mb-3"&gt;Margin top & bottom&lt;/div&gt;
+
+&lt;!-- Display utilities --&gt;
+&lt;div class="d-flex flex-center"&gt;Flexbox centered&lt;/div&gt;
+      </div>
+    </section>
+
+    <!-- Color Palette Section -->
+    <section class="demo-section">
+      <h2 class="component-title">Color Palette</h2>
+      <p class="text-muted">Available color variables for your project</p>
+      
+      <h3 class="component-subtitle">Primary Colors</h3>
+      <div class="grid grid--auto-fit" style="--grid-gap: 0.5rem;">
+        <div style="background: var(--color-primary-900); color: white; padding: 1.5rem; border-radius: var(--border-radius-md); text-align: center; font-size: 0.875rem;">primary-900</div>
+        <div style="background: var(--color-primary-700); color: white; padding: 1.5rem; border-radius: var(--border-radius-md); text-align: center; font-size: 0.875rem;">primary-700</div>
+        <div style="background: var(--color-primary-600); color: white; padding: 1.5rem; border-radius: var(--border-radius-md); text-align: center; font-size: 0.875rem;">primary-600</div>
+        <div style="background: var(--color-primary-400); color: white; padding: 1.5rem; border-radius: var(--border-radius-md); text-align: center; font-size: 0.875rem;">primary-400</div>
+        <div style="background: var(--color-primary-200); padding: 1.5rem; border-radius: var(--border-radius-md); text-align: center; font-size: 0.875rem;">primary-200</div>
+        <div style="background: var(--color-primary-50); padding: 1.5rem; border-radius: var(--border-radius-md); text-align: center; font-size: 0.875rem;">primary-50</div>
+      </div>
+      
+      <h3 class="component-subtitle">Grey Scale</h3>
+      <div class="grid grid--auto-fit" style="--grid-gap: 0.5rem;">
+        <div style="background: var(--color-grey-900); color: white; padding: 1.5rem; border-radius: var(--border-radius-md); text-align: center; font-size: 0.875rem;">grey-900</div>
+        <div style="background: var(--color-grey-700); color: white; padding: 1.5rem; border-radius: var(--border-radius-md); text-align: center; font-size: 0.875rem;">grey-700</div>
+        <div style="background: var(--color-grey-500); color: white; padding: 1.5rem; border-radius: var(--border-radius-md); text-align: center; font-size: 0.875rem;">grey-500</div>
+        <div style="background: var(--color-grey-300); padding: 1.5rem; border-radius: var(--border-radius-md); text-align: center; font-size: 0.875rem;">grey-300</div>
+        <div style="background: var(--color-grey-100); padding: 1.5rem; border-radius: var(--border-radius-md); text-align: center; font-size: 0.875rem;">grey-100</div>
+        <div style="background: var(--color-grey-50); padding: 1.5rem; border-radius: var(--border-radius-md); text-align: center; font-size: 0.875rem;">grey-50</div>
+      </div>
+      
+      <h3 class="component-subtitle">Semantic Colors</h3>
+      <div class="grid grid--4-cols">
+        <div style="background: var(--color-success); color: white; padding: 1.5rem; border-radius: var(--border-radius-md); text-align: center;">Success</div>
+        <div style="background: var(--color-warning); color: white; padding: 1.5rem; border-radius: var(--border-radius-md); text-align: center;">Warning</div>
+        <div style="background: var(--color-error); color: white; padding: 1.5rem; border-radius: var(--border-radius-md); text-align: center;">Error</div>
+        <div style="background: var(--color-info); color: white; padding: 1.5rem; border-radius: var(--border-radius-md); text-align: center;">Info</div>
+      </div>
+    </section>
+
+    <!-- Badges Section -->
+    <section class="demo-section">
+      <h2 class="component-title">Badges</h2>
+      <p class="text-muted">Labels and notification badges for status indicators</p>
+      
+      <h3 class="component-subtitle">Badge Variants</h3>
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem;">
+        <span class="badge badge--primary">Primary</span>
+        <span class="badge badge--secondary">Secondary</span>
+        <span class="badge badge--success">Success</span>
+        <span class="badge badge--warning">Warning</span>
+        <span class="badge badge--error">Error</span>
+        <span class="badge badge--info">Info</span>
+        <span class="badge badge--light">Light</span>
+        <span class="badge badge--dark">Dark</span>
+      </div>
+
+      <h3 class="component-subtitle">Outline Badges</h3>
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem;">
+        <span class="badge badge--outline badge--primary">Primary</span>
+        <span class="badge badge--outline badge--success">Success</span>
+        <span class="badge badge--outline badge--error">Error</span>
+      </div>
+
+      <h3 class="component-subtitle">Badge Sizes</h3>
+      <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; margin-bottom: 2rem;">
+        <span class="badge badge--primary badge--sm">Small</span>
+        <span class="badge badge--primary">Default</span>
+        <span class="badge badge--primary badge--lg">Large</span>
+      </div>
+
+      <h3 class="component-subtitle">Rounded & With Dot</h3>
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+        <span class="badge badge--success badge--rounded">New</span>
+        <span class="badge badge--error badge--rounded">Sale</span>
+        <span class="badge badge--primary badge--dot">In Stock</span>
+        <span class="badge badge--count badge--error">5</span>
+      </div>
+
+      <div class="code-preview">
+&lt;span class="badge badge--primary"&gt;Badge&lt;/span&gt;
+&lt;span class="badge badge--success badge--rounded"&gt;New&lt;/span&gt;
+&lt;span class="badge badge--primary badge--dot"&gt;Status&lt;/span&gt;
+      </div>
+    </section>
+
+    <!-- Breadcrumb Section -->
+    <section class="demo-section">
+      <h2 class="component-title">Breadcrumb</h2>
+      <p class="text-muted">Navigation breadcrumbs for page hierarchy</p>
+      
+      <h3 class="component-subtitle">Default Breadcrumb</h3>
+      <nav class="breadcrumb">
+        <li class="breadcrumb__item"><a href="#">Home</a></li>
+        <li class="breadcrumb__item"><a href="#">Products</a></li>
+        <li class="breadcrumb__item"><a href="#">Category</a></li>
+        <li class="breadcrumb__item breadcrumb__item--active">Product Name</li>
+      </nav>
+
+      <h3 class="component-subtitle">Icon Separator</h3>
+      <nav class="breadcrumb breadcrumb--icon">
+        <li class="breadcrumb__item"><a href="#">Home</a></li>
+        <li class="breadcrumb__item"><a href="#">Shop</a></li>
+        <li class="breadcrumb__item breadcrumb__item--active">Cart</li>
+      </nav>
+
+      <div class="code-preview">
+&lt;nav class="breadcrumb"&gt;
+  &lt;li class="breadcrumb__item"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+  &lt;li class="breadcrumb__item"&gt;&lt;a href="#"&gt;Category&lt;/a&gt;&lt;/li&gt;
+  &lt;li class="breadcrumb__item breadcrumb__item--active"&gt;Current&lt;/li&gt;
+&lt;/nav&gt;
+      </div>
+    </section>
+
+    <!-- Category Cards Section -->
+    <section class="demo-section">
+      <h2 class="component-title">Category Cards</h2>
+      <p class="text-muted">Clickable category cards with image overlay</p>
+      
+      <div class="category-grid">
+        <a href="#" class="category-card">
+          <div class="category-card__image">
+            <img src="https://via.placeholder.com/400x600/287330/ffffff?text=Scooters" alt="Scooters">
+          </div>
+          <div class="category-card__content">
+            <h3 class="category-card__title">Scooters</h3>
+            <p class="category-card__count">24 products</p>
+          </div>
+        </a>
+
+        <a href="#" class="category-card">
+          <div class="category-card__image">
+            <img src="https://via.placeholder.com/400x600/34bf42/ffffff?text=Rollators" alt="Rollators">
+          </div>
+          <div class="category-card__content">
+            <h3 class="category-card__title">Rollators</h3>
+            <p class="category-card__count">18 products</p>
+          </div>
+        </a>
+
+        <a href="#" class="category-card">
+          <div class="category-card__image">
+            <img src="https://via.placeholder.com/400x600/666666/ffffff?text=Wheelchairs" alt="Wheelchairs">
+          </div>
+          <div class="category-card__content">
+            <h3 class="category-card__title">Wheelchairs</h3>
+            <p class="category-card__count">32 products</p>
+          </div>
+        </a>
+
+        <a href="#" class="category-card">
+          <div class="category-card__image">
+            <img src="https://via.placeholder.com/400x600/f4c542/ffffff?text=Furniture" alt="Furniture">
+          </div>
+          <div class="category-card__content">
+            <h3 class="category-card__title">Furniture</h3>
+            <p class="category-card__count">45 products</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="code-preview">
+&lt;a href="#" class="category-card"&gt;
+  &lt;div class="category-card__image"&gt;
+    &lt;img src="image.jpg" alt="Category"&gt;
+  &lt;/div&gt;
+  &lt;div class="category-card__content"&gt;
+    &lt;h3 class="category-card__title"&gt;Category Name&lt;/h3&gt;
+    &lt;p class="category-card__count"&gt;24 products&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/a&gt;
+      </div>
+    </section>
+
+    <!-- Product Cards Section -->
+    <section class="demo-section">
+      <h2 class="component-title">Product Cards</h2>
+      <p class="text-muted">E-commerce product cards with all features</p>
+      
+      <div class="product-grid">
+        <!-- Product 1 - With Sale Badge -->
+        <div class="product-card">
+          <div class="product-card__badge product-card__badge--sale">Sale -20%</div>
+          <button class="product-card__wishlist">♡</button>
+          <div class="product-card__image">
+            <img src="https://via.placeholder.com/400x400/287330/ffffff?text=Product+1" alt="Product 1">
+            <div class="product-card__quick-add">
+              <button class="btn btn--primary btn--sm">Quick Add</button>
+            </div>
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__category">Mobility</span>
+            <h3 class="product-card__title"><a href="#">Premium Walker with Seat</a></h3>
+            <div class="product-card__rating">
+              <span class="stars">★★★★★</span>
+              <span class="count">(48)</span>
+            </div>
+          </div>
+          <div class="product-card__footer">
+            <div class="product-card__price">
+              <span class="product-card__price-current">€399</span>
+              <span class="product-card__price-original">€499</span>
+            </div>
+            <button class="product-card__add-to-cart">🛒</button>
+          </div>
+        </div>
+
+        <!-- Product 2 - New Badge -->
+        <div class="product-card">
+          <div class="product-card__badge product-card__badge--new">New</div>
+          <button class="product-card__wishlist active">♥</button>
+          <div class="product-card__image">
+            <img src="https://via.placeholder.com/400x400/34bf42/ffffff?text=Product+2" alt="Product 2">
+            <div class="product-card__quick-add">
+              <button class="btn btn--primary btn--sm">Quick Add</button>
+            </div>
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__category">Furniture</span>
+            <h3 class="product-card__title"><a href="#">Ergonomic Office Chair</a></h3>
+            <div class="product-card__rating">
+              <span class="stars">★★★★☆</span>
+              <span class="count">(32)</span>
+            </div>
+          </div>
+          <div class="product-card__footer">
+            <div class="product-card__price">
+              <span class="product-card__price-current">€599</span>
+            </div>
+            <button class="product-card__add-to-cart">🛒</button>
+          </div>
+        </div>
+
+        <!-- Product 3 - Regular -->
+        <div class="product-card">
+          <button class="product-card__wishlist">♡</button>
+          <div class="product-card__image">
+            <img src="https://via.placeholder.com/400x400/666666/ffffff?text=Product+3" alt="Product 3">
+            <div class="product-card__quick-add">
+              <button class="btn btn--primary btn--sm">Quick Add</button>
+            </div>
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__category">Accessories</span>
+            <h3 class="product-card__title"><a href="#">Comfort Cushion Set</a></h3>
+            <div class="product-card__rating">
+              <span class="stars">★★★★★</span>
+              <span class="count">(96)</span>
+            </div>
+          </div>
+          <div class="product-card__footer">
+            <div class="product-card__price">
+              <span class="product-card__price-current">€89</span>
+            </div>
+            <button class="product-card__add-to-cart">🛒</button>
+          </div>
+        </div>
+
+        <!-- Product 4 - Compact -->
+        <div class="product-card product-card--compact">
+          <button class="product-card__wishlist">♡</button>
+          <div class="product-card__image">
+            <img src="https://via.placeholder.com/400x400/f4c542/ffffff?text=Product+4" alt="Product 4">
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__category">Tools</span>
+            <h3 class="product-card__title"><a href="#">Compact Mobility Aid</a></h3>
+          </div>
+          <div class="product-card__footer">
+            <div class="product-card__price">
+              <span class="product-card__price-current">€149</span>
+            </div>
+            <button class="product-card__add-to-cart">🛒</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-preview">
+&lt;div class="product-card"&gt;
+  &lt;div class="product-card__badge product-card__badge--sale"&gt;Sale&lt;/div&gt;
+  &lt;button class="product-card__wishlist"&gt;♡&lt;/button&gt;
+  &lt;div class="product-card__image"&gt;
+    &lt;img src="product.jpg" alt="Product"&gt;
+  &lt;/div&gt;
+  &lt;div class="product-card__body"&gt;
+    &lt;h3 class="product-card__title"&gt;Product Name&lt;/h3&gt;
+  &lt;/div&gt;
+  &lt;div class="product-card__footer"&gt;
+    &lt;div class="product-card__price"&gt;
+      &lt;span class="product-card__price-current"&gt;€99&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+      </div>
+    </section>
+
+    <!-- Promo Banner Section -->
+    <section class="demo-section">
+      <h2 class="component-title">Promo Banner</h2>
+      <p class="text-muted">Promotional banner with diagonal ribbon</p>
+      
+      <div class="promo-banner">
+        <div class="promo-banner__ribbon" data-text="Limited Time"></div>
+        <div class="promo-banner__content">
+          <span class="promo-banner__label">Sale</span>
+          <h2 class="promo-banner__title">Up to 20% Off on All Chairs</h2>
+          <p class="promo-banner__description">Premium ergonomic chairs designed for comfort and style</p>
+          <button class="btn btn--primary">Shop Now</button>
+        </div>
+        <div class="promo-banner__image">
+          <img src="https://via.placeholder.com/600x400?text=Chair" alt="Promo">
+        </div>
+      </div>
+
+      <h3 class="component-subtitle mt-4">Variant - Primary Background</h3>
+      <div class="promo-banner promo-banner--primary">
+        <div class="promo-banner__content">
+          <span class="promo-banner__label">New</span>
+          <h2 class="promo-banner__title">Discover Our Latest Collection</h2>
+          <p class="promo-banner__description">Innovative mobility solutions for modern living</p>
+          <button class="btn btn--secondary">Explore Now</button>
+        </div>
+      </div>
+
+      <div class="code-preview">
+&lt;div class="promo-banner"&gt;
+  &lt;div class="promo-banner__ribbon" data-text="Limited"&gt;&lt;/div&gt;
+  &lt;div class="promo-banner__content"&gt;
+    &lt;span class="promo-banner__label"&gt;Sale&lt;/span&gt;
+    &lt;h2 class="promo-banner__title"&gt;Title&lt;/h2&gt;
+    &lt;p class="promo-banner__description"&gt;Description&lt;/p&gt;
+    &lt;button class="btn btn--primary"&gt;CTA&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+      </div>
+    </section>
+
+    <!-- Carousel Section -->
+    <section class="demo-section">
+      <h2 class="component-title">Carousel</h2>
+      <p class="text-muted">Horizontal scrolling carousel with navigation</p>
+      
+      <div class="carousel">
+        <div class="carousel__header">
+          <h3 class="carousel__title">Featured Products</h3>
+          <a href="#" class="carousel__view-all">View All →</a>
+        </div>
+        
+        <div class="carousel__container">
+          <button class="carousel__nav carousel__nav--prev">‹</button>
+          <button class="carousel__nav carousel__nav--next">›</button>
+          
+          <div class="carousel__track">
+            <div class="carousel__track-item">
+              <div class="card">
+                <div class="card__image">
+                  <img src="https://via.placeholder.com/300x200/287330/ffffff?text=Item+1" alt="Item 1">
+                </div>
+                <div class="card__body">
+                  <h4 class="card__title">Product 1</h4>
+                  <p class="card__text">€99</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel__track-item">
+              <div class="card">
+                <div class="card__image">
+                  <img src="https://via.placeholder.com/300x200/34bf42/ffffff?text=Item+2" alt="Item 2">
+                </div>
+                <div class="card__body">
+                  <h4 class="card__title">Product 2</h4>
+                  <p class="card__text">€149</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel__track-item">
+              <div class="card">
+                <div class="card__image">
+                  <img src="https://via.placeholder.com/300x200/666666/ffffff?text=Item+3" alt="Item 3">
+                </div>
+                <div class="card__body">
+                  <h4 class="card__title">Product 3</h4>
+                  <p class="card__text">€199</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel__track-item">
+              <div class="card">
+                <div class="card__image">
+                  <img src="https://via.placeholder.com/300x200/f4c542/ffffff?text=Item+4" alt="Item 4">
+                </div>
+                <div class="card__body">
+                  <h4 class="card__title">Product 4</h4>
+                  <p class="card__text">€249</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel__track-item">
+              <div class="card">
+                <div class="card__image">
+                  <img src="https://via.placeholder.com/300x200/ff6b35/ffffff?text=Item+5" alt="Item 5">
+                </div>
+                <div class="card__body">
+                  <h4 class="card__title">Product 5</h4>
+                  <p class="card__text">€299</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel__dots">
+          <span class="carousel__dots-dot active"></span>
+          <span class="carousel__dots-dot"></span>
+          <span class="carousel__dots-dot"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content Block Section -->
+    <section class="demo-section">
+      <h2 class="component-title">Content Blocks</h2>
+      <p class="text-muted">Image and text side-by-side layouts</p>
+      
+      <h3 class="component-subtitle">Default Layout</h3>
+      <div class="content-block">
+        <div class="content-block__image">
+          <img src="https://via.placeholder.com/600x400/287330/ffffff?text=Support+Image" alt="Support">
+          <div class="content-block__image-icon">🏠</div>
+        </div>
+        <div class="content-block__content">
+          <span class="content-block__label">Support</span>
+          <h2 class="content-block__title">Home Care Services</h2>
+          <p class="content-block__description">Professional support and guidance for your mobility needs. Our expert team is here to help you find the perfect solution.</p>
+          <ul class="content-block__list">
+            <li>Free home consultation</li>
+            <li>Professional installation</li>
+            <li>24/7 customer support</li>
+            <li>Warranty coverage</li>
+          </ul>
+          <div class="content-block__actions">
+            <button class="btn btn--primary">Learn More</button>
+            <button class="btn btn--outline">Contact Us</button>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="component-subtitle mt-5">Reverse Layout</h3>
+      <div class="content-block content-block--reverse">
+        <div class="content-block__image">
+          <img src="https://via.placeholder.com/600x400/34bf42/ffffff?text=Store+Image" alt="Store">
+          <div class="content-block__image-icon">🏢</div>
+        </div>
+        <div class="content-block__content">
+          <span class="content-block__label">Visit Us</span>
+          <h2 class="content-block__title">Visit Our Showroom</h2>
+          <p class="content-block__description">Experience our products firsthand. Visit our modern showroom and get expert advice from our knowledgeable staff.</p>
+          <div class="content-block__actions">
+            <button class="btn btn--primary">Find Location</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-preview">
+&lt;div class="content-block"&gt;
+  &lt;div class="content-block__image"&gt;
+    &lt;img src="image.jpg" alt="Content"&gt;
+  &lt;/div&gt;
+  &lt;div class="content-block__content"&gt;
+    &lt;h2 class="content-block__title"&gt;Title&lt;/h2&gt;
+    &lt;p class="content-block__description"&gt;Description&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+      </div>
+    </section>
+
+    <!-- Contact Card Section -->
+    <section class="demo-section">
+      <h2 class="component-title">Contact Cards</h2>
+      <p class="text-muted">Contact information and help sections</p>
+      
+      <div class="grid grid--2-cols">
+        <div class="contact-card">
+          <div class="contact-card__avatar">
+            <img src="https://via.placeholder.com/160x160/287330/ffffff?text=Agent" alt="Agent">
+          </div>
+          <h3 class="contact-card__title">Need Help?</h3>
+          <p class="contact-card__subtitle">Get in touch with our support team</p>
+          <ul class="contact-card__info">
+            <li>
+              <span class="icon">📞</span>
+              <a href="tel:+31234567890">+31 (0)20 123 4567</a>
+            </li>
+            <li>
+              <span class="icon">✉️</span>
+              <a href="mailto:info@example.com">info@example.com</a>
+            </li>
+            <li>
+              <span class="icon">💬</span>
+              <span>Live Chat Available</span>
+            </li>
+          </ul>
+          <a href="#" class="contact-card__link">Start Live Chat →</a>
+        </div>
+
+        <div class="help-section">
+          <div class="help-section__content">
+            <h2 class="help-section__title">Questions? We're Here to Help!</h2>
+            <p class="help-section__subtitle">Our team is ready to assist you with personalized advice and support.</p>
+            <button class="btn btn--primary btn--lg">Contact Support</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-preview">
+&lt;div class="contact-card"&gt;
+  &lt;div class="contact-card__avatar"&gt;
+    &lt;img src="avatar.jpg" alt="Agent"&gt;
+  &lt;/div&gt;
+  &lt;h3 class="contact-card__title"&gt;Need Help?&lt;/h3&gt;
+  &lt;ul class="contact-card__info"&gt;
+    &lt;li&gt;
+      &lt;span class="icon"&gt;📞&lt;/span&gt;
+      &lt;a href="tel:+123"&gt;Phone&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer style="background: var(--color-grey-900); color: var(--color-grey-300); padding: 2rem 0; margin-top: 4rem;">
+    <div class="container text-center">
+      <p>SCSS Template Component Library</p>
+      <p style="font-size: var(--font-size-sm); margin-top: 0.5rem;">Customize variables to match your project</p>
+    </div>
+  </footer>
+
+  <script src="src/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+@use '../abstracts/mixins' as *;
+
+// ============================================
+// Contact Card Component
+// ============================================
+
+.contact-card {
+  background: var(--color-white);
+  border: var(--border-width-thin) solid var(--color-grey-200);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+
+  &__avatar {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1rem;
+    border-radius: var(--border-radius-full);
+    overflow: hidden;
+    border: 3px solid var(--color-primary-100);
+
+    img {
+      @include cover-image;
+    }
+  }
+
+  &__title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 0.5rem;
+  }
+
+  &__subtitle {
+    font-size: var(--font-size-sm);
+    color: var(--color-grey-600);
+    margin-bottom: 1.5rem;
+  }
+
+  &__info {
+    @include reset-list;
+    margin-bottom: 1.5rem;
+    text-align: left;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem;
+      margin-bottom: 0.5rem;
+      background: var(--color-grey-50);
+      border-radius: var(--border-radius-md);
+
+      .icon {
+        width: 20px;
+        color: var(--color-primary-600);
+        flex-shrink: 0;
+      }
+
+      a {
+        color: var(--color-grey-900);
+        
+        &:hover {
+          color: var(--color-primary-600);
+        }
+      }
+    }
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-primary-600);
+    font-weight: var(--font-weight-medium);
+    transition: var(--transition-fast);
+
+    &:hover {
+      gap: 0.75rem;
+    }
+  }
+
+  // Horizontal variant
+  &--horizontal {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+    text-align: left;
+
+    .contact-card__avatar {
+      margin: 0;
+    }
+
+    .contact-card__info {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Help/Support Section
+.help-section {
+  background: linear-gradient(135deg, #ffd966 0%, #f4c542 100%);
+  padding: 3rem 2rem;
+  border-radius: var(--border-radius-lg);
+
+  @include respond-to('lg') {
+    padding: 4rem 3rem;
+  }
+
+  &__content {
+    max-width: 600px;
+  }
+
+  &__title {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    margin-bottom: 1rem;
+  }
+
+  &__subtitle {
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: 2rem;
+    color: var(--color-grey-800);
+  }
+}

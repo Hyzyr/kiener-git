@@ -1,0 +1,271 @@
+// ============================================
+// Mixins & Utilities
+// Modern SCSS helpers for common patterns
+// ============================================
+
+@use 'variables' as *;
+
+// ============================================
+// 1. RESPONSIVE & MEDIA QUERIES
+// ============================================
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint: #{$breakpoint}";
+  }
+}
+
+@mixin mobile-only {
+  @media (max-width: 639px) { @content; }
+}
+
+@mixin tablet-up {
+  @media (min-width: 768px) { @content; }
+}
+
+@mixin desktop-up {
+  @media (min-width: 1024px) { @content; }
+}
+
+// Container Query Support
+@mixin container($name: null, $type: inline-size) {
+  @if $name {
+    container: #{$name} / #{$type};
+  } @else {
+    container-type: $type;
+  }
+}
+
+@mixin container-query($size) {
+  @container (min-width: #{$size}) {
+    @content;
+  }
+}
+
+// ============================================
+// 2. LAYOUT & POSITIONING
+// ============================================
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin grid($columns: 1, $gap: var(--grid-gap)) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}
+
+@mixin grid-auto-fit($min-width: 250px, $gap: var(--grid-gap)) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+  gap: $gap;
+}
+
+@mixin grid-auto-fill($min-width: 250px, $gap: var(--grid-gap)) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($min-width, 1fr));
+  gap: $gap;
+}
+
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin absolute-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// ============================================
+// 3. IMAGES & MEDIA
+// ============================================
+
+@mixin cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@mixin contain-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@mixin aspect-ratio($width, $height) {
+  aspect-ratio: #{$width} / #{$height};
+}
+
+@mixin bg-cover {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+// ============================================
+// 4. TYPOGRAPHY
+// ============================================
+
+@mixin truncate($lines: 1) {
+  @if $lines == 1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+// ============================================
+// 5. UTILITY MIXINS
+// ============================================
+
+@mixin transition($property: all, $duration: var(--transition-base)) {
+  transition: $property $duration;
+}
+
+// Easing Mixins
+@mixin ease-snap($property: all, $duration: 300ms) {
+  transition: $property $duration var(--ease-snap);
+}
+
+@mixin ease-smooth($property: all, $duration: 250ms) {
+  transition: $property $duration var(--ease-smooth);
+}
+
+@mixin ease-swift($property: all, $duration: 200ms) {
+  transition: $property $duration var(--ease-swift);
+}
+
+@mixin reset-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@mixin reset-button {
+  appearance: button;
+  background-color: transparent;
+  background-image: none;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+@mixin no-select {
+  user-select: none;
+}
+
+@mixin hide-scrollbar {
+  scrollbar-width: none;
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin custom-scrollbar(
+  $size: 8px,
+  $track-color: var(--color-grey-100),
+  $thumb-color: var(--color-grey-400)
+) {
+  scrollbar-width: thin;
+  scrollbar-color: $thumb-color $track-color;
+
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $track-color;
+    border-radius: calc($size / 2);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $thumb-color;
+    border-radius: calc($size / 2);
+    
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+@mixin focus-ring($color: var(--color-primary-400), $width: 2px, $offset: 2px) {
+  &:focus-visible {
+    outline: $width solid $color;
+    outline-offset: $offset;
+  }
+}
+
+// Performance Optimization
+@mixin hardware-accelerate {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@mixin gpu-accelerate {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+// ============================================
+// 6. PSEUDO ELEMENTS
+// ============================================
+
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+@mixin overlay($background: rgba(0, 0, 0, 0.5)) {
+  @include pseudo;
+  @include absolute-cover;
+  background: $background;
+}

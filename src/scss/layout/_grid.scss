@@ -1,0 +1,57 @@
+@use '../abstracts/mixins' as *;
+
+// ============================================
+// Grid System
+// ============================================
+
+.grid {
+  @include grid(1);
+
+  @include respond-to('sm') {
+    @include grid(2);
+  }
+
+  @include respond-to('lg') {
+    @include grid(3);
+  }
+
+  &--2-cols {
+    @include grid(1);
+    
+    @include respond-to('md') {
+      @include grid(2);
+    }
+  }
+
+  &--3-cols {
+    @include grid(1);
+    
+    @include respond-to('sm') {
+      @include grid(2);
+    }
+    
+    @include respond-to('lg') {
+      @include grid(3);
+    }
+  }
+
+  &--4-cols {
+    @include grid(1);
+    
+    @include respond-to('sm') {
+      @include grid(2);
+    }
+    
+    @include respond-to('lg') {
+      @include grid(4);
+    }
+  }
+
+  &--auto-fit {
+    @include grid-auto-fit(250px);
+  }
+
+  &--auto-fill {
+    @include grid-auto-fill(250px);
+  }
+}

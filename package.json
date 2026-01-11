@@ -1,0 +1,22 @@
+{
+  "name": "scss-template",
+  "version": "1.0.0",
+  "description": "Modern SCSS template for HTML/CSS projects",
+  "main": "index.html",
+  "scripts": {
+    "clean": "node -e \"require('fs').rmSync('dist', {recursive: true, force: true})\"",
+    "copy:assets": "node -e \"require('fs').cpSync('src/assets', 'dist/assets', {recursive: true})\"",
+    "dev:scss": "sass src/scss:src/css --watch",
+    "build:scss": "sass src/scss/main.scss dist/css/main.css --no-source-map --style=compressed",
+    "build:js": "terser src/js/main.js -o dist/js/main.min.js --compress --mangle",
+    "build:html": "html-minifier-terser --collapse-whitespace --remove-comments src/index.html -o dist/index.html && html-minifier-terser --collapse-whitespace --remove-comments src/components.html -o dist/components.html",
+    "build": "npm run clean && npm run copy:assets && npm run build:scss && npm run build:js && npm run build:html",
+    "dev": "npm run dev:scss"
+  },
+  "keywords": ["scss", "template", "html", "css"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.70.0"
+  }
+}

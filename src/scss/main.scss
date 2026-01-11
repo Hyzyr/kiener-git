@@ -1,0 +1,36 @@
+// ============================================
+// Main SCSS Entry Point
+// Modern architecture using @use and @forward
+// ============================================
+
+// 1. Abstracts (no output)
+@use 'abstracts/variables';
+@use 'abstracts/mixins';
+
+// 2. Base styles
+@use 'base/reset';
+@use 'base/typography';
+@use 'base/print';
+
+// 3. Layout
+@use 'layout/container';
+@use 'layout/grid';
+
+// 4. Components
+@use 'components/button';
+@use 'components/input';
+@use 'components/card';
+@use 'components/badge';
+@use 'components/breadcrumb';
+@use 'components/header';
+@use 'components/footer';
+@use 'components/hero';
+@use 'components/category-card';
+@use 'components/product-card';
+@use 'components/promo-banner';
+@use 'components/carousel';
+@use 'components/content-block';
+@use 'components/contact-card';
+
+// 5. Utilities
+@use 'utilities/helpers';

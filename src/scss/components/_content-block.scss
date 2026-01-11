@@ -1,0 +1,143 @@
+@use '../abstracts/mixins' as *;
+
+// ============================================
+// Content Block Component (Image + Text)
+// ============================================
+
+.content-block {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+
+  @include respond-to('lg') {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  &__image {
+    position: relative;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    @include aspect-ratio(16, 10);
+
+    img {
+      @include cover-image;
+    }
+
+    // Icon overlay
+    &-icon {
+      position: absolute;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      width: 64px;
+      height: 64px;
+      @include flex-center;
+      background: var(--color-white);
+      border-radius: var(--border-radius-full);
+      box-shadow: var(--shadow-lg);
+      font-size: 2rem;
+    }
+  }
+
+  &__content {
+    padding: 1rem;
+
+    @include respond-to('lg') {
+      padding: 2rem;
+    }
+  }
+
+  &__label {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: var(--color-primary-50);
+    color: var(--color-primary-700);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    border-radius: var(--border-radius-sm);
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    margin-bottom: 1rem;
+  }
+
+  &__description {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-grey-600);
+    margin-bottom: 1.5rem;
+  }
+
+  &__list {
+    @include reset-list;
+    margin-bottom: 2rem;
+
+    li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: var(--color-grey-700);
+
+      &::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: var(--color-success);
+        font-weight: var(--font-weight-bold);
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  // Reverse layout
+  &--reverse {
+    @include respond-to('lg') {
+      .content-block__image {
+        order: 2;
+      }
+      
+      .content-block__content {
+        order: 1;
+      }
+    }
+  }
+
+  // Full background variant
+  &--bg {
+    background: var(--color-grey-50);
+    padding: 3rem;
+
+    @include mobile-only {
+      padding: 2rem 1rem;
+    }
+  }
+
+  &--primary-bg {
+    background: var(--color-primary-50);
+  }
+
+  // Compact variant
+  &--compact {
+    gap: 1.5rem;
+
+    .content-block__title {
+      font-size: var(--font-size-2xl);
+    }
+
+    .content-block__content {
+      padding: 0;
+    }
+  }
+}

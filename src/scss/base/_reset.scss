@@ -1,0 +1,249 @@
+@use '../abstracts/mixins' as *;
+
+// ============================================
+// Modern CSS Reset
+// ============================================
+
+// View Transitions API (Modern browsers)
+@view-transition {
+  navigation: auto; /* Animates the transition between page loads automatically */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  height: 100%;
+  font-size: 16px;
+  line-height: 1.5;
+  tab-size: 4;
+}
+
+body {
+  min-height: 100%;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-normal);
+  color: var(--color-grey-900);
+  background-color: var(--color-white);
+  @include custom-scrollbar;
+  
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+
+// ============================================
+// MODERN ENHANCEMENTS
+// ============================================
+
+// Smooth scroll padding for fixed headers
+html {
+  scroll-padding-top: 2rem;
+}
+
+// Modern focus styles with better accessibility
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+
+// Container queries support
+@supports (container-type: inline-size) {
+  .container {
+    container-type: inline-size;
+  }
+}
+
+// ============================================
+// TYPOGRAPHY
+// ============================================
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: inherit;
+  line-height: var(--line-height-tight);
+  text-wrap: balance;
+}
+
+p, ul, ol, dl, blockquote, pre {
+  margin: 0;
+  text-wrap: pretty;
+}
+
+ul, ol {
+  @include reset-list;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  background-color: transparent;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// ============================================
+// MEDIA ELEMENTS
+// ============================================
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+img,
+svg {
+  vertical-align: middle;
+}
+
+// Modern image loading optimization
+img[loading="lazy"] {
+  content-visibility: auto;
+}
+
+// Prevent layout shift for images
+img {
+  &[width][height] {
+    height: auto;
+  }
+}
+
+// ============================================
+// FORM ELEMENTS
+// ============================================
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+}
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  @include reset-button;
+  
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+input,
+textarea {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[type='number'] {
+  appearance: textfield;
+  
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0;
+  }
+}
+
+input[type='search'] {
+  appearance: textfield;
+  
+  &::-webkit-search-decoration {
+    appearance: none;
+  }
+}
+
+// Autofill styling
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px var(--color-white) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+// ============================================
+// UTILITY CLASSES
+// ============================================
+
+[hidden] {
+  display: none !important;
+}
+// Modern scrollbar for specific elements
+.custom-scroll {
+  @include custom-scrollbar;
+}
+
+// Smooth scroll behavior for anchors
+@media (prefers-reduced-motion: no-preference) {
+  html:has(:target) {
+    scroll-behavior: smooth;
+  }
+}
+
+
+.sr-only,
+.visually-hidden {
+  @include visually-hidden;
+}
+
+::selection {
+  background-color: var(--color-primary-200);
+  color: var(--color-white);
+  text-shadow: none;
+}
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}

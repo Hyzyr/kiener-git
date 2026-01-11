@@ -1,0 +1,161 @@
+@use '../abstracts/mixins' as *;
+
+// ============================================
+// Header Component
+// ============================================
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+
+  // Top announcement bar
+  &__topbar {
+    background: var(--color-grey-900);
+    color: var(--color-white);
+    padding: 0.5rem 0;
+    font-size: var(--font-size-sm);
+    text-align: center;
+
+    a {
+      color: var(--color-white);
+      text-decoration: underline;
+      
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  // Main navigation
+  &__nav {
+    padding: 1rem 0;
+
+    .container {
+      @include flex-between;
+      gap: 2rem;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    
+    img {
+      height: 40px;
+      width: auto;
+    }
+  }
+
+  // Primary menu
+  &__menu {
+    @include reset-list;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+
+    @include mobile-only {
+      display: none;
+    }
+
+    &-item {
+      position: relative;
+      
+      a {
+        color: var(--color-grey-900);
+        font-weight: var(--font-weight-medium);
+        transition: var(--transition-fast);
+        
+        &:hover {
+          color: var(--color-primary-600);
+        }
+      }
+
+      // Dropdown indicator
+      &--has-dropdown {
+        &::after {
+          content: '▼';
+          font-size: 0.625rem;
+          margin-left: 0.25rem;
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+
+  // Actions (search, account, cart)
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__search {
+    position: relative;
+    width: 250px;
+
+    @include mobile-only {
+      display: none;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.5rem 2.5rem 0.5rem 1rem;
+      border: var(--border-width-thin) solid var(--color-grey-300);
+      border-radius: var(--border-radius-full);
+      font-size: var(--font-size-sm);
+
+      &:focus {
+        border-color: var(--color-primary-500);
+      }
+    }
+
+    button {
+      @include absolute-center;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 0.25rem;
+      color: var(--color-grey-600);
+    }
+  }
+
+  &__icon-btn {
+    @include reset-button;
+    position: relative;
+    padding: 0.5rem;
+    color: var(--color-grey-700);
+    transition: var(--transition-fast);
+
+    &:hover {
+      color: var(--color-primary-600);
+    }
+
+    // Cart badge
+    .badge {
+      position: absolute;
+      top: 0;
+      right: 0;
+      min-width: 18px;
+      height: 18px;
+      padding: 0 0.25rem;
+      background: var(--color-primary-600);
+      color: var(--color-white);
+      font-size: 0.625rem;
+      font-weight: var(--font-weight-bold);
+      border-radius: var(--border-radius-full);
+      @include flex-center;
+    }
+  }
+
+  // Mobile menu toggle
+  &__mobile-toggle {
+    display: none;
+    
+    @include mobile-only {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# IDE
+.vscode/*
+!.vscode/settings.json
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Compiled files (src/css is dev output, dist is production)
+src/css/
+dist/
+
+# Source maps
+*.css.map
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary
+*.tmp
+*.temp
