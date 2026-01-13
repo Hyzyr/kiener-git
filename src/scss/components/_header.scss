@@ -8,7 +8,7 @@
 .preheader {
   background: var(--color-mellow-apricot);
   color: var(--color-charcoal-grey);
-  padding: 0.25rem 0;
+  padding: 0.5rem 0;
 
   .preheader__inner {
     display: flex;
@@ -22,47 +22,6 @@
     justify-content: space-around;
     align-items: center;
     gap: 0.5rem;
-  }
-
-  .preheader__link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: 93px;
-    height: 16px;
-    font-family: 'Author Variable', sans-serif;
-    font-style: normal;
-    font-weight: 596;
-    font-size: 14px;
-    line-height: 16px; /* identical to box height */
-    letter-spacing: -0.02em;
-    color: var(--color-charcoal-grey);
-    text-decoration: none;
-    transition: opacity var(--transition-fast), transform var(--transition-fast);
-
-    &:hover {
-      opacity: 0.9;
-      transform: translateY(-1px);
-    }
-  }
-
-  // Larger variant
-  .preheader__link--lg {
-    width: 120px;
-    height: 18px;
-    font-size: 16px;
-    font-weight: 600;
-  }
-
-  // Static/text variant with no pointer interaction
-  .preheader__link--static {
-    pointer-events: none;
-    cursor: default;
-    &:hover {
-      opacity: 1;
-      transform: none;
-    }
   }
 }
 .header {
