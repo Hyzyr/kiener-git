@@ -254,6 +254,11 @@
   transform: translateZ(0);
 }
 
+@mixin content-visibility($size: 500px) {
+  content-visibility: auto;
+  contain-intrinsic-size: $size;
+}
+
 // ============================================
 // 6. PSEUDO ELEMENTS
 // ============================================

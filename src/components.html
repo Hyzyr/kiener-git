@@ -105,35 +105,43 @@ function greet(name) {
       <h2 class="component-title">Buttons</h2>
       <p class="text-muted">Various button styles and states for user interactions</p>
       
-      <h3 class="component-subtitle">Button Variants</h3>
+      <h3 class="component-subtitle">Filled Buttons</h3>
       <div class="demo-grid">
-        <button class="btn btn--primary">Primary Button</button>
-        <button class="btn btn--secondary">Secondary Button</button>
-        <button class="btn btn--outline">Outline Button</button>
-        <button class="btn btn--ghost">Ghost Button</button>
+        <button class="btn btn--filled btn--primary btn--md">Primary Filled</button>
+        <button class="btn btn--filled btn--secondary btn--md">Secondary Filled</button>
+        <button class="btn btn--filled btn--white btn--md">White Filled</button>
+      </div>
+      
+      <h3 class="component-subtitle">Outlined Buttons</h3>
+      <div class="demo-grid">
+        <button class="btn btn--outlined btn--primary btn--md">Primary Outlined</button>
+        <button class="btn btn--outlined btn--secondary btn--md">Secondary Outlined</button>
+        <button class="btn btn--outlined btn--white btn--md" style="background: #333; padding: 1em;">White Outlined</button>
       </div>
       
       <h3 class="component-subtitle">Button Sizes</h3>
       <div class="demo-grid" style="align-items: center;">
-        <button class="btn btn--primary btn--sm">Small Button</button>
-        <button class="btn btn--primary">Default Button</button>
-        <button class="btn btn--primary btn--lg">Large Button</button>
+        <button class="btn btn--filled btn--primary btn--sm">Small (16px)</button>
+        <button class="btn btn--filled btn--primary btn--md">Medium (18px)</button>
+        <button class="btn btn--filled btn--primary btn--lg">Large (20px)</button>
       </div>
       
       <h3 class="component-subtitle">Button States</h3>
       <div class="demo-grid">
-        <button class="btn btn--primary">Normal</button>
-        <button class="btn btn--primary" disabled>Disabled</button>
+        <button class="btn btn--filled btn--primary btn--md">Normal</button>
+        <button class="btn btn--filled btn--primary btn--md" disabled>Disabled</button>
       </div>
       
       <h3 class="component-subtitle">Block Button</h3>
-      <button class="btn btn--primary btn--block">Full Width Block Button</button>
+      <button class="btn btn--filled btn--primary btn--md btn--block">Full Width Block Button</button>
       
       <div class="code-preview">
-&lt;button class="btn btn--primary"&gt;Primary Button&lt;/button&gt;
-&lt;button class="btn btn--secondary"&gt;Secondary Button&lt;/button&gt;
-&lt;button class="btn btn--outline"&gt;Outline Button&lt;/button&gt;
-&lt;button class="btn btn--ghost"&gt;Ghost Button&lt;/button&gt;
+&lt;!-- Filled Buttons --&gt;
+&lt;button class="btn btn--filled btn--primary btn--lg"&gt;Primary&lt;/button&gt;
+&lt;button class="btn btn--filled btn--secondary btn--md"&gt;Secondary&lt;/button&gt;
+
+&lt;!-- Outlined Buttons --&gt;
+&lt;button class="btn btn--outlined btn--primary btn--sm"&gt;Outlined&lt;/button&gt;
       </div>
     </section>
 
@@ -234,7 +242,7 @@ function greet(name) {
           </div>
           <div class="card__footer">
             <span class="text-muted">Footer Info</span>
-            <button class="btn btn--primary btn--sm">Action</button>
+            <button class="btn btn--filled btn--primary btn--sm">Action</button>
           </div>
         </div>
 
@@ -291,7 +299,7 @@ function greet(name) {
     &lt;p class="card__text"&gt;Card description&lt;/p&gt;
   &lt;/div&gt;
   &lt;div class="card__footer"&gt;
-    &lt;button class="btn btn--primary btn--sm"&gt;Action&lt;/button&gt;
+    &lt;button class="btn btn--filled btn--primary btn--sm"&gt;Action&lt;/button&gt;
   &lt;/div&gt;
 &lt;/div&gt;
       </div>
@@ -587,7 +595,7 @@ function greet(name) {
           <div class="product-card__image">
             <img src="https://via.placeholder.com/400x400/287330/ffffff?text=Product+1" alt="Product 1">
             <div class="product-card__quick-add">
-              <button class="btn btn--primary btn--sm">Quick Add</button>
+              <button class="btn btn--filled btn--primary btn--sm">Quick Add</button>
             </div>
           </div>
           <div class="product-card__body">
@@ -614,7 +622,7 @@ function greet(name) {
           <div class="product-card__image">
             <img src="https://via.placeholder.com/400x400/34bf42/ffffff?text=Product+2" alt="Product 2">
             <div class="product-card__quick-add">
-              <button class="btn btn--primary btn--sm">Quick Add</button>
+              <button class="btn btn--filled btn--primary btn--sm">Quick Add</button>
             </div>
           </div>
           <div class="product-card__body">
@@ -639,7 +647,7 @@ function greet(name) {
           <div class="product-card__image">
             <img src="https://via.placeholder.com/400x400/666666/ffffff?text=Product+3" alt="Product 3">
             <div class="product-card__quick-add">
-              <button class="btn btn--primary btn--sm">Quick Add</button>
+              <button class="btn btn--filled btn--primary btn--sm">Quick Add</button>
             </div>
           </div>
           <div class="product-card__body">
@@ -707,7 +715,7 @@ function greet(name) {
           <span class="promo-banner__label">Sale</span>
           <h2 class="promo-banner__title">Up to 20% Off on All Chairs</h2>
           <p class="promo-banner__description">Premium ergonomic chairs designed for comfort and style</p>
-          <button class="btn btn--primary">Shop Now</button>
+          <button class="btn btn--filled btn--primary btn--md">Shop Now</button>
         </div>
         <div class="promo-banner__image">
           <img src="https://via.placeholder.com/600x400?text=Chair" alt="Promo">
@@ -720,7 +728,7 @@ function greet(name) {
           <span class="promo-banner__label">New</span>
           <h2 class="promo-banner__title">Discover Our Latest Collection</h2>
           <p class="promo-banner__description">Innovative mobility solutions for modern living</p>
-          <button class="btn btn--secondary">Explore Now</button>
+          <button class="btn btn--filled btn--secondary btn--md">Explore Now</button>
         </div>
       </div>
 
@@ -845,8 +853,8 @@ function greet(name) {
             <li>Warranty coverage</li>
           </ul>
           <div class="content-block__actions">
-            <button class="btn btn--primary">Learn More</button>
-            <button class="btn btn--outline">Contact Us</button>
+            <button class="btn btn--filled btn--primary btn--md">Learn More</button>
+            <button class="btn btn--outlined btn--primary btn--md">Contact Us</button>
           </div>
         </div>
       </div>
@@ -862,7 +870,7 @@ function greet(name) {
           <h2 class="content-block__title">Visit Our Showroom</h2>
           <p class="content-block__description">Experience our products firsthand. Visit our modern showroom and get expert advice from our knowledgeable staff.</p>
           <div class="content-block__actions">
-            <button class="btn btn--primary">Find Location</button>
+            <button class="btn btn--filled btn--primary btn--md">Find Location</button>
           </div>
         </div>
       </div>
@@ -913,7 +921,7 @@ function greet(name) {
           <div class="help-section__content">
             <h2 class="help-section__title">Questions? We're Here to Help!</h2>
             <p class="help-section__subtitle">Our team is ready to assist you with personalized advice and support.</p>
-            <button class="btn btn--primary btn--lg">Contact Support</button>
+            <button class="btn btn--filled btn--primary btn--lg">Contact Support</button>
           </div>
         </div>
       </div>

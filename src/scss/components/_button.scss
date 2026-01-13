@@ -8,12 +8,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--spacing-sm);
-  padding: 0.75em 1.5em;
-  border: var(--border-width-thin) solid transparent;
+  gap: 0.6em;
+  border: 2px solid transparent;
   border-radius: var(--border-radius-md);
   font-family: var(--font-family-primary);
-  font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
   line-height: 1;
   text-align: center;
@@ -26,68 +24,132 @@
     opacity: 0.6;
   }
 
-  // Variants
-  &--primary {
-    background-color: var(--color-primary-600);
-    border-color: var(--color-primary-600);
-    color: var(--color-white);
+  // ============================================
+  // SIZES
+  // ============================================
 
-    &:hover:not(:disabled) {
-      background-color: var(--color-primary-700);
-      border-color: var(--color-primary-700);
-    }
-
-    &:active:not(:disabled) {
-      background-color: var(--color-primary-800);
-    }
-  }
-
-  &--secondary {
-    background-color: var(--color-grey-100);
-    border-color: var(--color-grey-100);
-    color: var(--color-grey-900);
-
-    &:hover:not(:disabled) {
-      background-color: var(--color-grey-200);
-      border-color: var(--color-grey-200);
-    }
-  }
-
-  &--outline {
-    background-color: transparent;
-    border-color: var(--color-primary-600);
-    color: var(--color-primary-600);
-
-    &:hover:not(:disabled) {
-      background-color: var(--color-primary-600);
-      color: var(--color-white);
-    }
-  }
-
-  &--ghost {
-    background-color: transparent;
-    border-color: transparent;
-    color: var(--color-primary-600);
-
-    &:hover:not(:disabled) {
-      background-color: var(--color-primary-50);
-    }
-  }
-
-  // Sizes
-  &--sm {
-    padding: 0.5em 1em;
-    font-size: var(--font-size-sm);
-  }
-
+  // Large - 20px font, 56px height
   &--lg {
-    padding: 1em 2em;
-    font-size: var(--font-size-lg);
+    font-size: 1.25rem;
+    height: 3.5rem;
+    padding: 0 2em;
   }
 
-  // Block
+  // Medium - 18px font, 46px height
+  &--md {
+    font-size: 1.125rem;
+    height: 2.875rem;
+    padding: 0 1.75em;
+  }
+
+  // Small - 16px font, 42px height
+  &--sm {
+    font-size: 1rem;
+    height: 2.625rem;
+    padding: 0 1.5em;
+  }
+
+  // ============================================
+  // FILLED BUTTONS
+  // ============================================
+
+  &--filled {
+    letter-spacing: -0.03em;
+
+    // Primary
+    &.btn--primary {
+      background-color: var(--color-primary);
+      border-color: var(--color-primary);
+      color: var(--color-white);
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+
+    // Secondary
+    &.btn--secondary {
+      background-color: var(--color-secondary);
+      border-color: var(--color-secondary);
+      color: var(--color-charcoal-grey);
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+
+    // White
+    &.btn--white {
+      background-color: var(--color-white);
+      border-color: var(--color-white);
+      color: var(--color-charcoal-grey);
+
+      &:hover {
+        background-color: var(--color-cloud-dancer);
+        border-color: var(--color-cloud-dancer);
+      }
+    }
+  }
+
+  // ============================================
+  // OUTLINED BUTTONS
+  // ============================================
+
+  &--outlined {
+    background-color: transparent;
+    letter-spacing: 0.01em;
+
+    border-color: var(--color-black);
+    color: var(--color-black);
+
+    &:hover {
+      background-color: var(--color-charcoal-grey);
+      color: var(--color-charcoal-grey);
+    }
+    // Primary
+    &.btn--primary {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+
+      &:hover {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+      }
+    }
+
+    // Secondary
+    &.btn--secondary {
+      border-color: var(--color-secondary);
+      color: var(--color-charcoal-grey);
+
+      &:hover {
+        background-color: var(--color-secondary);
+      }
+    }
+
+    // White
+    &.btn--white {
+      border-color: var(--color-white);
+      color: var(--color-white);
+
+      &:hover {
+        background-color: var(--color-white);
+        color: var(--color-charcoal-grey);
+      }
+    }
+  }
+
+  // ============================================
+  // BLOCK
+  // ============================================
+
   &--block {
     display: flex;
     width: 100%;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.85;
   }
 }

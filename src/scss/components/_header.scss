@@ -3,7 +3,68 @@
 // ============================================
 // Header Component
 // ============================================
+// Preheader (small top bar with quick links)
+// Uses a mellow apricot background and link variants
+.preheader {
+  background: var(--color-mellow-apricot);
+  color: var(--color-charcoal-grey);
+  padding: 0.25rem 0;
 
+  .preheader__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .preheader__nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .preheader__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 93px;
+    height: 16px;
+    font-family: 'Author Variable', sans-serif;
+    font-style: normal;
+    font-weight: 596;
+    font-size: 14px;
+    line-height: 16px; /* identical to box height */
+    letter-spacing: -0.02em;
+    color: var(--color-charcoal-grey);
+    text-decoration: none;
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
+
+    &:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+  }
+
+  // Larger variant
+  .preheader__link--lg {
+    width: 120px;
+    height: 18px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  // Static/text variant with no pointer interaction
+  .preheader__link--static {
+    pointer-events: none;
+    cursor: default;
+    &:hover {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
 .header {
   position: sticky;
   top: 0;
@@ -22,140 +83,196 @@
     a {
       color: var(--color-white);
       text-decoration: underline;
-      
+
       &:hover {
         opacity: 0.8;
       }
     }
   }
 
-  // Main navigation
-  &__nav {
-    padding: 1rem 0;
-
-    .container {
-      @include flex-between;
-      gap: 2rem;
-    }
-  }
-
-  &__logo {
+  // ============================================
+  // Header Inner Container - 3 Column Layout
+  // ============================================
+  &__inner {
     display: flex;
     align-items: center;
-    
-    img {
-      height: 40px;
-      width: auto;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 1.5rem 0;
+
+    @include tablet-up {
+      gap: 1rem;
     }
   }
 
-  // Primary menu
-  &__menu {
+  // ============================================
+  // Left Section: Logo
+  // ============================================
+  &__logo {
+    flex-shrink: 0;
+  }
+
+  // ============================================
+  // Center Section: Main Navigation
+  // ============================================
+  &__nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+    @include mobile-only {
+      display: none;
+    }
+  }
+
+  &__nav-list {
     @include reset-list;
     display: flex;
-    gap: 2rem;
     align-items: center;
+    gap: 2.5rem;
 
-    @include mobile-only {
-      display: none;
-    }
-
-    &-item {
-      position: relative;
-      
-      a {
-        color: var(--color-grey-900);
-        font-weight: var(--font-weight-medium);
-        transition: var(--transition-fast);
-        
-        &:hover {
-          color: var(--color-primary-600);
-        }
-      }
-
-      // Dropdown indicator
-      &--has-dropdown {
-        &::after {
-          content: '▼';
-          font-size: 0.625rem;
-          margin-left: 0.25rem;
-          opacity: 0.6;
-        }
-      }
+    @include tablet-up {
+      gap: 1.5rem;
     }
   }
 
-  // Actions (search, account, cart)
-  &__actions {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  &__search {
-    position: relative;
-    width: 250px;
-
-    @include mobile-only {
-      display: none;
-    }
-
-    input {
-      width: 100%;
-      padding: 0.5rem 2.5rem 0.5rem 1rem;
-      border: var(--border-width-thin) solid var(--color-grey-300);
-      border-radius: var(--border-radius-full);
-      font-size: var(--font-size-sm);
-
-      &:focus {
-        border-color: var(--color-primary-500);
-      }
-    }
-
-    button {
-      @include absolute-center;
-      right: 0.5rem;
-      top: 50%;
-      transform: translateY(-50%);
-      padding: 0.25rem;
-      color: var(--color-grey-600);
-    }
-  }
-
-  &__icon-btn {
-    @include reset-button;
-    position: relative;
-    padding: 0.5rem;
-    color: var(--color-grey-700);
-    transition: var(--transition-fast);
+  &__nav-link {
+    display: inline-block;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-charcoal-grey);
+    text-decoration: none;
+    transition: opacity var(--transition-fast);
 
     &:hover {
-      color: var(--color-primary-600);
-    }
-
-    // Cart badge
-    .badge {
-      position: absolute;
-      top: 0;
-      right: 0;
-      min-width: 18px;
-      height: 18px;
-      padding: 0 0.25rem;
-      background: var(--color-primary-600);
-      color: var(--color-white);
-      font-size: 0.625rem;
-      font-weight: var(--font-weight-bold);
-      border-radius: var(--border-radius-full);
-      @include flex-center;
+      opacity: 0.7;
     }
   }
 
-  // Mobile menu toggle
-  &__mobile-toggle {
-    display: none;
-    
-    @include mobile-only {
-      display: block;
+  // ============================================
+  // Right Section: Actions (Secondary Nav + Search)
+  // ============================================
+  &__actions {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    @include tablet-up {
+      gap: 1rem;
     }
+  }
+
+  &__secondary-nav {
+    @include mobile-only {
+      display: none;
+    }
+  }
+
+  &__secondary-list {
+    @include reset-list;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    @include tablet-up {
+      gap: 1rem;
+    }
+  }
+
+  &__secondary-link {
+    display: inline-block;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-charcoal-grey);
+    text-decoration: none;
+    transition: opacity var(--transition-fast);
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  // ============================================
+  // Search Component
+  // ============================================
+  &__search {
+    @include mobile-only {
+      display: none;
+    }
+  }
+
+  // ============================================
+  // Modifier: White Variant
+  // ============================================
+  &--white {
+    background: transparent;
+    box-shadow: none;
+
+    .header__nav-link,
+    .header__secondary-link {
+      color: var(--color-white);
+    }
+  }
+
+  // ============================================
+  // Modifier: Dark Variant
+  // ============================================
+  &--dark {
+    .header__nav-link,
+    .header__secondary-link {
+      color: var(--color-charcoal-grey);
+    }
+  }
+}
+
+// ============================================
+// Hamburger Menu
+// ============================================
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+
+  @include mobile-only {
+    display: flex;
+  }
+
+  &-line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-charcoal-grey);
+    transition: all 0.3s ease-in-out;
+    transform-origin: center;
+  }
+
+  // Open state animations
+  &.is-active {
+    .hamburger-line {
+      &:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+      &:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+    }
+  }
+}
+
+// When header is white, hamburger should be white
+.header--white {
+  .header__hamburger-line {
+    background-color: var(--color-white);
   }
 }

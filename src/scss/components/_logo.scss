@@ -1,0 +1,85 @@
+@use '../abstracts/mixins' as *;
+
+// ============================================
+// Logo Component (Reusable)
+// ============================================
+// Dual-image logo that switches between light and dark versions
+// based on parent context (header--white/dark, footer, etc.)
+
+.logo {
+  display: inline-block;
+  position: relative;
+  font-size: 1rem; // Base for em calculations
+  width: 6.875em; // 110px at 1rem
+  height: 2.25em; // 36px at 1rem
+  line-height: 0;
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity var(--transition-base), visibility var(--transition-base);
+  }
+
+  // Dark version (default visible)
+  &__image--dark {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  // Light version (hidden by default)
+  &__image--light {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+// ============================================
+// Context-based Logo Switching
+// ============================================
+
+// When inside header--white, show light version
+.header--white {
+  .logo__image--dark {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .logo__image--light {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+// When inside header--dark, show dark version (default)
+.header--dark {
+  .logo__image--dark {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .logo__image--light {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+// Footer uses dark version and larger size (62px height)
+.footer {
+  .logo {
+    font-size: 1.72222rem; // 62px / 36px * 1rem = 1.72222rem for 62px height
+  }
+
+  .logo__image--dark {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .logo__image--light {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

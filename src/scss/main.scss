@@ -10,6 +10,7 @@
 // 2. Base styles
 @use 'base/reset';
 @use 'base/typography';
+@use 'base/primitives';
 @use 'base/print';
 
 // 3. Layout
@@ -19,9 +20,11 @@
 // 4. Components
 @use 'components/button';
 @use 'components/input';
+@use 'components/search';
 @use 'components/card';
 @use 'components/badge';
 @use 'components/breadcrumb';
+@use 'components/logo';
 @use 'components/header';
 @use 'components/footer';
 @use 'components/hero';

@@ -1,0 +1,167 @@
+@use '../abstracts/mixins' as *;
+
+// ============================================
+// Primitives - Basic Reusable Components
+// ============================================
+// Foundational building blocks for layouts and images
+
+// ============================================
+// Background Image Component
+// ============================================
+// Usage: <div class="bg"><img src="..." alt="..."></div>
+
+.bg {
+  position: relative;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  // Variant: contain instead of cover
+  &--contain {
+    img {
+      object-fit: contain;
+    }
+  }
+
+  // Variant: top alignment
+  &--top {
+    img {
+      object-position: top;
+    }
+  }
+
+  // Variant: bottom alignment
+  &--bottom {
+    img {
+      object-position: bottom;
+    }
+  }
+
+  // Variant: left alignment
+  &--left {
+    img {
+      object-position: left;
+    }
+  }
+
+  // Variant: right alignment
+  &--right {
+    img {
+      object-position: right;
+    }
+  }
+}
+
+// ============================================
+// Ratio Image Component
+// ============================================
+// Maintains aspect ratio using padding-bottom technique
+// Works in all browsers including older ones
+
+.ratio-image {
+  position: relative;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+
+  // Content container
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    img,
+    video,
+    iframe {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  // ============================================
+  // Common Aspect Ratios
+  // ============================================
+
+  // Square (1:1)
+  &--1x1 {
+    padding-bottom: 100%;
+  }
+
+  // Classic 4:3
+  &--4x3 {
+    padding-bottom: 75%;
+  }
+
+  // Widescreen 16:9
+  &--16x9 {
+    padding-bottom: 56.25%;
+  }
+
+  // Cinematic 21:9
+  &--21x9 {
+    padding-bottom: 42.857%;
+  }
+
+  // Portrait 3:4
+  &--3x4 {
+    padding-bottom: 133.333%;
+  }
+
+  // Portrait 2:3
+  &--2x3 {
+    padding-bottom: 150%;
+  }
+
+  // Golden ratio (1.618:1)
+  &--golden {
+    padding-bottom: 61.8%;
+  }
+
+  // Custom ratios
+  &--custom {
+    // Use inline style: style="padding-bottom: [calculated]%"
+  }
+
+  // ============================================
+  // Object-fit Variants
+  // ============================================
+
+  &--contain {
+    .ratio-image__content {
+      img,
+      video {
+        object-fit: contain;
+      }
+    }
+  }
+
+  &--fill {
+    .ratio-image__content {
+      img,
+      video {
+        object-fit: fill;
+      }
+    }
+  }
+
+  &--none {
+    .ratio-image__content {
+      img,
+      video {
+        object-fit: none;
+      }
+    }
+  }
+}
