@@ -1,442 +1,321 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Modern SCSS Template - Professional Component Library" />
-    <title>Kiener - Home</title>
+---
+layout: base.html
+title: Kiener - Home
+---
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-    <link rel="icon" type="image/png" href="assets/favicon.png" />
-
-    <!-- Compiled CSS -->
-    <link rel="stylesheet" href="css/main.css" />
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
-      rel="stylesheet" />
-
-    <style>
-      .hero {
-        background: linear-gradient(
-          135deg,
-          var(--color-primary-600) 0%,
-          var(--color-primary-800) 100%
-        );
-        color: white;
-        padding: 6rem 0;
-        text-align: center;
-      }
-      .hero h1 {
-        color: white;
-        font-size: clamp(2rem, 5vw, 4rem);
-        margin-bottom: 1rem;
-      }
-      .hero p {
-        font-size: var(--font-size-xl);
-        opacity: 0.9;
-        max-width: 600px;
-        margin: 0 auto 2rem;
-      }
-      .feature-card {
-        text-align: center;
-        padding: 2rem;
-        background: white;
-        border-radius: var(--border-radius-lg);
-        box-shadow: var(--shadow-md);
-        transition: var(--transition-base);
-      }
-      .feature-card:hover {
-        transform: translateY(-4px);
-        box-shadow: var(--shadow-xl);
-      }
-      .feature-icon {
-        width: 64px;
-        height: 64px;
-        margin: 0 auto 1rem;
-        background: var(--color-primary-50);
-        border-radius: var(--border-radius-full);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2rem;
-      }
-    </style>
-  </head>
-  <body>
-    <nav class="preheader" aria-label="Preheader">
-      <div class="container preheader__inner">
-        <div class="preheader__nav">
-          <a href="#" class="quick-link">Gratis verzending vanaf €50,-</a>
-          <a href="#" class="quick-link"
-            >Vandaag besteld, binnen een week geleverd</a
-          >
-          <a href="#" class="quick-link">4.7/5 (1900+ reviews)</a>
-        </div>
-      </div>
-    </nav>
-
-    <header class="header">
-      <div class="container">
-        <div class="header__inner">
-          <nav class="nav" aria-label="Main navigation">
-            <ul class="nav__nav-list">
-              <li class="nav__item">
-                <a href="#" class="nav__nav-link">Home</a>
-              </li>
-              <li class="nav__item">
-                <a href="#" class="nav__nav-link">
-                  <span
-                    class="hamburger"
-                    aria-label="Toggle menu"
-                    aria-expanded="false">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                  </span>
-                  Categorieën
-                </a>
-              </li>
-              <li class="nav__item">
-                <a href="#" class="nav__nav-link">Service</a>
-              </li>
-              <li class="nav__item">
-                <a href="#" class="nav__nav-link">Over ons</a>
-              </li>
-            </ul>
-          </nav>
-          <div class="header__logo">
-            <a href="/" class="logo">
-              <img
-                src="assets/kiener-logo-dark.svg"
-                alt="Logo"
-                class="logo__image logo__image--dark" />
-              <img
-                src="assets/kiener-logo-white.svg"
-                alt="Logo"
-                class="logo__image logo__image--light" />
-            </a>
-          </div>
-          <div class="header__actions">
-            <div class="header__search search search--md">
-              <input
-                type="search"
-                class="search__input"
-                placeholder="Search..."
-                aria-label="Search" />
-              <button
-                type="submit"
-                class="search__button"
-                aria-label="Submit search">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path
-                    d="M7 13C10.3137 13 13 10.3137 13 7C13 3.68629 10.3137 1 7 1C3.68629 1 1 3.68629 1 7C1 10.3137 3.68629 13 7 13Z"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round" />
-                  <path
-                    d="M15 15L11.5 11.5"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round" />
-                </svg>
-              </button>
-            </div>
-          </div>
-          <a href="#" class="nav__nav-link">Login</a>
-          <button
-            id="menu-toggle"
-            class="hamburger"
-            aria-label="Toggle menu"
-            aria-expanded="false">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-          </button>
-        </div>
-      </div>
-    </header>
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="container">
-        <h1>Modern SCSS Template</h1>
-        <p>
+<!-- Hero Section -->
+<section class="hero section section--no-padding">
+  <div class="container hero__container">
+    <div class="hero__body">
+      <div class="hero__group">
+        <h1 class="hero__title">Modern SCSS Template</h1>
+        <p class="hero__text">
           A professional, modular component library built with modern SCSS
           architecture. Ready to customize for your next project.
         </p>
-        <button class="btn btn--filled btn--primary btn--lg">
-          Primary Filled
-        </button>
+      </div>
+      <div class="hero__cta">
+        <a href="#" class="btn btn--filled btn--primary btn--lg">
+          Bekijk onze producten
+          <svg class="icon" width="22" height="15">
+            <use xlink:href="#icon-arrow-1"></use>
+          </svg>
+        </a>
+        <a href="#" class="btn btn--filled btn--white btn--lg">
+          Krijg persoonlijk advies
+          <svg class="icon" width="22" height="15">
+            <use xlink:href="#icon-arrow-1"></use>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="section" id="features">
+  <div class="container">
+    <h2 class="text-center mb-5">Features</h2>
+
+    <div class="grid grid--3-cols" style="gap: 2rem">
+      <div class="feature-card">
+        <div class="feature-icon">🎨</div>
+        <h3>Modern Architecture</h3>
+        <p>
+          Built with @use/@forward, CSS custom properties, and best
+          practices from 2026
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📦</div>
+        <h3>Modular Components</h3>
+        <p>
+          Reusable UI components with variants, states, and responsive
+          behavior
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Easy Customization</h3>
+        <p>
+          Simple variable system - change colors, fonts, and spacing in one
+          place
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📱</div>
+        <h3>Fully Responsive</h3>
+        <p>
+          Mobile-first approach with modern CSS Grid and Flexbox layouts
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">♿</div>
+        <h3>Accessible</h3>
+        <p>
+          Built with accessibility in mind - focus states, ARIA support, and
+          semantic HTML
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🚀</div>
+        <h3>Production Ready</h3>
+        <p>
+          Optimized CSS output, print styles, and cross-browser
+          compatibility
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Quick Start Section -->
+<section class="section" style="background: var(--color-grey-50)">
+  <div class="container">
+    <h2 class="text-center mb-4">Quick Start</h2>
+    <p class="text-center text-muted mb-5">Get started in 3 simple steps</p>
+
+    <div class="grid grid--3-cols" style="gap: 2rem">
+      <div style="text-align: center">
         <div
           style="
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 1rem;
+            background: var(--color-primary-600);
+            color: white;
+            border-radius: 50%;
             display: flex;
-            gap: 1rem;
+            align-items: center;
             justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 2rem;
+            font-size: 1.5rem;
+            font-weight: bold;
           ">
-          <a href="components.html" class="btn btn--secondary btn--lg"
+          1
+        </div>
+        <h4>Customize Variables</h4>
+        <p class="text-muted">
+          Update colors, fonts, and spacing in <code>_variables.scss</code>
+        </p>
+      </div>
+
+      <div style="text-align: center">
+        <div
+          style="
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 1rem;
+            background: var(--color-primary-600);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+          ">
+          2
+        </div>
+        <h4>Compile SCSS</h4>
+        <p class="text-muted">
+          Run <code>npm run watch</code> or use Live Sass Compiler
+        </p>
+      </div>
+
+      <div style="text-align: center">
+        <div
+          style="
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 1rem;
+            background: var(--color-primary-600);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+          ">
+          3
+        </div>
+        <h4>Build Your Project</h4>
+        <p class="text-muted">
+          Use components and utilities to create your design
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Components Preview Section -->
+<section class="section">
+  <div class="container">
+    <h2 class="text-center mb-4">Component Library</h2>
+    <p class="text-center text-muted mb-5">
+      Browse all available components with code examples
+    </p>
+
+    <div class="grid grid--2-cols" style="gap: 2rem">
+      <div class="card">
+        <div class="card__body">
+          <h3 class="card__title">🎨 UI Components</h3>
+          <p class="card__text">
+            Buttons, cards, forms, inputs with multiple variants and states
+          </p>
+          <ul style="margin: 1rem 0; padding-left: 1.5rem">
+            <li>Buttons (4 variants, 3 sizes)</li>
+            <li>Form inputs & validation states</li>
+            <li>Cards (default, flat, outline)</li>
+            <li>Typography system</li>
+          </ul>
+        </div>
+        <div class="card__footer">
+          <a href="components.html#buttons" class="btn btn--primary btn--sm"
             >View Components</a
           >
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__body">
+          <h3 class="card__title">📐 Layout System</h3>
+          <p class="card__text">
+            Responsive grids, containers, and flexible layouts
+          </p>
+          <ul style="margin: 1rem 0; padding-left: 1.5rem">
+            <li>CSS Grid system (2, 3, 4 columns)</li>
+            <li>Auto-fit & auto-fill grids</li>
+            <li>Responsive containers</li>
+            <li>Flexbox utilities</li>
+          </ul>
+        </div>
+        <div class="card__footer">
+          <a href="components.html#grid" class="btn btn--primary btn--sm"
+            >View Layouts</a
+          >
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__body">
+          <h3 class="card__title">🎯 Utility Classes</h3>
+          <p class="card__text">
+            Helper classes for spacing, colors, text, and display
+          </p>
+          <ul style="margin: 1rem 0; padding-left: 1.5rem">
+            <li>Spacing utilities (margin, padding)</li>
+            <li>Text alignment & transform</li>
+            <li>Color utilities</li>
+            <li>Display & flex helpers</li>
+          </ul>
+        </div>
+        <div class="card__footer">
           <a
-            href="#features"
-            class="btn btn--ghost btn--lg"
-            style="color: white; border-color: white"
-            >Learn More</a
+            href="components.html#utilities"
+            class="btn btn--primary btn--sm"
+            >View Utilities</a
           >
         </div>
       </div>
-    </section>
 
-    <!-- Features Section -->
-    <section class="section" id="features">
-      <div class="container">
-        <h2 class="text-center mb-5">Features</h2>
-
-        <div class="grid grid--3-cols" style="gap: 2rem">
-          <div class="feature-card">
-            <div class="feature-icon">🎨</div>
-            <h3>Modern Architecture</h3>
-            <p>
-              Built with @use/@forward, CSS custom properties, and best
-              practices from 2026
-            </p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">📦</div>
-            <h3>Modular Components</h3>
-            <p>
-              Reusable UI components with variants, states, and responsive
-              behavior
-            </p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">⚡</div>
-            <h3>Easy Customization</h3>
-            <p>
-              Simple variable system - change colors, fonts, and spacing in one
-              place
-            </p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">📱</div>
-            <h3>Fully Responsive</h3>
-            <p>
-              Mobile-first approach with modern CSS Grid and Flexbox layouts
-            </p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">♿</div>
-            <h3>Accessible</h3>
-            <p>
-              Built with accessibility in mind - focus states, ARIA support, and
-              semantic HTML
-            </p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">🚀</div>
-            <h3>Production Ready</h3>
-            <p>
-              Optimized CSS output, print styles, and cross-browser
-              compatibility
-            </p>
-          </div>
+      <div class="card">
+        <div class="card__body">
+          <h3 class="card__title">🔧 SCSS Mixins</h3>
+          <p class="card__text">
+            Powerful mixins for responsive design and common patterns
+          </p>
+          <ul style="margin: 1rem 0; padding-left: 1.5rem">
+            <li>Responsive breakpoint system</li>
+            <li>Flexbox & Grid mixins</li>
+            <li>Image & media helpers</li>
+            <li>Typography utilities</li>
+          </ul>
+        </div>
+        <div class="card__footer">
+          <a href="README.md" class="btn btn--primary btn--sm">View Docs</a>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- Quick Start Section -->
-    <section class="section" style="background: var(--color-grey-50)">
-      <div class="container">
-        <h2 class="text-center mb-4">Quick Start</h2>
-        <p class="text-center text-muted mb-5">Get started in 3 simple steps</p>
+    <div class="text-center mt-5">
+      <a href="components.html" class="btn btn--primary btn--lg"
+        >Browse All Components →</a
+      >
+    </div>
+  </div>
+</section>
 
-        <div class="grid grid--3-cols" style="gap: 2rem">
-          <div style="text-align: center">
-            <div
-              style="
-                width: 48px;
-                height: 48px;
-                margin: 0 auto 1rem;
-                background: var(--color-primary-600);
-                color: white;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 1.5rem;
-                font-weight: bold;
-              ">
-              1
-            </div>
-            <h4>Customize Variables</h4>
-            <p class="text-muted">
-              Update colors, fonts, and spacing in <code>_variables.scss</code>
-            </p>
-          </div>
-
-          <div style="text-align: center">
-            <div
-              style="
-                width: 48px;
-                height: 48px;
-                margin: 0 auto 1rem;
-                background: var(--color-primary-600);
-                color: white;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 1.5rem;
-                font-weight: bold;
-              ">
-              2
-            </div>
-            <h4>Compile SCSS</h4>
-            <p class="text-muted">
-              Run <code>npm run watch</code> or use Live Sass Compiler
-            </p>
-          </div>
-
-          <div style="text-align: center">
-            <div
-              style="
-                width: 48px;
-                height: 48px;
-                margin: 0 auto 1rem;
-                background: var(--color-primary-600);
-                color: white;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 1.5rem;
-                font-weight: bold;
-              ">
-              3
-            </div>
-            <h4>Build Your Project</h4>
-            <p class="text-muted">
-              Use components and utilities to create your design
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Components Preview Section -->
-    <section class="section">
-      <div class="container">
-        <h2 class="text-center mb-4">Component Library</h2>
-        <p class="text-center text-muted mb-5">
-          Browse all available components with code examples
-        </p>
-
-        <div class="grid grid--2-cols" style="gap: 2rem">
-          <div class="card">
-            <div class="card__body">
-              <h3 class="card__title">🎨 UI Components</h3>
-              <p class="card__text">
-                Buttons, cards, forms, inputs with multiple variants and states
-              </p>
-              <ul style="margin: 1rem 0; padding-left: 1.5rem">
-                <li>Buttons (4 variants, 3 sizes)</li>
-                <li>Form inputs & validation states</li>
-                <li>Cards (default, flat, outline)</li>
-                <li>Typography system</li>
-              </ul>
-            </div>
-            <div class="card__footer">
-              <a href="components.html#buttons" class="btn btn--primary btn--sm"
-                >View Components</a
-              >
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card__body">
-              <h3 class="card__title">📐 Layout System</h3>
-              <p class="card__text">
-                Responsive grids, containers, and flexible layouts
-              </p>
-              <ul style="margin: 1rem 0; padding-left: 1.5rem">
-                <li>CSS Grid system (2, 3, 4 columns)</li>
-                <li>Auto-fit & auto-fill grids</li>
-                <li>Responsive containers</li>
-                <li>Flexbox utilities</li>
-              </ul>
-            </div>
-            <div class="card__footer">
-              <a href="components.html#grid" class="btn btn--primary btn--sm"
-                >View Layouts</a
-              >
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card__body">
-              <h3 class="card__title">🎯 Utility Classes</h3>
-              <p class="card__text">
-                Helper classes for spacing, colors, text, and display
-              </p>
-              <ul style="margin: 1rem 0; padding-left: 1.5rem">
-                <li>Spacing utilities (margin, padding)</li>
-                <li>Text alignment & transform</li>
-                <li>Color utilities</li>
-                <li>Display & flex helpers</li>
-              </ul>
-            </div>
-            <div class="card__footer">
-              <a
-                href="components.html#utilities"
-                class="btn btn--primary btn--sm"
-                >View Utilities</a
-              >
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card__body">
-              <h3 class="card__title">🔧 SCSS Mixins</h3>
-              <p class="card__text">
-                Powerful mixins for responsive design and common patterns
-              </p>
-              <ul style="margin: 1rem 0; padding-left: 1.5rem">
-                <li>Responsive breakpoint system</li>
-                <li>Flexbox & Grid mixins</li>
-                <li>Image & media helpers</li>
-                <li>Typography utilities</li>
-              </ul>
-            </div>
-            <div class="card__footer">
-              <a href="README.md" class="btn btn--primary btn--sm">View Docs</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="text-center mt-5">
-          <a href="components.html" class="btn btn--primary btn--lg"
-            >Browse All Components →</a
-          >
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section
+<!-- CTA Section -->
+<section
+  class="section"
+  style="
+    background: linear-gradient(
+      135deg,
+      var(--color-primary-700) 0%,
+      var(--color-primary-900) 100%
+    );
+    color: white;
+    text-align: center;
+  ">
+  <div class="container">
+    <h2 style="color: white; margin-bottom: 1rem">
+      Ready to Start Building?
+    </h2>
+    <p
+      style="
+        font-size: var(--font-size-lg);
+        opacity: 0.9;
+        max-width: 600px;
+        margin: 0 auto 2rem;
+      ">
+      Clone this template and customize it for your next project. All
+      components are production-ready and fully responsive.
+    </p>
+    <div
+      style="
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      ">
+      <a href="components.html" class="btn btn--secondary btn--lg"
+        >View Components</a
+      >
+      <a
+        href="README.md"
+        class="btn btn--ghost btn--lg"
+        style="color: white; border-color: white"
+        >Read Documentation</a
+      >
+    </div>
+  </div>
+</section>
       class="section"
       style="
         background: linear-gradient(
@@ -480,89 +359,3 @@
         </div>
       </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container container--lg">
-        <div class="footer__inner">
-          <!-- Left: Logo and Description -->
-          <div class="footer__brand">
-            <a href="/" class="logo">
-              <img
-                src="assets/kiener-logo-dark.svg"
-                alt="Logo"
-                class="logo__image logo__image--dark" />
-              <img
-                src="assets/kiener-logo-white.svg"
-                alt="Logo"
-                class="logo__image logo__image--light" />
-            </a>
-            <p class="footer__description">
-              A modern, professional component library for building responsive
-              web projects with SCSS.
-            </p>
-          </div>
-
-          <!-- Right: 3 Columns -->
-          <div class="footer__columns">
-            <div class="footer__column">
-              <h4 class="footer__column-title">Quick Links</h4>
-              <ul class="footer__column-list">
-                <li><a href="components.html">Components</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-              </ul>
-            </div>
-
-            <div class="footer__column">
-              <h4 class="footer__column-title">Resources</h4>
-              <ul class="footer__column-list">
-                <li><a href="README.md">Documentation</a></li>
-                <li><a href="src/scss">SCSS Files</a></li>
-                <li>
-                  <a href="src/scss/abstracts/_variables.scss">Variables</a>
-                </li>
-                <li><a href="src/scss/abstracts/_mixins.scss">Mixins</a></li>
-              </ul>
-            </div>
-
-            <div class="footer__column">
-              <h4 class="footer__column-title">Support</h4>
-              <ul class="footer__column-list">
-                <li><a href="#help">Help Center</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#terms">Terms of Service</a></li>
-                <li><a href="#privacy">Privacy Policy</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Sub Footer -->
-    <div class="subfooter">
-      <div class="container container--lg">
-        <div class="subfooter__inner">
-          <!-- Left: Copyright -->
-          <div class="subfooter__left">
-            <p class="subfooter__copyright">
-              © 2026 SCSS Template. All rights reserved.
-            </p>
-          </div>
-
-          <!-- Right: Links -->
-          <div class="subfooter__right">
-            <a href="#privacy" class="quick-link">Privacy</a>
-            <a href="#terms" class="quick-link">Terms</a>
-            <a href="#cookies" class="quick-link">Cookies</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Scripts -->
-    <script src="./js/main.js"></script>
-  </body>
-</html>

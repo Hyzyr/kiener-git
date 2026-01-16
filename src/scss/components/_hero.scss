@@ -6,94 +6,90 @@
 
 .hero {
   position: relative;
-  min-height: 500px;
-  @include flex-center;
+  min-height: clamp(600px, 80vh, 900px);
+  background-color: var(--color-ocean-blue);
   overflow: hidden;
-  
-  @include respond-to('lg') {
-    min-height: 600px;
-  }
+  display: flex;
+  align-items: center;
 
-  &__image {
-    @include absolute-cover;
-    z-index: -1;
-
-    img {
-      @include cover-image;
-    }
-
-    // Overlay
-    &::after {
-      @include overlay(rgba(0, 0, 0, 0.3));
-    }
-  }
-
-  &__content {
+  &__container {
+    height: 100%;
     position: relative;
-    z-index: 2;
-    max-width: 600px;
-    color: var(--color-white);
-    text-align: left;
+  }
 
-    @include mobile-only {
-      padding: 2rem 1rem;
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    gap: 3.125em; // 50px / 16px (approx if base is 16) or let's use rem/em context
+    
+    // Figma dimensions: absolute, 918x438, left 81, top 191
+    // We'll use relative positioning for better responsiveness inside container
+    max-width: 57.375rem; // 918px
+    margin-top: 11.9375rem; // 191px
+    margin-left: 5.0625rem; // 81px
+    
+    @include respond-to('md') {
+      margin-left: 0;
+      margin-top: 5rem;
+      gap: 2rem;
     }
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    gap: 1em; // 16px
+    max-width: 56.1875rem; // 899px
   }
 
   &__title {
-    font-size: clamp(2rem, 5vw, 4rem);
-    font-weight: var(--font-weight-bold);
-    line-height: var(--line-height-tight);
-    margin-bottom: 1rem;
-    color: var(--color-white);
+    font-family: var(--font-family-primary);
+    font-weight: 494; // Custom figma weight
+    font-size: 6.875rem; // 110px
+    line-height: 0.9;
+    color: var(--color-soft-alabaster);
+    margin: 0;
+
+    @include respond-to('lg') {
+      font-size: 5rem;
+    }
+    @include respond-to('md') {
+      font-size: 3.5rem;
+    }
   }
 
-  &__subtitle {
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    line-height: var(--line-height-relaxed);
-    margin-bottom: 2rem;
-    opacity: 0.95;
+  &__text {
+    font-family: var(--font-family-primary);
+    font-weight: 494;
+    font-size: 1.25rem; // 20px
+    line-height: 1.25;
+    color: var(--color-soft-alabaster);
+    max-width: 30.0625rem; // 481px
+    margin: 0;
+
+    @include respond-to('md') {
+      font-size: 1.125rem;
+    }
   }
 
-  &__actions {
+  &__cta {
     display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
+    flex-direction: row; // Changed from column if they should be side by side
+    align-items: flex-start;
+    padding: 0;
+    gap: 0.75rem; // 12px
 
-  // Floating product preview card
-  &__preview {
-    position: absolute;
-    bottom: 2rem;
-    right: 2rem;
-    background: var(--color-white);
-    padding: 1rem;
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-xl);
-    max-width: 200px;
-    
-    @include mobile-only {
-      display: none;
-    }
-
-    img {
+    @include respond-to('md') {
+      flex-direction: column;
       width: 100%;
-      height: auto;
-      margin-bottom: 0.5rem;
-    }
 
-    &-title {
-      font-size: var(--font-size-sm);
-      font-weight: var(--font-weight-semibold);
-      margin-bottom: 0.25rem;
-    }
-
-    &-link {
-      font-size: var(--font-size-xs);
-      color: var(--color-primary-600);
-      display: flex;
-      align-items: center;
-      gap: 0.25rem;
+      .btn {
+        width: 100%;
+      }
     }
   }
 }

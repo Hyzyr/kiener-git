@@ -29,4 +29,8 @@
 
 .section {
   padding-block: var(--section-spacing);
+
+  &--no-padding {
+    padding-block: 0;
+  }
 }

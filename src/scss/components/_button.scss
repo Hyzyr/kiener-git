@@ -81,13 +81,12 @@
 
     // White
     &.btn--white {
-      background-color: var(--color-white);
-      border-color: var(--color-white);
-      color: var(--color-charcoal-grey);
+      background-color: var(--color-soft-alabaster);
+      border-color: var(--color-soft-alabaster);
+      color: var(--color-primary);
 
       &:hover {
-        background-color: var(--color-cloud-dancer);
-        border-color: var(--color-cloud-dancer);
+        opacity: 0.9;
       }
     }
   }
