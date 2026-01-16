@@ -73,9 +73,11 @@
     <nav class="preheader" aria-label="Preheader">
       <div class="container preheader__inner">
         <div class="preheader__nav">
-          <a href="#" class="quick-link">Shipping</a>
-          <a href="#" class="quick-link">Returns</a>
-          <a href="#" class="quick-link">Contact</a>
+          <a href="#" class="quick-link">Gratis verzending vanaf €50,-</a>
+          <a href="#" class="quick-link"
+            >Vandaag besteld, binnen een week geleverd</a
+          >
+          <a href="#" class="quick-link">4.7/5 (1900+ reviews)</a>
         </div>
       </div>
     </nav>
@@ -83,7 +85,32 @@
     <header class="header">
       <div class="container">
         <div class="header__inner">
-          <!-- Left: Logo -->
+          <nav class="nav" aria-label="Main navigation">
+            <ul class="nav__nav-list">
+              <li class="nav__item">
+                <a href="#" class="nav__nav-link">Home</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__nav-link">
+                  <span
+                    class="hamburger"
+                    aria-label="Toggle menu"
+                    aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                  </span>
+                  Categorieën
+                </a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__nav-link">Service</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__nav-link">Over ons</a>
+              </li>
+            </ul>
+          </nav>
           <div class="header__logo">
             <a href="/" class="logo">
               <img
@@ -96,37 +123,7 @@
                 class="logo__image logo__image--light" />
             </a>
           </div>
-
-          <!-- Center: Main Navigation -->
-          <nav class="header__nav" aria-label="Main navigation">
-            <ul class="header__nav-list">
-              <li class="header__nav-item">
-                <a href="#" class="header__nav-link">Shop</a>
-              </li>
-              <li class="header__nav-item">
-                <a href="#" class="header__nav-link">Collections</a>
-              </li>
-              <li class="header__nav-item">
-                <a href="#" class="header__nav-link">About</a>
-              </li>
-            </ul>
-          </nav>
-
-          <!-- Right: Actions (Links + Search) -->
           <div class="header__actions">
-            <nav
-              class="header__secondary-nav"
-              aria-label="Secondary navigation">
-              <ul class="header__secondary-list">
-                <li class="header__secondary-item">
-                  <a href="#" class="header__secondary-link">Account</a>
-                </li>
-                <li class="header__secondary-item">
-                  <a href="#" class="header__secondary-link">Cart</a>
-                </li>
-              </ul>
-            </nav>
-
             <div class="header__search search search--md">
               <input
                 type="search"
@@ -154,9 +151,9 @@
               </button>
             </div>
           </div>
-
-          <!-- Hamburger Menu (Mobile) -->
+          <a href="#" class="nav__nav-link">Login</a>
           <button
+            id="menu-toggle"
             class="hamburger"
             aria-label="Toggle menu"
             aria-expanded="false">
@@ -175,7 +172,7 @@
           A professional, modular component library built with modern SCSS
           architecture. Ready to customize for your next project.
         </p>
-        <button class="btn btn--filled btn--primary btn--md">
+        <button class="btn btn--filled btn--primary btn--lg">
           Primary Filled
         </button>
         <div
@@ -566,6 +563,6 @@
     </div>
 
     <!-- Scripts -->
-    <script src="src/js/main.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>

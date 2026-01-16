@@ -9,19 +9,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  
+
   // Font size in rem (14px)
-  font-size: 0.875rem; 
-  
-  // Dimensions in em (calculated from 14px font-size)
-  // 93px / 14px = ~6.6428em
-  width: 6.6428em; 
-  // 16px / 14px = ~1.1428em
-  height: 1.1428em;
-  
-  font-family: 'Author Variable', sans-serif;
+  font-size: 0.875rem;
+
+  font-family: var(--font-family-primary);
   font-style: normal;
-  font-weight: 596;
+  font-weight: 500;
   line-height: 1.1428em;
   letter-spacing: -0.02em;
   color: inherit;
@@ -30,18 +24,11 @@
 
   &:hover {
     opacity: 0.7;
-    transform: translateY(-1px);
   }
 
   // Variants
   &--lg {
-    // Font size in rem (16px)
     font-size: 1rem;
-    
-    // 120px / 16px = 7.5em
-    width: 7.5em;
-    // 18px / 16px = 1.125em
-    height: 1.125em;
     font-weight: 600;
   }
 
@@ -55,14 +42,12 @@
   }
 
   &--dark {
-     color: var(--color-charcoal-grey);
+    color: var(--color-charcoal-grey);
   }
-
   &--white {
-     color: var(--color-white);
+    color: var(--color-white);
   }
-
   &--muted {
-     color: var(--color-grey-500);
+    color: var(--color-grey-500);
   }
 }
