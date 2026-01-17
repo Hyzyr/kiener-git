@@ -11,51 +11,67 @@
 // Usage: <div class="bg"><img src="..." alt="..."></div>
 
 .bg {
-  position: relative;
+  @include absolute-cover;
   overflow: hidden;
 
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+  &__wrapper {
+    position: relative;
+  }
+  &__image {
+    @include absolute-cover;
+    border-radius: inherit;
+
+    img {
+      border-radius: inherit;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
   }
 
   // Variant: contain instead of cover
   &--contain {
-    img {
-      object-fit: contain;
+    &__image {
+      img {
+        object-fit: contain;
+      }
     }
   }
 
   // Variant: top alignment
   &--top {
-    img {
-      object-position: top;
+    &__image {
+      img {
+        object-position: top;
+      }
     }
   }
 
   // Variant: bottom alignment
   &--bottom {
-    img {
-      object-position: bottom;
+    .bg__image {
+      img {
+        object-position: bottom;
+      }
     }
   }
 
   // Variant: left alignment
   &--left {
-    img {
-      object-position: left;
+    &__image {
+      img {
+        object-position: left;
+      }
     }
   }
 
   // Variant: right alignment
   &--right {
-    img {
-      object-position: right;
+    &__image {
+      img {
+        object-position: right;
+      }
     }
   }
 }
@@ -89,10 +105,6 @@
       object-position: center;
     }
   }
-
-  // ============================================
-  // Common Aspect Ratios
-  // ============================================
 
   // Square (1:1)
   &--1x1 {

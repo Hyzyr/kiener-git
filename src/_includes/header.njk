@@ -1,16 +1,31 @@
-<nav class="preheader" aria-label="Preheader">
+<div class="preheader" aria-label="Preheader">
   <div class="container preheader__inner">
     <div class="preheader__nav">
       <a href="#" class="quick-link">Gratis verzending vanaf €50,-</a>
-      <a href="#" class="quick-link"
-        >Vandaag besteld, binnen een week geleverd</a
-      >
-      <a href="#" class="quick-link">4.7/5 (1900+ reviews)</a>
+      <a href="#" class="quick-link">Vandaag besteld, binnen een week geleverd</a>
+      <a href="#" class="quick-link">
+        <span class="quick-link__group">
+          <svg class="icon" width="22" height="15">
+            <use xlink:href="#icon-star"></use>
+          </svg>
+          <svg class="icon" width="22" height="15">
+            <use xlink:href="#icon-star"></use>
+          </svg>
+          <svg class="icon" width="22" height="15">
+            <use xlink:href="#icon-star"></use>
+          </svg>
+          <svg class="icon" width="22" height="15">
+            <use xlink:href="#icon-star"></use>
+          </svg>
+          <svg class="icon" width="22" height="15">
+            <use xlink:href="#icon-star"></use>
+          </svg>
+        </span>
+        4.7/5 (1900+ reviews)</a>
     </div>
   </div>
-</nav>
-
-<header class="header">
+</div>
+<header class="header {{ header_class }}">
   <div class="container">
     <div class="header__inner">
       <nav class="nav" aria-label="Main navigation">
@@ -20,10 +35,7 @@
           </li>
           <li class="nav__item">
             <a href="#" class="nav__nav-link">
-              <span
-                class="hamburger"
-                aria-label="Toggle menu"
-                aria-expanded="false">
+              <span class="hamburger" aria-label="Toggle menu" aria-expanded="false">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
@@ -41,27 +53,14 @@
       </nav>
       <div class="header__logo">
         <a href="/" class="logo">
-          <img
-            src="/assets/kiener-logo-dark.svg"
-            alt="Logo"
-            class="logo__image logo__image--dark" />
-          <img
-            src="/assets/kiener-logo-white.svg"
-            alt="Logo"
-            class="logo__image logo__image--light" />
+          <img src="/assets/kiener-logo-dark.svg" alt="Logo" class="logo__image logo__image--dark"/>
+          <img src="/assets/kiener-logo-white.svg" alt="Logo" class="logo__image logo__image--light"/>
         </a>
       </div>
       <div class="header__actions">
         <div class="header__search search search--md">
-          <input
-            type="search"
-            class="search__input"
-            placeholder="Search..."
-            aria-label="Search" />
-          <button
-            type="submit"
-            class="search__button"
-            aria-label="Submit search">
+          <input type="search" class="search__input" placeholder="Search..." aria-label="Search"/>
+          <button type="submit" class="search__button" aria-label="Submit search">
             <svg class="search__icon" width="16" height="16">
               <use xlink:href="#icon-search"></use>
             </svg>
@@ -69,11 +68,7 @@
         </div>
       </div>
       <a href="#" class="nav__nav-link">Login</a>
-      <button
-        id="menu-toggle"
-        class="hamburger"
-        aria-label="Toggle menu"
-        aria-expanded="false">
+      <button id="menu-toggle" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
@@ -81,3 +76,4 @@
     </div>
   </div>
 </header>
+<div class="headerspace"></div>

@@ -1,32 +1,57 @@
 ---
-layout: base.html
+layout: base.njk
 title: Kiener - Home
+header_class: 'header--nospaceholder header--white '
 ---
 
 <!-- Hero Section -->
 <section class="hero section section--no-padding">
-  <div class="container hero__container">
-    <div class="hero__body">
-      <div class="hero__group">
-        <h1 class="hero__title">Modern SCSS Template</h1>
-        <p class="hero__text">
-          A professional, modular component library built with modern SCSS
-          architecture. Ready to customize for your next project.
-        </p>
+  <div class="container">
+    <div class="hero__inner">
+      <div class="hero__bg">
+        <img
+          src="./assets/images/landing-banner.png"
+          class="hero__bg-image"
+          alt="background" />
+        <img
+          src="./assets/images/landing-banner-woman.png"
+          class="hero__bg-woman"
+          alt="foreground" />
       </div>
-      <div class="hero__cta">
-        <a href="#" class="btn btn--filled btn--primary btn--lg">
-          Bekijk onze producten
-          <svg class="icon" width="22" height="15">
-            <use xlink:href="#icon-arrow-1"></use>
-          </svg>
-        </a>
-        <a href="#" class="btn btn--filled btn--white btn--lg">
-          Krijg persoonlijk advies
-          <svg class="icon" width="22" height="15">
-            <use xlink:href="#icon-arrow-1"></use>
-          </svg>
-        </a>
+      <div class="hero__body">
+        <div class="hero__group">
+          <h1 class="hero__title">
+            Een nieuwe dag.
+            <br />
+            Meer mogelijkheden.
+          </h1>
+          <p class="p _xl fw--medium">
+            Hulpmiddelen die beweging en zelfstandigheid ondersteunen,
+            <br />
+            zodat je je leven op jouw manier kunt blijven leven.
+          </p>
+        </div>
+        <div class="hero__cta">
+          <a href="#" class="btn btn--filled btn--primary btn--lg">
+            Bekijk onze producten
+            <svg class="icon" width="22" height="15">
+              <use xlink:href="#icon-arrow-1"></use>
+            </svg>
+          </a>
+          <a href="#" class="btn btn--filled btn--white btn--lg">
+            Krijg persoonlijk advies
+            <svg class="icon" width="22" height="15">
+              <use xlink:href="#icon-arrow-1"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="hero__news">re
+        <div class="prdoct-card">
+          <div class="ratio-image ratio-image--1x1">
+            <img src="./assets/images/" alt="">
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -42,8 +67,8 @@ title: Kiener - Home
         <div class="feature-icon">🎨</div>
         <h3>Modern Architecture</h3>
         <p>
-          Built with @use/@forward, CSS custom properties, and best
-          practices from 2026
+          Built with @use/@forward, CSS custom properties, and best practices
+          from 2026
         </p>
       </div>
 
@@ -51,8 +76,7 @@ title: Kiener - Home
         <div class="feature-icon">📦</div>
         <h3>Modular Components</h3>
         <p>
-          Reusable UI components with variants, states, and responsive
-          behavior
+          Reusable UI components with variants, states, and responsive behavior
         </p>
       </div>
 
@@ -68,9 +92,7 @@ title: Kiener - Home
       <div class="feature-card">
         <div class="feature-icon">📱</div>
         <h3>Fully Responsive</h3>
-        <p>
-          Mobile-first approach with modern CSS Grid and Flexbox layouts
-        </p>
+        <p>Mobile-first approach with modern CSS Grid and Flexbox layouts</p>
       </div>
 
       <div class="feature-card">
@@ -86,8 +108,7 @@ title: Kiener - Home
         <div class="feature-icon">🚀</div>
         <h3>Production Ready</h3>
         <p>
-          Optimized CSS output, print styles, and cross-browser
-          compatibility
+          Optimized CSS output, print styles, and cross-browser compatibility
         </p>
       </div>
     </div>
@@ -236,9 +257,7 @@ title: Kiener - Home
           </ul>
         </div>
         <div class="card__footer">
-          <a
-            href="components.html#utilities"
-            class="btn btn--primary btn--sm"
+          <a href="components.html#utilities" class="btn btn--primary btn--sm"
             >View Utilities</a
           >
         </div>
@@ -284,9 +303,7 @@ title: Kiener - Home
     text-align: center;
   ">
   <div class="container">
-    <h2 style="color: white; margin-bottom: 1rem">
-      Ready to Start Building?
-    </h2>
+    <h2 style="color: white; margin-bottom: 1rem">Ready to Start Building?</h2>
     <p
       style="
         font-size: var(--font-size-lg);
@@ -294,8 +311,8 @@ title: Kiener - Home
         max-width: 600px;
         margin: 0 auto 2rem;
       ">
-      Clone this template and customize it for your next project. All
-      components are production-ready and fully responsive.
+      Clone this template and customize it for your next project. All components
+      are production-ready and fully responsive.
     </p>
     <div
       style="
@@ -316,46 +333,3 @@ title: Kiener - Home
     </div>
   </div>
 </section>
-      class="section"
-      style="
-        background: linear-gradient(
-          135deg,
-          var(--color-primary-700) 0%,
-          var(--color-primary-900) 100%
-        );
-        color: white;
-        text-align: center;
-      ">
-      <div class="container">
-        <h2 style="color: white; margin-bottom: 1rem">
-          Ready to Start Building?
-        </h2>
-        <p
-          style="
-            font-size: var(--font-size-lg);
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-          ">
-          Clone this template and customize it for your next project. All
-          components are production-ready and fully responsive.
-        </p>
-        <div
-          style="
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-          ">
-          <a href="components.html" class="btn btn--secondary btn--lg"
-            >View Components</a
-          >
-          <a
-            href="README.md"
-            class="btn btn--ghost btn--lg"
-            style="color: white; border-color: white"
-            >Read Documentation</a
-          >
-        </div>
-      </div>
-    </section>

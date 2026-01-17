@@ -45,16 +45,12 @@
 .flex-between { @include flex-between; }
 .flex-column { @include flex-column; }
 
-// Text alignment
-.text-left { text-align: left; }
-.text-center { text-align: center; }
+// Text colors
+.text-primary { color: var(--color-primary); }
+.text-secondary { color: var(--color-secondary); }
+.text-white { color: var(--color-white); }
+.text-muted { color: var(--color-grey-600); }
 .text-right { text-align: right; }
-
-// Text utilities
-.text-truncate { @include truncate(1); }
-.text-bold { font-weight: var(--font-weight-bold); }
-.text-uppercase { text-transform: uppercase; }
-.text-lowercase { text-transform: lowercase; }
 
 // Colors
 .text-primary { color: var(--color-primary-600); }

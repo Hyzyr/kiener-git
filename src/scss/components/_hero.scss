@@ -6,35 +6,61 @@
 
 .hero {
   position: relative;
-  min-height: clamp(600px, 80vh, 900px);
-  background-color: var(--color-ocean-blue);
   overflow: hidden;
   display: flex;
   align-items: center;
+  transform: translate(0, 0);
 
-  &__container {
+  &__inner {
     height: 100%;
-    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 10vh;
+    gap: 2rem;
+    min-height: 90vh;
+    min-height: clamp(600px, 85vh, 900px);
+  }
+
+  &__bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    aspect-ratio: 1440 / 772;
+    min-width: 100%;
+    min-height: 100%;
+
+    &-image {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 100%;
+      display: block;
+      // object-fit: cover;
+      // object-position: bottom center;
+      z-index: -1;
+    }
+    &-woman {
+      position: absolute;
+      left: 37.2916%;
+      top: 44.5595%;
+      width: 17.5%;
+      height: auto;
+      z-index: 10;
+      display: block;
+    }
   }
 
   &__body {
+    position: relative;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 0;
-    gap: 3.125em; // 50px / 16px (approx if base is 16) or let's use rem/em context
-    
-    // Figma dimensions: absolute, 918x438, left 81, top 191
-    // We'll use relative positioning for better responsiveness inside container
+    gap: 3.125em;
     max-width: 57.375rem; // 918px
-    margin-top: 11.9375rem; // 191px
-    margin-left: 5.0625rem; // 81px
-    
-    @include respond-to('md') {
-      margin-left: 0;
-      margin-top: 5rem;
-      gap: 2rem;
-    }
+    color: var(--color-soft-alabaster);
   }
 
   &__group {
@@ -43,32 +69,19 @@
     align-items: flex-start;
     padding: 0;
     gap: 1em; // 16px
-    max-width: 56.1875rem; // 899px
   }
 
   &__title {
-    font-family: var(--font-family-primary);
-    font-weight: 494; // Custom figma weight
-    font-size: 6.875rem; // 110px
-    line-height: 0.9;
     color: var(--color-soft-alabaster);
     margin: 0;
-
-    @include respond-to('lg') {
-      font-size: 5rem;
-    }
-    @include respond-to('md') {
-      font-size: 3.5rem;
-    }
   }
 
   &__text {
     font-family: var(--font-family-primary);
-    font-weight: 494;
+    font-weight: var(--font-weight-medium);
     font-size: 1.25rem; // 20px
     line-height: 1.25;
     color: var(--color-soft-alabaster);
-    max-width: 30.0625rem; // 481px
     margin: 0;
 
     @include respond-to('md') {
@@ -78,18 +91,13 @@
 
   &__cta {
     display: flex;
-    flex-direction: row; // Changed from column if they should be side by side
+    flex-direction: column; // Changed from column if they should be side by side
     align-items: flex-start;
     padding: 0;
     gap: 0.75rem; // 12px
 
-    @include respond-to('md') {
-      flex-direction: column;
-      width: 100%;
-
-      .btn {
-        width: 100%;
-      }
+    .button {
+      max-width: 250px;
     }
   }
 }

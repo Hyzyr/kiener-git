@@ -1,3 +1,5 @@
+@use '../abstracts/mixins' as *;
+
 // ============================================
 // Typography
 // ============================================
@@ -6,7 +8,7 @@
 @font-face {
   font-family: 'Author Variable';
   src: url('../assets/fonts/Author-Variable.woff2') format('woff2');
-      //  url('../assets/fonts/AuthorVariable-Bold.woff') format('woff');
+  //  url('../assets/fonts/AuthorVariable-Bold.woff') format('woff');
   font-weight: 200 700;
   font-style: normal;
   font-display: swap;
@@ -20,12 +22,18 @@ body {
   color: var(--color-grey-900);
 }
 
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4,
-h5, .h5,
-h6, .h6 {
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
   font-family: var(--font-family-primary);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
@@ -33,36 +41,60 @@ h6, .h6 {
   margin-bottom: var(--spacing-md);
 }
 
-h1, .h1 {
+h1,
+.h1 {
   font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-medium);
+  line-height: 0.9;
 }
 
-h2, .h2 {
+h2,
+.h2 {
   font-size: var(--font-size-4xl);
 }
 
-h3, .h3 {
+h3,
+.h3 {
   font-size: var(--font-size-3xl);
 }
 
-h4, .h4 {
+h4,
+.h4 {
   font-size: var(--font-size-2xl);
 }
 
-h5, .h5 {
+h5,
+.h5 {
   font-size: var(--font-size-xl);
 }
 
-h6, .h6 {
+h6,
+.h6 {
   font-size: var(--font-size-lg);
 }
 
-p {
+p,
+.p {
+  font-size: var(--font-);
   font-weight: var(--font-weight-regular);
-  margin-bottom: var(--spacing-md);
-  
-  &:last-child {
-    margin-bottom: 0;
+
+  &._xs {
+    font-size: var(--font-size-xs);
+  }
+  &._sm {
+    font-size: var(--font-size-sm);
+  }
+  &._base {
+    font-size: var(--font-size-base);
+  }
+  &._lg {
+    font-size: var(--font-size-lg);
+  }
+  &._xl {
+    font-size: var(--font-size-xl);
+  }
+  &._2xl {
+    font-size: var(--font-size-2xl);
   }
 }
 
@@ -70,22 +102,24 @@ a {
   color: var(--color-primary-600);
   text-decoration: none;
   transition: var(--transition-fast);
-  
+
   &:hover {
     color: var(--color-primary-700);
   }
-  
+
   &:focus-visible {
     outline: 2px solid var(--color-primary-500);
     outline-offset: 2px;
   }
 }
 
-strong, b {
+strong,
+b {
   font-weight: var(--font-weight-bold);
 }
 
-em, i {
+em,
+i {
   font-style: italic;
 }
 
@@ -108,7 +142,7 @@ pre {
   padding: var(--spacing-md);
   border-radius: var(--border-radius-md);
   overflow-x: auto;
-  
+
   code {
     background: none;
     padding: 0;
@@ -121,3 +155,24 @@ blockquote {
   font-style: italic;
   color: var(--color-grey-600);
 }
+
+
+// Text alignment
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+// Text weight
+.fw-extralight { font-weight: var(--font-weight-extralight); }
+.fw-light { font-weight: var(--font-weight-light); }
+.fw-regular { font-weight: var(--font-weight-regular); }
+.fw-medium { font-weight: var(--font-weight-medium); }
+.fw-semibold { font-weight: var(--font-weight-semibold); }
+.fw-bold { font-weight: var(--font-weight-bold); }
+
+
+// Text utilities
+.text-truncate { @include truncate(1); }
+.text-bold { font-weight: var(--font-weight-bold); }
+.text-uppercase { text-transform: uppercase; }
+.text-lowercase { text-transform: lowercase; }
