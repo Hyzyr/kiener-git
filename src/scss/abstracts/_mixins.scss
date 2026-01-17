@@ -4,14 +4,15 @@
 // ============================================
 
 @use 'variables' as *;
+@use "sass:map";
 
 // ============================================
 // 1. RESPONSIVE & MEDIA QUERIES
 // ============================================
 
 @mixin respond-to($breakpoint) {
-  @if map-has-key($breakpoints, $breakpoint) {
-    @media (min-width: map-get($breakpoints, $breakpoint)) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    @media (min-width: map.get($breakpoints, $breakpoint)) {
       @content;
     }
   } @else {

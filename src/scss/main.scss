@@ -14,11 +14,7 @@
 @use 'base/primitives';
 @use 'base/print';
 
-// 3. Layout
-@use 'layout/container';
-@use 'layout/grid';
-
-// 4. Components
+// 3. Components
 @use 'components/button';
 @use 'components/input';
 @use 'components/search';
@@ -28,13 +24,18 @@
 @use 'components/logo';
 @use 'components/header';
 @use 'components/footer';
-@use 'components/hero';
-@use 'components/category-card';
-@use 'components/product-card';
+
 @use 'components/promo-banner';
 @use 'components/carousel';
 @use 'components/content-block';
 @use 'components/contact-card';
+
+// 4. Layout
+@use 'layout/container';
+@use 'layout/grid';
+@use 'layout/hero';
+@use 'layout/categories';
+
 
 // 5. Utilities
 @use 'utilities/helpers';

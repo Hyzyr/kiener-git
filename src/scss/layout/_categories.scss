@@ -1,0 +1,121 @@
+@use '../abstracts/mixins' as *;
+
+.categories {
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  &__row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 20px;
+
+    .category-card {
+      flex-grow: 1;
+      flex-shrink: 0;
+    }
+  }
+}
+
+.category-card {
+  position: relative;
+  display: block;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  padding-bottom: 133.33%; // 4:3 Aspect Ratio
+  transition: 0.3s var(--transition-base) 0.1s;
+
+  &__image {
+    display: flex;
+    @include absolute-cover;
+
+    img {
+      @include absolute-cover;
+      transform: scale(1.01);
+      transition: 0.6s var(--ease-smooth);
+      @include cover-image;
+    }
+
+    // Dark overlay
+    &::after {
+      @include overlay(
+        linear-gradient(
+          180deg,
+          rgba(#21609d, 0) 65%,
+          var(--color-charcoal-grey) 100%
+        )
+      );
+      opacity: 0.8;
+      transition: 0.8s var(--ease-smooth) 0.1s;
+    }
+  }
+  &:hover {
+    box-shadow: var(--shadow-lg);
+
+    .category-card__image img {
+      transform: scale(1.05);
+    }
+  }
+  &:hover &__image::after {
+    opacity: 1;
+  }
+
+  &__content {
+    @include absolute-cover;
+    z-index: 2;
+    padding: 1.5rem;
+    @include flex-column;
+    justify-content: flex-end;
+  }
+
+  &__title {
+    color: var(--color-cloud-dancer);
+    font-family: var(--font-primary);
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    font-style: normal;
+    line-height: 110%;
+  }
+
+  // &__count {
+  //   color: var(--color-white);
+  //   font-size: var(--font-size-sm);
+  //   opacity: 0.9;
+  //   margin-top: 0.25rem;
+  // }
+
+  // // Icon overlay variant
+  // &--icon {
+  //   .category-card__icon {
+  //     position: absolute;
+  //     top: 50%;
+  //     left: 50%;
+  //     transform: translate(-50%, -50%);
+  //     font-size: 4rem;
+  //     color: var(--color-white);
+  //     opacity: 0.2;
+  //   }
+  // }
+}
+
+// Category Grid
+.category-grid {
+  @include grid(1, 1.5rem);
+
+  @include respond-to('sm') {
+    @include grid(2, 1.5rem);
+  }
+
+  @include respond-to('md') {
+    @include grid(3, 1.5rem);
+  }
+
+  @include respond-to('lg') {
+    @include grid(4, 1.5rem);
+  }
+}
