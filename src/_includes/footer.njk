@@ -1,79 +1,100 @@
 <!-- Footer -->
 <footer class="footer">
   <div class="container container--lg">
-    <div class="footer__inner">
-      <!-- Left: Logo and Description -->
+    <div
+      class="footer__inner">
+      <!-- Left: Logo & Address -->
       <div class="footer__brand">
-        <a href="/" class="logo">
-          <img
-            src="/assets/kiener-logo-dark.svg"
-            alt="Logo"
-            class="logo__image logo__image--dark" />
-          <img
-            src="/assets/kiener-logo-white.svg"
-            alt="Logo"
-            class="logo__image logo__image--light" />
-        </a>
-        <p class="footer__description">
-          A modern, professional component library for building responsive
-          web projects with SCSS.
-        </p>
+        <div class="footer__brand__logo">
+          <a href="/" class="logo">
+            <img src="/assets/kiener-logo-dark.svg" alt="Logo" class="logo__image logo__image--dark"/>
+          </a>
+          <p class="p _lg">Is onderdeel van
+            <a href="https://meneerkooi.nl" class="link-inherit link-inherit--underline" target="_blank">Meneer Kooi</a>
+          </p>
+        </div>
+        <div class="footer__brand__info">
+          <address class="p _lg">
+            Zeppelinlaan 2<br/> 9207 JG Drachten
+          </address>
+        </div>
       </div>
-
-      <!-- Right: 3 Columns -->
+      <!-- Right: Columns -->
       <div class="footer__columns">
         <div class="footer__column">
-          <h4 class="footer__column-title">Quick Links</h4>
+          <h4 class="footer__column-title">Shop</h4>
           <ul class="footer__column-list">
-            <li><a href="/components.html">Components</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-
-        <div class="footer__column">
-          <h4 class="footer__column-title">Resources</h4>
-          <ul class="footer__column-list">
-            <li><a href="/README.md">Documentation</a></li>
-            <li><a href="/scss">SCSS Files</a></li>
             <li>
-              <a href="/scss/abstracts/_variables.scss">Variables</a>
+              <a href="#">Trapliften</a>
             </li>
-            <li><a href="/scss/abstracts/_mixins.scss">Mixins</a></li>
+            <li>
+              <a href="#">Rollator</a>
+            </li>
+            <li>
+              <a href="#">Sta-op stoelen</a>
+            </li>
+            <li>
+              <a href="#">Rolstoelen</a>
+            </li>
+            <li>
+              <a href="#">Scootmobielen</a>
+            </li>
+            <li>
+              <a href="#">Bedden</a>
+            </li>
           </ul>
         </div>
-
         <div class="footer__column">
-          <h4 class="footer__column-title">Support</h4>
+          <h4 class="footer__column-title">Over Kiener</h4>
           <ul class="footer__column-list">
-            <li><a href="#help">Help Center</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#terms">Terms of Service</a></li>
-            <li><a href="#privacy">Privacy Policy</a></li>
+            <li>
+              <a href="#">Onze service</a>
+            </li>
+            <li>
+              <a href="#">Levering & Retour</a>
+            </li>
+            <li>
+              <a href="#">Klantenservice</a>
+            </li>
           </ul>
+        </div>
+        <div class="footer__column footer__column--newsletter">
+          <h4 class="footer__column-title">Nieuwsbrief</h4>
+          <p class="p _sm">
+            Ontvang updates over nieuwe producten en ontvang 10% korting op je eerste aankoop
+          </p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Jouw e-mailadres" required/>
+            <button type="submit" class="btn btn--filled btn--primary">Meld je aan</button>
+          </form>
+          <div class="footer__social">
+            <h4 class="footer__column-title">Volg ons</h4>
+            <div class="social-links">
+              <a href="#" class="social-link">
+                <svg class="icon" width="24" height="24">
+                  <use xlink:href="#icon-instagram"></use>
+                </svg>
+              </a>
+              <a href="#" class="social-link">
+                <svg class="icon" width="24" height="24">
+                  <use xlink:href="#icon-facebook"></use>
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </footer>
-
 <!-- Sub Footer -->
 <div class="subfooter">
   <div class="container container--lg">
     <div class="subfooter__inner">
-      <!-- Left: Copyright -->
-      <div class="subfooter__left">
-        <p class="subfooter__copyright">
-          © 2026 SCSS Template. All rights reserved.
-        </p>
-      </div>
-
-      <!-- Right: Links -->
       <div class="subfooter__right">
-        <a href="#privacy" class="quick-link">Privacy</a>
-        <a href="#terms" class="quick-link">Terms</a>
-        <a href="#cookies" class="quick-link">Cookies</a>
+        <a href="#" class="quick-link">Algemene voorwaarden</a>
+        <a href="#" class="quick-link">Privacy verklaring</a>
+        <a href="#" class="quick-link">Cookie voorkeuren</a>
       </div>
     </div>
   </div>

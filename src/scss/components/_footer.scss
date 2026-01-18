@@ -5,18 +5,9 @@
 // ============================================
 
 .footer {
-  background: var(--color-cloud-dancer); 
-  color: var(--color-grey-300);
+  background: var(--color-cloud-dancer);
+  color: var(--color-charcoal-grey);
   padding: 4rem 0;
-
-  a {
-    color: var(--color-grey-300);
-    transition: var(--transition-fast);    text-decoration: none;
-
-    &:hover {
-      color: var(--color-white);
-    }
-  }
 
   // ============================================
   // Footer Inner - Two Column Layout
@@ -25,87 +16,163 @@
     display: flex;
     gap: 4rem;
     align-items: flex-start;
-
-    @include tablet-up {
-      flex-direction: column;
-      gap: 3rem;
-    }
   }
 
   // ============================================
-  // Left Section: Brand (Logo + Description)
+  // Left Section: Brand (Logo + Address)
   // ============================================
   &__brand {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem; // 28px
+    margin-right: auto;
     flex-shrink: 0;
-    max-width: 400px;
 
-    @include tablet-up {
-      max-width: 100%;
+    .p {
+      font-family: var(--font-family-primary);
+      font-style: normal;
+      font-weight: var(--font-weight-regular);
+      color: var(--color-charcoal-grey);
+      margin: 0;
     }
 
-    .logo {
-      margin-bottom: 1.5rem;
-    }
-  }
-
-  &__description {
-    font-size: var(--font-size-sm);
-    line-height: 1.6;
-    color: var(--color-grey-400);
-  }
-
-  // ============================================
-  // Right Section: 3 Columns (max-width 660px)
-  // ============================================
-  &__columns {
-    flex: 1;
-    max-width: 660px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-    margin-left: auto;
-
-    @include tablet-up {
-      max-width: 100%;
-      margin-left: 0;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-    }
-
-    @include mobile-only {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-  }
-
-  &__column {
-    // Column styles
-  }
-
-  &__column-title {
-    font-size: var(--font-size-base);
-    font-weight: var(--font-weight-semibold);
-    color: var(--color-white);
-    margin-bottom: 1.25rem;
-  }
-
-  &__column-list {
-    @include reset-list;
-
-    li {
-      margin-bottom: 0.75rem;
-
-      &:last-child {
-        margin-bottom: 0;
+    &__logo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0;
+      gap: 1.25rem; // 20px
+      .p {
+        line-height: 1;
+        letter-spacing: 0.04em;
       }
     }
 
-    a {
-      font-size: var(--font-size-sm);
-      color: var(--color-grey-400);
+    &__info {
+      p {
+        line-height: 140%;
+        letter-spacing: 0;
+      }
+    }
+  }
 
-      &:hover {
-        color: var(--color-white);
+  &__address {
+    font-style: normal;
+    line-height: var(--line-height-normal);
+    color: var(--color-charcoal-grey);
+    font-size: var(--font-size-sm);
+  }
+
+  // ============================================
+  // Right Section: Columns
+  // ============================================
+  &__columns {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) 2fr;
+    gap: 2.5rem;
+    max-width: 700px;
+
+    // a {
+    //   color: var(--color-charcoal-grey);
+    //   transition: var(--transition-fast);
+    //   text-decoration: none;
+
+    //   &:hover {
+    //     text-decoration: underline;
+    //   }
+    // }
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5px 0;
+    gap: 0.875rem; // 14px
+
+    &--newsletter {
+      width: auto;
+      max-width: 400px;
+
+      .p {
+        margin-bottom: 1rem;
+      }
+    }
+
+    &-title {
+      font-family: var(--font-family-primary);
+      font-style: normal;
+      font-weight: var(--font-weight-semibold);
+      font-size: 1.125rem; // 18px
+      line-height: 1; // 100%
+      color: var(--color-black);
+    }
+
+    &-list {
+      @include reset-list;
+      display: flex;
+      flex-direction: column;
+      gap: inherit; // 14px
+
+      li {
+        margin: 0;
+        flex: none;
+        flex-grow: 0;
+      }
+
+      a {
+        font-family: var(--font-family-primary);
+        font-style: normal;
+        font-weight: var(--font-weight-regular);
+        font-size: 1.125rem; // 18px
+        line-height: 1; // 100%
+        color: var(--color-charcoal-grey);
+        text-decoration: none;
+
+        &:hover {
+          color: var(--black);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .newsletter-form {
+    display: flex;
+    gap: 0;
+    margin-bottom: 2rem;
+    max-width: 400px;
+
+    input {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-right: none;
+      border-radius: var(--border-radius-sm) 0 0 var(--border-radius-sm);
+      font-size: var(--font-size-sm);
+    }
+
+    .btn {
+      border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
+      padding: 0 1.5rem;
+      font-size: var(--font-size-sm);
+      white-space: nowrap;
+    }
+  }
+
+  &__social {
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+
+      .social-link {
+        color: var(--color-charcoal-grey);
+
+        &:hover {
+          color: var(--color-primary);
+        }
       }
     }
   }
@@ -117,12 +184,12 @@
 .subfooter {
   background: var(--color-white);
   color: var(--color-charcoal-grey);
-  padding: 1.5rem 0;
-  border-top: 1px solid #EAEAEA;
+  padding: 0.65rem 0 0.75rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
 
   &__inner {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     gap: 2rem;
 
@@ -132,28 +199,32 @@
     }
   }
 
-  // Left Section
-  &__left {
-    display: flex;
-    align-items: center;
-  }
-
-  &__copyright {
-    font-size: var(--font-size-xs);
-    color: var(--color-charcoal-grey);
-    opacity: 0.6;
-    margin: 0;
-  }
-
-  // Right Section - 3 Links
   &__right {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 0.5rem;
+    gap: 2rem;
 
     @include mobile-only {
+      flex-direction: column;
+      gap: 0.5rem;
       justify-content: center;
+    }
+
+    .quick-link {
+      font-family: var(--font-family-primary);
+      font-style: normal;
+      font-weight: var(--font-weight-regular);
+      font-size: 1rem; // 16px
+      line-height: 1; // 100%
+      color: var(--color-charcoal-grey);
+      text-decoration: none;
+
+      &:hover {
+        color: var(--black);
+        opacity: 1;
+        text-decoration: underline;
+      }
     }
   }
 }

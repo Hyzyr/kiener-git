@@ -21,7 +21,8 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
-    transition: opacity var(--transition-base),
+    transition:
+      opacity var(--transition-base),
       visibility var(--transition-base);
   }
 
@@ -68,19 +69,8 @@
   }
 }
 
-// Footer uses dark version and larger size (62px height)
 .footer {
   .logo {
-    font-size: 1.72222rem; // 62px / 36px * 1rem = 1.72222rem for 62px height
-  }
-
-  .logo__image--dark {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .logo__image--light {
-    opacity: 0;
-    visibility: hidden;
+    font-size: 1.71rem; // (65px / 2.375em) / 16px = 1.7105rem
   }
 }

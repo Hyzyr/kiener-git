@@ -64,3 +64,24 @@
     color: var(--color-grey-500);
   }
 }
+
+.link-inherit {
+  color: inherit;
+  text-decoration: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  transition: opacity var(--transition-fast);
+
+  &:hover {
+    opacity: 1;
+    text-decoration: underline;
+    color: var(--black);
+  }
+  &--underline {
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
