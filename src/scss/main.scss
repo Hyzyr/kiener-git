@@ -33,9 +33,10 @@
 // 4. Layout
 @use 'layout/container';
 @use 'layout/grid';
-@use 'layout/hero';
 @use 'layout/categories';
 
+// 5. Pages
+@use 'layout/home';
 
-// 5. Utilities
+// 6. Utilities
 @use 'utilities/helpers';

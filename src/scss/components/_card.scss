@@ -80,10 +80,11 @@
   font-size: 16px;
   isolation: isolate;
   border: var(--border-width-thin) solid var(--color-grey-200);
-  transition: .25s var(--transition-base);
+  transition: 0.25s var(--transition-base);
 
-  background: var(--color-soft-alabaster);
+  background: var(--color-white);
   border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
 
   &__image {
     width: 100%;
@@ -92,7 +93,7 @@
       width: 100%;
 
       img {
-        transition: 1s var(--ease-smooth) ;
+        transition: 1s var(--ease-smooth);
       }
     }
   }
@@ -124,7 +125,7 @@
   }
 
   &:hover {
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-xl);
     border-color: var(--color-grey-300);
 
     .product-card__image img {

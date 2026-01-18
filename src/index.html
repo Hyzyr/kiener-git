@@ -75,7 +75,7 @@ header_class: 'header--nospaceholder header--white '
   <div class="container">
     <div class="categories__inner">
       <div class="categories__title section__title">
-        <h3 class="h3">Bekijk onze categorieen</h3>
+        <h3 class="h2">Bekijk onze categorieen</h3>
         <button class="btn btn--outlined btn--md">
           Bekijk alle producten
           <svg class="icon" width="22" height="15">
@@ -120,279 +120,162 @@ header_class: 'header--nospaceholder header--white '
     </div>
   </div>
 </section>
-<!-- Features Section -->
-<section class="section" id="features">
+<section class="sale section">
   <div class="container">
-    <h2 class="text-center mb-5">Features</h2>
-
-    <div class="grid grid--3-cols" style="gap: 2rem">
-      <div class="feature-card">
-        <div class="feature-icon">🎨</div>
-        <h3>Modern Architecture</h3>
-        <p>
-          Built with @use/@forward, CSS custom properties, and best practices
-          from 2026
-        </p>
+    <div class="sale__inner">
+      <div class="sale__content">
+        <div class="subtitle">SALE</div>
+        <h2 class="h2">
+          Tot 20% Korting <br />
+          op alle sta-op stoelen
+        </h2>
+        <a href="#" class="btn btn--outlined btn--xlg"> Bekijk het aanbod </a>
       </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">📦</div>
-        <h3>Modular Components</h3>
-        <p>
-          Reusable UI components with variants, states, and responsive behavior
-        </p>
+      <div class="sale__label">
+        <span>
+          Korting Tot 20% Korting Tot 20% Korting Tot 20% Korting Tot 20%
+          Korting Tot 20% Korting Tot 20% Korting Tot 20% Korting Tot 20%
+        </span>
+        <span>
+          Korting Tot 20% Korting Tot 20% Korting Tot 20% Korting Tot 20%
+          Korting Tot 20% Korting Tot 20% Korting Tot 20% Korting Tot 20%
+        </span>
       </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">⚡</div>
-        <h3>Easy Customization</h3>
-        <p>
-          Simple variable system - change colors, fonts, and spacing in one
-          place
-        </p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">📱</div>
-        <h3>Fully Responsive</h3>
-        <p>Mobile-first approach with modern CSS Grid and Flexbox layouts</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">♿</div>
-        <h3>Accessible</h3>
-        <p>
-          Built with accessibility in mind - focus states, ARIA support, and
-          semantic HTML
-        </p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">🚀</div>
-        <h3>Production Ready</h3>
-        <p>
-          Optimized CSS output, print styles, and cross-browser compatibility
-        </p>
+      <div class="sale__banner">
+        <div class="ratio-image">
+          <img
+            src="./assets/images/banner-sale-chair-1.png"
+            alt="banner-sale-chair-1" />
+          <img
+            src="./assets/images/banner-sale-chair-2.png"
+            alt="banner-sale-chair-2" />
+          <img
+            src="./assets/images/banner-sale-chair-3.png"
+            alt="banner-sale-chair-3" />
+        </div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- Quick Start Section -->
-<section class="section" style="background: var(--color-grey-50)">
+<section class="products section">
   <div class="container">
-    <h2 class="text-center mb-4">Quick Start</h2>
-    <p class="text-center text-muted mb-5">Get started in 3 simple steps</p>
-
-    <div class="grid grid--3-cols" style="gap: 2rem">
-      <div style="text-align: center">
-        <div
-          style="
-            width: 48px;
-            height: 48px;
-            margin: 0 auto 1rem;
-            background: var(--color-primary-600);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-          ">
-          1
-        </div>
-        <h4>Customize Variables</h4>
-        <p class="text-muted">
-          Update colors, fonts, and spacing in <code>_variables.scss</code>
-        </p>
+    <div class="products__inner">
+      <div class="products__title section__title">
+        <h3 class="h3">Ontdek enze nieuwste producten</h3>
+        <button class="btn btn--outlined btn--md">
+          Shop nu
+          <svg class="icon" width="22" height="15">
+            <use xlink:href="#icon-arrow-1"></use>
+          </svg>
+        </button>
       </div>
-
-      <div style="text-align: center">
-        <div
-          style="
-            width: 48px;
-            height: 48px;
-            margin: 0 auto 1rem;
-            background: var(--color-primary-600);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-          ">
-          2
+      <div class="product-grid product-grid--5-cols">
+        <div class="product-card">
+          <div class="product-card__image">
+            <div class="ratio-image ratio-image--1x1">
+              <img
+                src="./assets/images/product-image-1.png"
+                alt="product-image" />
+            </div>
+          </div>
+          <div class="product-card__info">
+            <div class="product-card__info-group">
+              <strong>Carbon Ultralight</strong>
+              <span>Rollator</span>
+              <strong>€399,-</strong>
+            </div>
+            <div class="icon-btn icon-btn--outlined">
+              <svg class="icon" width="22" height="15">
+                <use xlink:href="#icon-arrow-1"></use>
+              </svg>
+            </div>
+          </div>
         </div>
-        <h4>Compile SCSS</h4>
-        <p class="text-muted">
-          Run <code>npm run watch</code> or use Live Sass Compiler
-        </p>
-      </div>
-
-      <div style="text-align: center">
-        <div
-          style="
-            width: 48px;
-            height: 48px;
-            margin: 0 auto 1rem;
-            background: var(--color-primary-600);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-          ">
-          3
+        <div class="product-card">
+          <div class="product-card__image">
+            <div class="ratio-image ratio-image--1x1">
+              <img
+                src="./assets/images/product-image-1.png"
+                alt="product-image" />
+            </div>
+          </div>
+          <div class="product-card__info">
+            <div class="product-card__info-group">
+              <strong>Carbon Ultralight</strong>
+              <span>Rollator</span>
+              <strong>€399,-</strong>
+            </div>
+            <div class="icon-btn icon-btn--outlined">
+              <svg class="icon" width="22" height="15">
+                <use xlink:href="#icon-arrow-1"></use>
+              </svg>
+            </div>
+          </div>
         </div>
-        <h4>Build Your Project</h4>
-        <p class="text-muted">
-          Use components and utilities to create your design
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Components Preview Section -->
-<section class="section">
-  <div class="container">
-    <h2 class="text-center mb-4">Component Library</h2>
-    <p class="text-center text-muted mb-5">
-      Browse all available components with code examples
-    </p>
-
-    <div class="grid grid--2-cols" style="gap: 2rem">
-      <div class="card">
-        <div class="card__body">
-          <h3 class="card__title">🎨 UI Components</h3>
-          <p class="card__text">
-            Buttons, cards, forms, inputs with multiple variants and states
-          </p>
-          <ul style="margin: 1rem 0; padding-left: 1.5rem">
-            <li>Buttons (4 variants, 3 sizes)</li>
-            <li>Form inputs & validation states</li>
-            <li>Cards (default, flat, outline)</li>
-            <li>Typography system</li>
-          </ul>
+        <div class="product-card">
+          <div class="product-card__image">
+            <div class="ratio-image ratio-image--1x1">
+              <img
+                src="./assets/images/product-image-1.png"
+                alt="product-image" />
+            </div>
+          </div>
+          <div class="product-card__info">
+            <div class="product-card__info-group">
+              <strong>Carbon Ultralight</strong>
+              <span>Rollator</span>
+              <strong>€399,-</strong>
+            </div>
+            <div class="icon-btn icon-btn--outlined">
+              <svg class="icon" width="22" height="15">
+                <use xlink:href="#icon-arrow-1"></use>
+              </svg>
+            </div>
+          </div>
         </div>
-        <div class="card__footer">
-          <a href="components.html#buttons" class="btn btn--primary btn--sm"
-            >View Components</a
-          >
+        <div class="product-card">
+          <div class="product-card__image">
+            <div class="ratio-image ratio-image--1x1">
+              <img
+                src="./assets/images/product-image-1.png"
+                alt="product-image" />
+            </div>
+          </div>
+          <div class="product-card__info">
+            <div class="product-card__info-group">
+              <strong>Carbon Ultralight</strong>
+              <span>Rollator</span>
+              <strong>€399,-</strong>
+            </div>
+            <div class="icon-btn icon-btn--outlined">
+              <svg class="icon" width="22" height="15">
+                <use xlink:href="#icon-arrow-1"></use>
+              </svg>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div class="card">
-        <div class="card__body">
-          <h3 class="card__title">📐 Layout System</h3>
-          <p class="card__text">
-            Responsive grids, containers, and flexible layouts
-          </p>
-          <ul style="margin: 1rem 0; padding-left: 1.5rem">
-            <li>CSS Grid system (2, 3, 4 columns)</li>
-            <li>Auto-fit & auto-fill grids</li>
-            <li>Responsive containers</li>
-            <li>Flexbox utilities</li>
-          </ul>
-        </div>
-        <div class="card__footer">
-          <a href="components.html#grid" class="btn btn--primary btn--sm"
-            >View Layouts</a
-          >
+        <div class="product-card">
+          <div class="product-card__image">
+            <div class="ratio-image ratio-image--1x1">
+              <img
+                src="./assets/images/product-image-1.png"
+                alt="product-image" />
+            </div>
+          </div>
+          <div class="product-card__info">
+            <div class="product-card__info-group">
+              <strong>Carbon Ultralight</strong>
+              <span>Rollator</span>
+              <strong>€399,-</strong>
+            </div>
+            <div class="icon-btn icon-btn--outlined">
+              <svg class="icon" width="22" height="15">
+                <use xlink:href="#icon-arrow-1"></use>
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div class="card">
-        <div class="card__body">
-          <h3 class="card__title">🎯 Utility Classes</h3>
-          <p class="card__text">
-            Helper classes for spacing, colors, text, and display
-          </p>
-          <ul style="margin: 1rem 0; padding-left: 1.5rem">
-            <li>Spacing utilities (margin, padding)</li>
-            <li>Text alignment & transform</li>
-            <li>Color utilities</li>
-            <li>Display & flex helpers</li>
-          </ul>
-        </div>
-        <div class="card__footer">
-          <a href="components.html#utilities" class="btn btn--primary btn--sm"
-            >View Utilities</a
-          >
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card__body">
-          <h3 class="card__title">🔧 SCSS Mixins</h3>
-          <p class="card__text">
-            Powerful mixins for responsive design and common patterns
-          </p>
-          <ul style="margin: 1rem 0; padding-left: 1.5rem">
-            <li>Responsive breakpoint system</li>
-            <li>Flexbox & Grid mixins</li>
-            <li>Image & media helpers</li>
-            <li>Typography utilities</li>
-          </ul>
-        </div>
-        <div class="card__footer">
-          <a href="README.md" class="btn btn--primary btn--sm">View Docs</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="text-center mt-5">
-      <a href="components.html" class="btn btn--primary btn--lg"
-        >Browse All Components →</a
-      >
-    </div>
-  </div>
-</section>
-
-<!-- CTA Section -->
-<section
-  class="section"
-  style="
-    background: linear-gradient(
-      135deg,
-      var(--color-primary-700) 0%,
-      var(--color-primary-900) 100%
-    );
-    color: white;
-    text-align: center;
-  ">
-  <div class="container">
-    <h2 style="color: white; margin-bottom: 1rem">Ready to Start Building?</h2>
-    <p
-      style="
-        font-size: var(--font-size-lg);
-        opacity: 0.9;
-        max-width: 600px;
-        margin: 0 auto 2rem;
-      ">
-      Clone this template and customize it for your next project. All components
-      are production-ready and fully responsive.
-    </p>
-    <div
-      style="
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
-      ">
-      <a href="components.html" class="btn btn--secondary btn--lg"
-        >View Components</a
-      >
-      <a
-        href="README.md"
-        class="btn btn--ghost btn--lg"
-        style="color: white; border-color: white"
-        >Read Documentation</a
-      >
     </div>
   </div>
 </section>

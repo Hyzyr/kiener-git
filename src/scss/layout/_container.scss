@@ -28,7 +28,8 @@
 }
 
 .section {
-  padding-block: var(--section-spacing);
+  padding: var(--section-spacing) 0 var(--section-spacing-big);
+  overflow: hidden;
 
   &--no-padding {
     padding-block: 0;

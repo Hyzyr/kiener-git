@@ -20,6 +20,7 @@ body {
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-normal);
   color: var(--color-grey-900);
+  background: var(--color-soft-alabaster);
 }
 
 h1,
@@ -45,31 +46,46 @@ h1,
   font-size: var(--font-size-5xl);
   font-weight: var(--font-weight-medium);
   line-height: 0.9;
+  letter-spacing: -0.03em;
 }
-
 h2,
 .h2 {
   font-size: var(--font-size-4xl);
+  letter-spacing: -0.03em;
 }
-
 h3,
 .h3 {
   font-size: var(--font-size-3xl);
+  letter-spacing: -0.02em;
 }
-
 h4,
 .h4 {
   font-size: var(--font-size-2xl);
+  letter-spacing: -0.01em;
 }
-
 h5,
 .h5 {
   font-size: var(--font-size-xl);
+  letter-spacing: -0.01em;
 }
-
 h6,
 .h6 {
   font-size: var(--font-size-lg);
+}
+.subtitle {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-ocean-blue-dark);
+
+  &--md {
+    font-size: var(--font-size-xl);
+  }
+  &--lg {
+    font-size: var(--font-size-2xl);
+  }
+  &--xlg {
+    font-size: var(--font-size-3xl);
+  }
 }
 
 p,
@@ -155,23 +171,47 @@ blockquote {
   color: var(--color-grey-600);
 }
 
-
 // Text alignment
-.text-left { text-align: left; }
-.text-center { text-align: center; }
-.text-right { text-align: right; }
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
 
 // Text weight
-.fw-extralight { font-weight: var(--font-weight-extralight); }
-.fw-light { font-weight: var(--font-weight-light); }
-.fw-regular { font-weight: var(--font-weight-regular); }
-.fw-medium { font-weight: var(--font-weight-medium); }
-.fw-semibold { font-weight: var(--font-weight-semibold); }
-.fw-bold { font-weight: var(--font-weight-bold); }
-
+.fw-extralight {
+  font-weight: var(--font-weight-extralight);
+}
+.fw-light {
+  font-weight: var(--font-weight-light);
+}
+.fw-regular {
+  font-weight: var(--font-weight-regular);
+}
+.fw-medium {
+  font-weight: var(--font-weight-medium);
+}
+.fw-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+.fw-bold {
+  font-weight: var(--font-weight-bold);
+}
 
 // Text utilities
-.text-truncate { @include truncate(1); }
-.text-bold { font-weight: var(--font-weight-bold); }
-.text-uppercase { text-transform: uppercase; }
-.text-lowercase { text-transform: lowercase; }
+.text-truncate {
+  @include truncate(1);
+}
+.text-bold {
+  font-weight: var(--font-weight-bold);
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+.text-lowercase {
+  text-transform: lowercase;
+}
