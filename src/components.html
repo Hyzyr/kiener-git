@@ -1,6 +1,7 @@
 ---
 layout: base.njk
 title: Kiener - Component Library
+permalink: /{{ page.fileSlug }}.html
 extra_css: |
   .component-nav {
     position: sticky;
@@ -87,12 +88,11 @@ extra_css: |
 </nav>
 
 <div class="container py-5">
-  
   <!-- Typography Section -->
   <section id="typography" class="demo-section">
     <h2 class="component-title">Typography</h2>
     <p class="text-muted">Standard heading tags and utility classes</p>
-    
+
     <div class="grid grid--2-cols mt-4">
       <div>
         <h3 class="component-subtitle">Heading Tags</h3>
@@ -113,30 +113,33 @@ extra_css: |
         <p class="h6">Class .h6</p>
       </div>
     </div>
-    
+
     <div class="mt-4">
       <h3 class="component-subtitle">Body Text</h3>
-      <p>Standard paragraph text with <strong>bold</strong>, <em>italic</em>, and <a href="#">link</a> styles.</p>
+      <p>
+        Standard paragraph text with <strong>bold</strong>, <em>italic</em>, and
+        <a href="#">link</a> styles.
+      </p>
       <p class="text-sm">Small text utility (.text-sm)</p>
       <p class="text-lg">Large text utility (.text-lg)</p>
     </div>
 
     <div class="code-preview">
-&lt;!-- Tag usage --&gt;
-&lt;h1&gt;Main Title&lt;/h1&gt;
-
-&lt;!-- Class usage for better SEO/UI control --&gt;
-&lt;h2 class="h1"&gt;Visual H1, but semantic H2&lt;/h2&gt;
+      &lt;!-- Tag usage --&gt; &lt;h1&gt;Main Title&lt;/h1&gt; &lt;!-- Class
+      usage for better SEO/UI control --&gt; &lt;h2 class="h1"&gt;Visual H1, but
+      semantic H2&lt;/h2&gt;
     </div>
   </section>
 
   <!-- Buttons Section -->
   <section id="buttons" class="demo-section">
     <h2 class="component-title">Buttons</h2>
-    <p class="text-muted">Interactive action elements in various styles and sizes</p>
-    
+    <p class="text-muted">
+      Interactive action elements in various styles and sizes
+    </p>
+
     <h3 class="component-subtitle">Filled Variants</h3>
-    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+    <div style="display: flex; gap: 1rem; flex-wrap: wrap">
       <button class="btn btn--filled btn--primary">Primary Button</button>
       <button class="btn btn--filled btn--secondary">Secondary Button</button>
       <button class="btn btn--filled btn--success">Success</button>
@@ -144,27 +147,36 @@ extra_css: |
     </div>
 
     <h3 class="component-subtitle">Outlined Variants</h3>
-    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+    <div style="display: flex; gap: 1rem; flex-wrap: wrap">
       <button class="btn btn--outlined btn--primary">Primary Outlined</button>
-      <button class="btn btn--outlined btn--secondary">Secondary Outlined</button>
+      <button class="btn btn--outlined btn--secondary">
+        Secondary Outlined
+      </button>
     </div>
 
     <h3 class="component-subtitle">Sizes</h3>
-    <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+    <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap">
       <button class="btn btn--filled btn--primary btn--sm">Small Button</button>
-      <button class="btn btn--filled btn--primary btn--md">Medium Button</button>
+      <button class="btn btn--filled btn--primary btn--md">
+        Medium Button
+      </button>
       <button class="btn btn--filled btn--primary btn--lg">Large Button</button>
     </div>
 
     <h3 class="component-subtitle">States</h3>
-    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-      <button class="btn btn--filled btn--primary" disabled>Disabled Button</button>
-      <button class="btn btn--filled btn--primary btn--full">Full Width Button</button>
+    <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+      <button class="btn btn--filled btn--primary" disabled>
+        Disabled Button
+      </button>
+      <button class="btn btn--filled btn--primary btn--full">
+        Full Width Button
+      </button>
     </div>
 
     <div class="code-preview">
-&lt;button class="btn btn--filled btn--primary"&gt;Primary&lt;/button&gt;
-&lt;button class="btn btn--outlined btn--primary btn--sm"&gt;Small Outline&lt;/button&gt;
+      &lt;button class="btn btn--filled btn--primary"&gt;Primary&lt;/button&gt;
+      &lt;button class="btn btn--outlined btn--primary btn--sm"&gt;Small
+      Outline&lt;/button&gt;
     </div>
   </section>
 
@@ -172,37 +184,45 @@ extra_css: |
   <section id="inputs" class="demo-section">
     <h2 class="component-title">Form Elements</h2>
     <p class="text-muted">Input fields, labels and form validation states</p>
-    
-    <div style="max-width: 500px;">
+
+    <div style="max-width: 500px">
       <div class="form-group mb-4">
         <label for="example-input" class="label">Default Label</label>
-        <input type="text" id="example-input" class="input" placeholder="Type something...">
+        <input
+          type="text"
+          id="example-input"
+          class="input"
+          placeholder="Type something..." />
       </div>
-      
+
       <div class="form-group mb-4">
         <label class="label">Field with Success State</label>
-        <input type="text" class="input input--success" value="Correct input">
+        <input type="text" class="input input--success" value="Correct input" />
         <span class="input-helper text-success">This information is valid</span>
       </div>
 
       <div class="form-group mb-4">
         <label class="label">Field with Error State</label>
-        <input type="email" class="input input--error" value="invalid-email">
-        <span class="input-helper text-error">Please enter a valid email address</span>
+        <input type="email" class="input input--error" value="invalid-email" />
+        <span class="input-helper text-error"
+          >Please enter a valid email address</span
+        >
       </div>
 
       <div class="form-group">
         <label class="label">Textarea Content</label>
-        <textarea class="textarea" rows="4" placeholder="Enter your message..."></textarea>
+        <textarea
+          class="textarea"
+          rows="4"
+          placeholder="Enter your message..."></textarea>
       </div>
     </div>
 
     <div class="code-preview">
-&lt;div class="form-group"&gt;
-  &lt;label class="label"&gt;Label&lt;/label&gt;
-  &lt;input type="text" class="input" placeholder="..."&gt;
-  &lt;span class="input-helper"&gt;Helper text&lt;/span&gt;
-&lt;/div&gt;
+      &lt;div class="form-group"&gt; &lt;label
+      class="label"&gt;Label&lt;/label&gt; &lt;input type="text" class="input"
+      placeholder="..."&gt; &lt;span class="input-helper"&gt;Helper
+      text&lt;/span&gt; &lt;/div&gt;
     </div>
   </section>
 
@@ -210,17 +230,24 @@ extra_css: |
   <section id="cards" class="demo-section">
     <h2 class="component-title">Cards</h2>
     <p class="text-muted">Versatile content containers</p>
-    
+
     <div class="grid grid--3-cols">
       <!-- Default Card -->
       <div class="card">
         <div class="card__image">
-          <img src="https://via.placeholder.com/400x250/287330/ffffff?text=Card+Image" alt="Card">
+          <img
+            src="https://via.placeholder.com/400x250/287330/ffffff?text=Card+Image"
+            alt="Card" />
         </div>
         <div class="card__body">
           <h3 class="card__title">Standard Card</h3>
-          <p class="card__text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn--filled btn--primary btn--sm mt-3">Read More</a>
+          <p class="card__text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <a href="#" class="btn btn--filled btn--primary btn--sm mt-3"
+            >Read More</a
+          >
         </div>
       </div>
 
@@ -228,7 +255,10 @@ extra_css: |
       <div class="card card--outlined">
         <div class="card__body">
           <h3 class="card__title">Outlined Card</h3>
-          <p class="card__text">This variant uses a border instead of a shadow to define its boundaries.</p>
+          <p class="card__text">
+            This variant uses a border instead of a shadow to define its
+            boundaries.
+          </p>
           <ul class="mt-3">
             <li>Feature one</li>
             <li>Feature two</li>
@@ -258,20 +288,20 @@ extra_css: |
   <section id="grid" class="demo-section">
     <h2 class="component-title">Grid System</h2>
     <p class="text-muted">Responsive grid layouts for organizing content</p>
-    
+
     <h3 class="component-subtitle">2 Column Grid</h3>
     <div class="grid grid--2-cols">
       <div class="demo-block">Column 1</div>
       <div class="demo-block">Column 2</div>
     </div>
-    
+
     <h3 class="component-subtitle">3 Column Grid</h3>
     <div class="grid grid--3-cols">
       <div class="demo-block">Column 1</div>
       <div class="demo-block">Column 2</div>
       <div class="demo-block">Column 3</div>
     </div>
-    
+
     <h3 class="component-subtitle">4 Column Grid</h3>
     <div class="grid grid--4-cols">
       <div class="demo-block">Column 1</div>
@@ -279,7 +309,7 @@ extra_css: |
       <div class="demo-block">Column 3</div>
       <div class="demo-block">Column 4</div>
     </div>
-    
+
     <h3 class="component-subtitle">Auto-Fit Grid (Responsive)</h3>
     <div class="grid grid--auto-fit">
       <div class="demo-block">Item 1</div>
@@ -288,18 +318,12 @@ extra_css: |
       <div class="demo-block">Item 4</div>
       <div class="demo-block">Item 5</div>
     </div>
-    
-    <div class="code-preview">
-&lt;div class="grid grid--3-cols"&gt;
-  &lt;div&gt;Column 1&lt;/div&gt;
-  &lt;div&gt;Column 2&lt;/div&gt;
-  &lt;div&gt;Column 3&lt;/div&gt;
-&lt;/div&gt;
 
-&lt;div class="grid grid--auto-fit"&gt;
-  &lt;div&gt;Auto-sizing item&lt;/div&gt;
-  ...
-&lt;/div&gt;
+    <div class="code-preview">
+      &lt;div class="grid grid--3-cols"&gt; &lt;div&gt;Column 1&lt;/div&gt;
+      &lt;div&gt;Column 2&lt;/div&gt; &lt;div&gt;Column 3&lt;/div&gt;
+      &lt;/div&gt; &lt;div class="grid grid--auto-fit"&gt;
+      &lt;div&gt;Auto-sizing item&lt;/div&gt; ... &lt;/div&gt;
     </div>
   </section>
 
@@ -307,18 +331,21 @@ extra_css: |
   <section id="utilities" class="demo-section">
     <h2 class="component-title">Utility Classes</h2>
     <p class="text-muted">Helper classes for quick styling</p>
-    
+
     <h3 class="component-subtitle">Text Alignment</h3>
     <p class="text-left">Left aligned text</p>
     <p class="text-center">Center aligned text</p>
     <p class="text-right">Right aligned text</p>
-    
+
     <h3 class="component-subtitle">Text Transform</h3>
     <p class="text-bold">Bold text weight</p>
     <p class="text-uppercase">uppercase text</p>
     <p class="text-lowercase">LOWERCASE TEXT</p>
-    <p class="text-truncate" style="max-width: 300px;">This is a very long text that will be truncated with ellipsis when it overflows</p>
-    
+    <p class="text-truncate" style="max-width: 300px">
+      This is a very long text that will be truncated with ellipsis when it
+      overflows
+    </p>
+
     <h3 class="component-subtitle">Text Colors</h3>
     <p class="text-primary">Primary color text</p>
     <p class="text-secondary">Secondary color text</p>
@@ -326,39 +353,80 @@ extra_css: |
     <p class="text-warning">Warning color text</p>
     <p class="text-error">Error color text</p>
     <p class="text-muted">Muted color text</p>
-    
+
     <h3 class="component-subtitle">Background Colors</h3>
-    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-      <div class="bg-primary" style="padding: 1rem; border-radius: var(--border-radius-md); color: white;">Primary BG</div>
-      <div class="bg-secondary" style="padding: 1rem; border-radius: var(--border-radius-md); color: white;">Secondary BG</div>
-      <div class="bg-light" style="padding: 1rem; border-radius: var(--border-radius-md);">Light BG</div>
-      <div class="bg-white" style="padding: 1rem; border-radius: var(--border-radius-md); border: 1px solid var(--color-grey-300);">White BG</div>
-    </div>
-    
-    <h3 class="component-subtitle">Spacing</h3>
-    <div style="background: var(--color-grey-50); padding: 1rem; border-radius: var(--border-radius-md);">
-      <div class="mb-3 bg-white" style="padding: 1rem;">Element with mb-3 (margin-bottom)</div>
-      <div class="pt-4 pb-4 bg-white" style="padding-inline: 1rem;">Element with pt-4 pb-4 (padding top & bottom)</div>
-    </div>
-    
-    <h3 class="component-subtitle">Display Utilities</h3>
-    <div style="background: var(--color-grey-50); padding: 1rem; border-radius: var(--border-radius-md);">
-      <div class="d-flex" style="gap: 1rem; margin-bottom: 1rem;">
-        <div class="bg-white" style="padding: 1rem; flex: 1;">Flex Item 1</div>
-        <div class="bg-white" style="padding: 1rem; flex: 1;">Flex Item 2</div>
+    <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+      <div
+        class="bg-primary"
+        style="
+          padding: 1rem;
+          border-radius: var(--border-radius-md);
+          color: white;
+        ">
+        Primary BG
       </div>
-      <div class="flex-center bg-white" style="padding: 2rem;">Centered with flexbox</div>
+      <div
+        class="bg-secondary"
+        style="
+          padding: 1rem;
+          border-radius: var(--border-radius-md);
+          color: white;
+        ">
+        Secondary BG
+      </div>
+      <div
+        class="bg-light"
+        style="padding: 1rem; border-radius: var(--border-radius-md)">
+        Light BG
+      </div>
+      <div
+        class="bg-white"
+        style="
+          padding: 1rem;
+          border-radius: var(--border-radius-md);
+          border: 1px solid var(--color-grey-300);
+        ">
+        White BG
+      </div>
     </div>
-    
+
+    <h3 class="component-subtitle">Spacing</h3>
+    <div
+      style="
+        background: var(--color-grey-50);
+        padding: 1rem;
+        border-radius: var(--border-radius-md);
+      ">
+      <div class="mb-3 bg-white" style="padding: 1rem">
+        Element with mb-3 (margin-bottom)
+      </div>
+      <div class="pt-4 pb-4 bg-white" style="padding-inline: 1rem">
+        Element with pt-4 pb-4 (padding top & bottom)
+      </div>
+    </div>
+
+    <h3 class="component-subtitle">Display Utilities</h3>
+    <div
+      style="
+        background: var(--color-grey-50);
+        padding: 1rem;
+        border-radius: var(--border-radius-md);
+      ">
+      <div class="d-flex" style="gap: 1rem; margin-bottom: 1rem">
+        <div class="bg-white" style="padding: 1rem; flex: 1">Flex Item 1</div>
+        <div class="bg-white" style="padding: 1rem; flex: 1">Flex Item 2</div>
+      </div>
+      <div class="flex-center bg-white" style="padding: 2rem">
+        Centered with flexbox
+      </div>
+    </div>
+
     <div class="code-preview">
-&lt;!-- Text utilities --&gt;
-&lt;p class="text-center text-bold text-primary"&gt;Centered, bold, primary text&lt;/p&gt;
-
-&lt;!-- Spacing utilities --&gt;
-&lt;div class="mt-4 mb-3"&gt;Margin top & bottom&lt;/div&gt;
-
-&lt;!-- Display utilities --&gt;
-&lt;div class="d-flex flex-center"&gt;Flexbox centered&lt;/div&gt;
+      &lt;!-- Text utilities --&gt; &lt;p class="text-center text-bold
+      text-primary"&gt;Centered, bold, primary text&lt;/p&gt; &lt;!-- Spacing
+      utilities --&gt; &lt;div class="mt-4 mb-3"&gt;Margin top &
+      bottom&lt;/div&gt; &lt;!-- Display utilities --&gt; &lt;div class="d-flex
+      flex-center"&gt;Flexbox centered&lt;/div&gt;
     </div>
   </section>
 
@@ -366,43 +434,197 @@ extra_css: |
   <section id="colors" class="demo-section">
     <h2 class="component-title">Color Palette</h2>
     <p class="text-muted">Available color variables for your project</p>
-    
+
     <h3 class="component-subtitle">Primary Colors</h3>
-    <div class="grid grid--auto-fit" style="--grid-gap: 0.5rem;">
-      <div style="background: var(--color-primary-900); color: white; padding: 1.5rem; border-radius: var(--border-radius-md); text-align: center; font-size: 0.875rem;">primary-900</div>
-      <div style="background: var(--color-primary-700); color: white; padding: 1.5rem; border-radius: var(--border-radius-md); text-align: center; font-size: 0.875rem;">primary-700</div>
-      <div style="background: var(--color-primary-600); color: white; padding: 1.5rem; border-radius: var(--border-radius-md); text-align: center; font-size: 0.875rem;">primary-600</div>
-      <div style="background: var(--color-primary-400); color: white; padding: 1.5rem; border-radius: var(--border-radius-md); text-align: center; font-size: 0.875rem;">primary-400</div>
-      <div style="background: var(--color-primary-200); padding: 1.5rem; border-radius: var(--border-radius-md); text-align: center; font-size: 0.875rem;">primary-200</div>
-      <div style="background: var(--color-primary-50); padding: 1.5rem; border-radius: var(--border-radius-md); text-align: center; font-size: 0.875rem;">primary-50</div>
+    <div class="grid grid--auto-fit" style="--grid-gap: 0.5rem">
+      <div
+        style="
+          background: var(--color-primary-900);
+          color: white;
+          padding: 1.5rem;
+          border-radius: var(--border-radius-md);
+          text-align: center;
+          font-size: 0.875rem;
+        ">
+        primary-900
+      </div>
+      <div
+        style="
+          background: var(--color-primary-700);
+          color: white;
+          padding: 1.5rem;
+          border-radius: var(--border-radius-md);
+          text-align: center;
+          font-size: 0.875rem;
+        ">
+        primary-700
+      </div>
+      <div
+        style="
+          background: var(--color-primary-600);
+          color: white;
+          padding: 1.5rem;
+          border-radius: var(--border-radius-md);
+          text-align: center;
+          font-size: 0.875rem;
+        ">
+        primary-600
+      </div>
+      <div
+        style="
+          background: var(--color-primary-400);
+          color: white;
+          padding: 1.5rem;
+          border-radius: var(--border-radius-md);
+          text-align: center;
+          font-size: 0.875rem;
+        ">
+        primary-400
+      </div>
+      <div
+        style="
+          background: var(--color-primary-200);
+          padding: 1.5rem;
+          border-radius: var(--border-radius-md);
+          text-align: center;
+          font-size: 0.875rem;
+        ">
+        primary-200
+      </div>
+      <div
+        style="
+          background: var(--color-primary-50);
+          padding: 1.5rem;
+          border-radius: var(--border-radius-md);
+          text-align: center;
+          font-size: 0.875rem;
+        ">
+        primary-50
+      </div>
     </div>
-    
+
     <h3 class="component-subtitle">Grey Scale</h3>
-    <div class="grid grid--auto-fit" style="--grid-gap: 0.5rem;">
-      <div style="background: var(--color-grey-900); color: white; padding: 1.5rem; border-radius: var(--border-radius-md); text-align: center; font-size: 0.875rem;">grey-900</div>
-      <div style="background: var(--color-grey-700); color: white; padding: 1.5rem; border-radius: var(--border-radius-md); text-align: center; font-size: 0.875rem;">grey-700</div>
-      <div style="background: var(--color-grey-500); color: white; padding: 1.5rem; border-radius: var(--border-radius-md); text-align: center; font-size: 0.875rem;">grey-500</div>
-      <div style="background: var(--color-grey-300); padding: 1.5rem; border-radius: var(--border-radius-md); text-align: center; font-size: 0.875rem;">grey-300</div>
-      <div style="background: var(--color-grey-100); padding: 1.5rem; border-radius: var(--border-radius-md); text-align: center; font-size: 0.875rem;">grey-100</div>
-      <div style="background: var(--color-grey-50); padding: 1.5rem; border-radius: var(--border-radius-md); text-align: center; font-size: 0.875rem;">grey-50</div>
+    <div class="grid grid--auto-fit" style="--grid-gap: 0.5rem">
+      <div
+        style="
+          background: var(--color-grey-900);
+          color: white;
+          padding: 1.5rem;
+          border-radius: var(--border-radius-md);
+          text-align: center;
+          font-size: 0.875rem;
+        ">
+        grey-900
+      </div>
+      <div
+        style="
+          background: var(--color-grey-700);
+          color: white;
+          padding: 1.5rem;
+          border-radius: var(--border-radius-md);
+          text-align: center;
+          font-size: 0.875rem;
+        ">
+        grey-700
+      </div>
+      <div
+        style="
+          background: var(--color-grey-500);
+          color: white;
+          padding: 1.5rem;
+          border-radius: var(--border-radius-md);
+          text-align: center;
+          font-size: 0.875rem;
+        ">
+        grey-500
+      </div>
+      <div
+        style="
+          background: var(--color-grey-300);
+          padding: 1.5rem;
+          border-radius: var(--border-radius-md);
+          text-align: center;
+          font-size: 0.875rem;
+        ">
+        grey-300
+      </div>
+      <div
+        style="
+          background: var(--color-grey-100);
+          padding: 1.5rem;
+          border-radius: var(--border-radius-md);
+          text-align: center;
+          font-size: 0.875rem;
+        ">
+        grey-100
+      </div>
+      <div
+        style="
+          background: var(--color-grey-50);
+          padding: 1.5rem;
+          border-radius: var(--border-radius-md);
+          text-align: center;
+          font-size: 0.875rem;
+        ">
+        grey-50
+      </div>
     </div>
-    
+
     <h3 class="component-subtitle">Semantic Colors</h3>
     <div class="grid grid--4-cols">
-      <div style="background: var(--color-success); color: white; padding: 1.5rem; border-radius: var(--border-radius-md); text-align: center;">Success</div>
-      <div style="background: var(--color-warning); color: white; padding: 1.5rem; border-radius: var(--border-radius-md); text-align: center;">Warning</div>
-      <div style="background: var(--color-error); color: white; padding: 1.5rem; border-radius: var(--border-radius-md); text-align: center;">Error</div>
-      <div style="background: var(--color-info); color: white; padding: 1.5rem; border-radius: var(--border-radius-md); text-align: center;">Info</div>
+      <div
+        style="
+          background: var(--color-success);
+          color: white;
+          padding: 1.5rem;
+          border-radius: var(--border-radius-md);
+          text-align: center;
+        ">
+        Success
+      </div>
+      <div
+        style="
+          background: var(--color-warning);
+          color: white;
+          padding: 1.5rem;
+          border-radius: var(--border-radius-md);
+          text-align: center;
+        ">
+        Warning
+      </div>
+      <div
+        style="
+          background: var(--color-error);
+          color: white;
+          padding: 1.5rem;
+          border-radius: var(--border-radius-md);
+          text-align: center;
+        ">
+        Error
+      </div>
+      <div
+        style="
+          background: var(--color-info);
+          color: white;
+          padding: 1.5rem;
+          border-radius: var(--border-radius-md);
+          text-align: center;
+        ">
+        Info
+      </div>
     </div>
   </section>
 
   <!-- Badges Section -->
   <section id="badges" class="demo-section">
     <h2 class="component-title">Badges</h2>
-    <p class="text-muted">Labels and notification badges for status indicators</p>
-    
+    <p class="text-muted">
+      Labels and notification badges for status indicators
+    </p>
+
     <h3 class="component-subtitle">Badge Variants</h3>
-    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem;">
+    <div
+      style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem">
       <span class="badge badge--primary">Primary</span>
       <span class="badge badge--secondary">Secondary</span>
       <span class="badge badge--success">Success</span>
@@ -414,21 +636,29 @@ extra_css: |
     </div>
 
     <h3 class="component-subtitle">Outline Badges</h3>
-    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem;">
+    <div
+      style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem">
       <span class="badge badge--outline badge--primary">Primary</span>
       <span class="badge badge--outline badge--success">Success</span>
       <span class="badge badge--outline badge--error">Error</span>
     </div>
 
     <h3 class="component-subtitle">Badge Sizes</h3>
-    <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; margin-bottom: 2rem;">
+    <div
+      style="
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 2rem;
+      ">
       <span class="badge badge--primary badge--sm">Small</span>
       <span class="badge badge--primary">Default</span>
       <span class="badge badge--primary badge--lg">Large</span>
     </div>
 
     <h3 class="component-subtitle">Rounded & With Dot</h3>
-    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap">
       <span class="badge badge--success badge--rounded">New</span>
       <span class="badge badge--error badge--rounded">Sale</span>
       <span class="badge badge--primary badge--dot">In Stock</span>
@@ -436,9 +666,9 @@ extra_css: |
     </div>
 
     <div class="code-preview">
-&lt;span class="badge badge--primary"&gt;Badge&lt;/span&gt;
-&lt;span class="badge badge--success badge--rounded"&gt;New&lt;/span&gt;
-&lt;span class="badge badge--primary badge--dot"&gt;Status&lt;/span&gt;
+      &lt;span class="badge badge--primary"&gt;Badge&lt;/span&gt; &lt;span
+      class="badge badge--success badge--rounded"&gt;New&lt;/span&gt; &lt;span
+      class="badge badge--primary badge--dot"&gt;Status&lt;/span&gt;
     </div>
   </section>
 
@@ -446,7 +676,7 @@ extra_css: |
   <section id="breadcrumb" class="demo-section">
     <h2 class="component-title">Breadcrumb</h2>
     <p class="text-muted">Navigation breadcrumbs for page hierarchy</p>
-    
+
     <h3 class="component-subtitle">Default Breadcrumb</h3>
     <nav class="breadcrumb">
       <li class="breadcrumb__item"><a href="#">Home</a></li>
@@ -463,11 +693,11 @@ extra_css: |
     </nav>
 
     <div class="code-preview">
-&lt;nav class="breadcrumb"&gt;
-  &lt;li class="breadcrumb__item"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
-  &lt;li class="breadcrumb__item"&gt;&lt;a href="#"&gt;Category&lt;/a&gt;&lt;/li&gt;
-  &lt;li class="breadcrumb__item breadcrumb__item--active"&gt;Current&lt;/li&gt;
-&lt;/nav&gt;
+      &lt;nav class="breadcrumb"&gt; &lt;li class="breadcrumb__item"&gt;&lt;a
+      href="#"&gt;Home&lt;/a&gt;&lt;/li&gt; &lt;li
+      class="breadcrumb__item"&gt;&lt;a
+      href="#"&gt;Category&lt;/a&gt;&lt;/li&gt; &lt;li class="breadcrumb__item
+      breadcrumb__item--active"&gt;Current&lt;/li&gt; &lt;/nav&gt;
     </div>
   </section>
 
@@ -475,11 +705,13 @@ extra_css: |
   <section id="category" class="demo-section">
     <h2 class="component-title">Category Cards</h2>
     <p class="text-muted">Clickable category cards with image overlay</p>
-    
+
     <div class="category-grid">
       <a href="#" class="category-card">
         <div class="category-card__image">
-          <img src="https://via.placeholder.com/400x600/287330/ffffff?text=Scooters" alt="Scooters">
+          <img
+            src="https://via.placeholder.com/400x600/287330/ffffff?text=Scooters"
+            alt="Scooters" />
         </div>
         <div class="category-card__content">
           <h3 class="category-card__title">Scooters</h3>
@@ -489,7 +721,9 @@ extra_css: |
 
       <a href="#" class="category-card">
         <div class="category-card__image">
-          <img src="https://via.placeholder.com/400x600/34bf42/ffffff?text=Rollators" alt="Rollators">
+          <img
+            src="https://via.placeholder.com/400x600/34bf42/ffffff?text=Rollators"
+            alt="Rollators" />
         </div>
         <div class="category-card__content">
           <h3 class="category-card__title">Rollators</h3>
@@ -499,7 +733,9 @@ extra_css: |
 
       <a href="#" class="category-card">
         <div class="category-card__image">
-          <img src="https://via.placeholder.com/400x600/666666/ffffff?text=Wheelchairs" alt="Wheelchairs">
+          <img
+            src="https://via.placeholder.com/400x600/666666/ffffff?text=Wheelchairs"
+            alt="Wheelchairs" />
         </div>
         <div class="category-card__content">
           <h3 class="category-card__title">Wheelchairs</h3>
@@ -509,7 +745,9 @@ extra_css: |
 
       <a href="#" class="category-card">
         <div class="category-card__image">
-          <img src="https://via.placeholder.com/400x600/f4c542/ffffff?text=Furniture" alt="Furniture">
+          <img
+            src="https://via.placeholder.com/400x600/f4c542/ffffff?text=Furniture"
+            alt="Furniture" />
         </div>
         <div class="category-card__content">
           <h3 class="category-card__title">Furniture</h3>
@@ -519,15 +757,12 @@ extra_css: |
     </div>
 
     <div class="code-preview">
-&lt;a href="#" class="category-card"&gt;
-  &lt;div class="category-card__image"&gt;
-    &lt;img src="image.jpg" alt="Category"&gt;
-  &lt;/div&gt;
-  &lt;div class="category-card__content"&gt;
-    &lt;h3 class="category-card__title"&gt;Category Name&lt;/h3&gt;
-    &lt;p class="category-card__count"&gt;24 products&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/a&gt;
+      &lt;a href="#" class="category-card"&gt; &lt;div
+      class="category-card__image"&gt; &lt;img src="image.jpg"
+      alt="Category"&gt; &lt;/div&gt; &lt;div class="category-card__content"&gt;
+      &lt;h3 class="category-card__title"&gt;Category Name&lt;/h3&gt; &lt;p
+      class="category-card__count"&gt;24 products&lt;/p&gt; &lt;/div&gt;
+      &lt;/a&gt;
     </div>
   </section>
 
@@ -535,21 +770,29 @@ extra_css: |
   <section id="products" class="demo-section">
     <h2 class="component-title">Product Cards</h2>
     <p class="text-muted">E-commerce product cards with all features</p>
-    
+
     <div class="product-grid">
       <!-- Product 1 - With Sale Badge -->
       <div class="product-card">
-        <div class="product-card__badge product-card__badge--sale">Sale -20%</div>
+        <div class="product-card__badge product-card__badge--sale">
+          Sale -20%
+        </div>
         <button class="product-card__wishlist">♡</button>
         <div class="product-card__image">
-          <img src="https://via.placeholder.com/400x400/287330/ffffff?text=Product+1" alt="Product 1">
+          <img
+            src="https://via.placeholder.com/400x400/287330/ffffff?text=Product+1"
+            alt="Product 1" />
           <div class="product-card__quick-add">
-            <button class="btn btn--filled btn--primary btn--sm">Quick Add</button>
+            <button class="btn btn--filled btn--primary btn--sm">
+              Quick Add
+            </button>
           </div>
         </div>
         <div class="product-card__body">
           <span class="product-card__category">Mobility</span>
-          <h3 class="product-card__title"><a href="#">Premium Walker with Seat</a></h3>
+          <h3 class="product-card__title">
+            <a href="#">Premium Walker with Seat</a>
+          </h3>
           <div class="product-card__rating">
             <span class="stars">★★★★★</span>
             <span class="count">(48)</span>
@@ -569,14 +812,20 @@ extra_css: |
         <div class="product-card__badge product-card__badge--new">New</div>
         <button class="product-card__wishlist active">♥</button>
         <div class="product-card__image">
-          <img src="https://via.placeholder.com/400x400/34bf42/ffffff?text=Product+2" alt="Product 2">
+          <img
+            src="https://via.placeholder.com/400x400/34bf42/ffffff?text=Product+2"
+            alt="Product 2" />
           <div class="product-card__quick-add">
-            <button class="btn btn--filled btn--primary btn--sm">Quick Add</button>
+            <button class="btn btn--filled btn--primary btn--sm">
+              Quick Add
+            </button>
           </div>
         </div>
         <div class="product-card__body">
           <span class="product-card__category">Furniture</span>
-          <h3 class="product-card__title"><a href="#">Ergonomic Office Chair</a></h3>
+          <h3 class="product-card__title">
+            <a href="#">Ergonomic Office Chair</a>
+          </h3>
           <div class="product-card__rating">
             <span class="stars">★★★★☆</span>
             <span class="count">(32)</span>
@@ -594,14 +843,20 @@ extra_css: |
       <div class="product-card">
         <button class="product-card__wishlist">♡</button>
         <div class="product-card__image">
-          <img src="https://via.placeholder.com/400x400/666666/ffffff?text=Product+3" alt="Product 3">
+          <img
+            src="https://via.placeholder.com/400x400/666666/ffffff?text=Product+3"
+            alt="Product 3" />
           <div class="product-card__quick-add">
-            <button class="btn btn--filled btn--primary btn--sm">Quick Add</button>
+            <button class="btn btn--filled btn--primary btn--sm">
+              Quick Add
+            </button>
           </div>
         </div>
         <div class="product-card__body">
           <span class="product-card__category">Accessories</span>
-          <h3 class="product-card__title"><a href="#">Comfort Cushion Set</a></h3>
+          <h3 class="product-card__title">
+            <a href="#">Comfort Cushion Set</a>
+          </h3>
           <div class="product-card__rating">
             <span class="stars">★★★★★</span>
             <span class="count">(96)</span>
@@ -619,11 +874,15 @@ extra_css: |
       <div class="product-card product-card--compact">
         <button class="product-card__wishlist">♡</button>
         <div class="product-card__image">
-          <img src="https://via.placeholder.com/400x400/f4c542/ffffff?text=Product+4" alt="Product 4">
+          <img
+            src="https://via.placeholder.com/400x400/f4c542/ffffff?text=Product+4"
+            alt="Product 4" />
         </div>
         <div class="product-card__body">
           <span class="product-card__category">Tools</span>
-          <h3 class="product-card__title"><a href="#">Compact Mobility Aid</a></h3>
+          <h3 class="product-card__title">
+            <a href="#">Compact Mobility Aid</a>
+          </h3>
         </div>
         <div class="product-card__footer">
           <div class="product-card__price">
@@ -635,21 +894,16 @@ extra_css: |
     </div>
 
     <div class="code-preview">
-&lt;div class="product-card"&gt;
-  &lt;div class="product-card__badge product-card__badge--sale"&gt;Sale&lt;/div&gt;
-  &lt;button class="product-card__wishlist"&gt;♡&lt;/button&gt;
-  &lt;div class="product-card__image"&gt;
-    &lt;img src="product.jpg" alt="Product"&gt;
-  &lt;/div&gt;
-  &lt;div class="product-card__body"&gt;
-    &lt;h3 class="product-card__title"&gt;Product Name&lt;/h3&gt;
-  &lt;/div&gt;
-  &lt;div class="product-card__footer"&gt;
-    &lt;div class="product-card__price"&gt;
-      &lt;span class="product-card__price-current"&gt;€99&lt;/span&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+      &lt;div class="product-card"&gt; &lt;div class="product-card__badge
+      product-card__badge--sale"&gt;Sale&lt;/div&gt; &lt;button
+      class="product-card__wishlist"&gt;♡&lt;/button&gt; &lt;div
+      class="product-card__image"&gt; &lt;img src="product.jpg"
+      alt="Product"&gt; &lt;/div&gt; &lt;div class="product-card__body"&gt;
+      &lt;h3 class="product-card__title"&gt;Product Name&lt;/h3&gt; &lt;/div&gt;
+      &lt;div class="product-card__footer"&gt; &lt;div
+      class="product-card__price"&gt; &lt;span
+      class="product-card__price-current"&gt;€99&lt;/span&gt; &lt;/div&gt;
+      &lt;/div&gt; &lt;/div&gt;
     </div>
   </section>
 
@@ -657,22 +911,24 @@ extra_css: |
   <section id="carousel" class="demo-section">
     <h2 class="component-title">Carousel</h2>
     <p class="text-muted">Horizontal scrolling carousel with navigation</p>
-    
+
     <div class="carousel">
       <div class="carousel__header">
         <h3 class="carousel__title">Featured Products</h3>
         <a href="#" class="carousel__view-all">View All →</a>
       </div>
-      
+
       <div class="carousel__container">
         <button class="carousel__nav carousel__nav--prev">‹</button>
         <button class="carousel__nav carousel__nav--next">›</button>
-        
+
         <div class="carousel__track">
           <div class="carousel__track-item">
             <div class="card">
               <div class="card__image">
-                <img src="https://via.placeholder.com/300x200/287330/ffffff?text=Item+1" alt="Item 1">
+                <img
+                  src="https://via.placeholder.com/300x200/287330/ffffff?text=Item+1"
+                  alt="Item 1" />
               </div>
               <div class="card__body">
                 <h4 class="card__title">Product 1</h4>
@@ -684,7 +940,9 @@ extra_css: |
           <div class="carousel__track-item">
             <div class="card">
               <div class="card__image">
-                <img src="https://via.placeholder.com/300x200/34bf42/ffffff?text=Item+2" alt="Item 2">
+                <img
+                  src="https://via.placeholder.com/300x200/34bf42/ffffff?text=Item+2"
+                  alt="Item 2" />
               </div>
               <div class="card__body">
                 <h4 class="card__title">Product 2</h4>
@@ -696,7 +954,9 @@ extra_css: |
           <div class="carousel__track-item">
             <div class="card">
               <div class="card__image">
-                <img src="https://via.placeholder.com/300x200/666666/ffffff?text=Item+3" alt="Item 3">
+                <img
+                  src="https://via.placeholder.com/300x200/666666/ffffff?text=Item+3"
+                  alt="Item 3" />
               </div>
               <div class="card__body">
                 <h4 class="card__title">Product 3</h4>
@@ -708,7 +968,9 @@ extra_css: |
           <div class="carousel__track-item">
             <div class="card">
               <div class="card__image">
-                <img src="https://via.placeholder.com/300x200/f4c542/ffffff?text=Item+4" alt="Item 4">
+                <img
+                  src="https://via.placeholder.com/300x200/f4c542/ffffff?text=Item+4"
+                  alt="Item 4" />
               </div>
               <div class="card__body">
                 <h4 class="card__title">Product 4</h4>
@@ -720,7 +982,9 @@ extra_css: |
           <div class="carousel__track-item">
             <div class="card">
               <div class="card__image">
-                <img src="https://via.placeholder.com/300x200/ff6b35/ffffff?text=Item+5" alt="Item 5">
+                <img
+                  src="https://via.placeholder.com/300x200/ff6b35/ffffff?text=Item+5"
+                  alt="Item 5" />
               </div>
               <div class="card__body">
                 <h4 class="card__title">Product 5</h4>
@@ -743,17 +1007,22 @@ extra_css: |
   <section id="content" class="demo-section">
     <h2 class="component-title">Content Blocks</h2>
     <p class="text-muted">Image and text side-by-side layouts</p>
-    
+
     <h3 class="component-subtitle">Default Layout</h3>
     <div class="content-block">
       <div class="content-block__image">
-        <img src="https://via.placeholder.com/600x400/287330/ffffff?text=Support+Image" alt="Support">
+        <img
+          src="https://via.placeholder.com/600x400/287330/ffffff?text=Support+Image"
+          alt="Support" />
         <div class="content-block__image-icon">🏠</div>
       </div>
       <div class="content-block__content">
         <span class="content-block__label">Support</span>
         <h2 class="content-block__title">Home Care Services</h2>
-        <p class="content-block__description">Professional support and guidance for your mobility needs. Our expert team is here to help you find the perfect solution.</p>
+        <p class="content-block__description">
+          Professional support and guidance for your mobility needs. Our expert
+          team is here to help you find the perfect solution.
+        </p>
         <ul class="content-block__list">
           <li>Free home consultation</li>
           <li>Professional installation</li>
@@ -761,8 +1030,12 @@ extra_css: |
           <li>Warranty coverage</li>
         </ul>
         <div class="content-block__actions">
-          <button class="btn btn--filled btn--primary btn--md">Learn More</button>
-          <button class="btn btn--outlined btn--primary btn--md">Contact Us</button>
+          <button class="btn btn--filled btn--primary btn--md">
+            Learn More
+          </button>
+          <button class="btn btn--outlined btn--primary btn--md">
+            Contact Us
+          </button>
         </div>
       </div>
     </div>
@@ -770,29 +1043,33 @@ extra_css: |
     <h3 class="component-subtitle mt-5">Reverse Layout</h3>
     <div class="content-block content-block--reverse">
       <div class="content-block__image">
-        <img src="https://via.placeholder.com/600x400/34bf42/ffffff?text=Store+Image" alt="Store">
+        <img
+          src="https://via.placeholder.com/600x400/34bf42/ffffff?text=Store+Image"
+          alt="Store" />
         <div class="content-block__image-icon">🏢</div>
       </div>
       <div class="content-block__content">
         <span class="content-block__label">Visit Us</span>
         <h2 class="content-block__title">Visit Our Showroom</h2>
-        <p class="content-block__description">Experience our products firsthand. Visit our modern showroom and get expert advice from our knowledgeable staff.</p>
+        <p class="content-block__description">
+          Experience our products firsthand. Visit our modern showroom and get
+          expert advice from our knowledgeable staff.
+        </p>
         <div class="content-block__actions">
-          <button class="btn btn--filled btn--primary btn--md">Find Location</button>
+          <button class="btn btn--filled btn--primary btn--md">
+            Find Location
+          </button>
         </div>
       </div>
     </div>
 
     <div class="code-preview">
-&lt;div class="content-block"&gt;
-  &lt;div class="content-block__image"&gt;
-    &lt;img src="image.jpg" alt="Content"&gt;
-  &lt;/div&gt;
-  &lt;div class="content-block__content"&gt;
-    &lt;h2 class="content-block__title"&gt;Title&lt;/h2&gt;
-    &lt;p class="content-block__description"&gt;Description&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+      &lt;div class="content-block"&gt; &lt;div class="content-block__image"&gt;
+      &lt;img src="image.jpg" alt="Content"&gt; &lt;/div&gt; &lt;div
+      class="content-block__content"&gt; &lt;h2
+      class="content-block__title"&gt;Title&lt;/h2&gt; &lt;p
+      class="content-block__description"&gt;Description&lt;/p&gt; &lt;/div&gt;
+      &lt;/div&gt;
     </div>
   </section>
 
@@ -800,11 +1077,13 @@ extra_css: |
   <section id="contact" class="demo-section">
     <h2 class="component-title">Contact Cards</h2>
     <p class="text-muted">Contact information and help sections</p>
-    
+
     <div class="grid grid--2-cols">
       <div class="contact-card">
         <div class="contact-card__avatar">
-          <img src="https://via.placeholder.com/160x160/287330/ffffff?text=Agent" alt="Agent">
+          <img
+            src="https://via.placeholder.com/160x160/287330/ffffff?text=Agent"
+            alt="Agent" />
         </div>
         <h3 class="contact-card__title">Need Help?</h3>
         <p class="contact-card__subtitle">Get in touch with our support team</p>
@@ -828,26 +1107,24 @@ extra_css: |
       <div class="help-section">
         <div class="help-section__content">
           <h2 class="help-section__title">Questions? We're Here to Help!</h2>
-          <p class="help-section__subtitle">Our team is ready to assist you with personalized advice and support.</p>
-          <button class="btn btn--filled btn--primary btn--lg">Contact Support</button>
+          <p class="help-section__subtitle">
+            Our team is ready to assist you with personalized advice and
+            support.
+          </p>
+          <button class="btn btn--filled btn--primary btn--lg">
+            Contact Support
+          </button>
         </div>
       </div>
     </div>
 
     <div class="code-preview">
-&lt;div class="contact-card"&gt;
-  &lt;div class="contact-card__avatar"&gt;
-    &lt;img src="avatar.jpg" alt="Agent"&gt;
-  &lt;/div&gt;
-  &lt;h3 class="contact-card__title"&gt;Need Help?&lt;/h3&gt;
-  &lt;ul class="contact-card__info"&gt;
-    &lt;li&gt;
-      &lt;span class="icon"&gt;📞&lt;/span&gt;
-      &lt;a href="tel:+123"&gt;Phone&lt;/a&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;
+      &lt;div class="contact-card"&gt; &lt;div class="contact-card__avatar"&gt;
+      &lt;img src="avatar.jpg" alt="Agent"&gt; &lt;/div&gt; &lt;h3
+      class="contact-card__title"&gt;Need Help?&lt;/h3&gt; &lt;ul
+      class="contact-card__info"&gt; &lt;li&gt; &lt;span
+      class="icon"&gt;📞&lt;/span&gt; &lt;a href="tel:+123"&gt;Phone&lt;/a&gt;
+      &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt;
     </div>
   </section>
-
 </div>

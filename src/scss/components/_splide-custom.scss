@@ -5,11 +5,13 @@
 
 .splide {
   visibility: visible !important;
-  
+
   &__track {
     overflow: hidden;
+    padding: 1rem 1rem !important;
+    margin: -1rem !important;
   }
-  
+
   &__list {
     display: flex !important;
     flex-direction: row !important; // Force horizontal layout
@@ -17,55 +19,61 @@
     padding: 0;
     list-style: none;
   }
-  
+
   &__slide {
     flex-shrink: 0;
     list-style: none;
     margin: 0;
     position: relative;
-    
+
     img {
       vertical-align: bottom;
     }
   }
-  
-  // Basic arrow styles (minimal)
+  &__arrows {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.15rem;
+  }
+  // Basic  arrow styles (minimal)
+
   &__arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
-    width: 3rem;
-    height: 3rem;
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
-    background: var(--color-white);
-    border: 1px solid var(--color-charcoal-grey);
+    background: transparent;
+
     cursor: pointer;
+    color: var(--color-charcoal-grey);
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
-    
+    transition: 0.5s var(--ease-smooth);
+
     &:hover {
-      background: var(--color-charcoal-grey);
-      color: var(--color-white);
+      background: var(--color-cloud-dancer);
+      color: var(--color-black);
     }
-    
+
     &--prev {
-      left: 1rem;
+      svg {
+        transform: translate(-10%) rotate(180deg);
+      }
     }
-    
     &--next {
-      right: 1rem;
+      svg {
+        transform: translate(10%);
+      }
     }
-    
+
     svg {
-      width: 1.2rem;
-      height: 1.2rem;
+      width: 0.88rem;
+      height: 0.88rem;
       fill: currentColor;
     }
   }
-  
+
   // Basic pagination styles
   &__pagination {
     position: absolute;
@@ -75,7 +83,7 @@
     display: flex;
     gap: 0.5rem;
     z-index: 1;
-    
+
     &__page {
       width: 0.5rem;
       height: 0.5rem;
@@ -85,7 +93,7 @@
       cursor: pointer;
       padding: 0;
       transition: all 0.3s ease;
-      
+
       &.is-active {
         background: var(--color-white);
         width: 1.5rem;

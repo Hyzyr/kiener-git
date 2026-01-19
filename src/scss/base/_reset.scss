@@ -145,7 +145,7 @@ img[loading='lazy'] {
 // Prevent layout shift for images
 img {
   &[width][height] {
-    height: auto;
+    object-fit: cover;
   }
 }
 

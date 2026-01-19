@@ -69,50 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     console.error('❌ Support carousel element not found');
   }
-  // const supportSplide = document.getElementById('support-splide');
-
-  // if (supportSplide && typeof Splide !== 'undefined') {
-  //   new Splide('#support-splide', {
-  //     type: 'loop',
-  //     perPage: 2,
-  //     perMove: 1,
-  //     gap: '1.5rem',
-  //     padding: { left: 0, right: '10%' },
-  //     breakpoints: {
-  //       1024: {
-  //         perPage: 1,
-  //         padding: { left: 0, right: '5%' },
-  //       },
-  //       768: {
-  //         perPage: 1,
-  //         gap: '1rem',
-  //         padding: 0,
-  //       },
-  //     },
-  //   }).mount();
-  // }
-
-  // // ============================================
-  // // Personal Service Carousel Initialization
-  // // ============================================
-  // const serviceSplide = document.getElementById('service-splide');
-
-  // if (serviceSplide && typeof Splide !== 'undefined') {
-  //   new Splide('#service-splide', {
-  //     type: 'loop',
-  //     perPage: 1,
-  //     perMove: 1,
-  //     gap: '2rem',
-  //     padding: 0,
-  //     arrows: true,
-  //     pagination: false,
-  //     autoplay: false,
-  //   }).mount();
-  // }
-
-  // ============================================
-  // Product Carousels Initialization
-  // ============================================
+ 
 
   // New Products Carousel
   const productsNewCarousel = document.getElementById('splide-products-new');

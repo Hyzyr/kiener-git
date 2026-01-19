@@ -132,6 +132,19 @@
       transform: scale(1.05);
     }
   }
+// 100 / 623 * 333 
+// 100 / 16 * 9
+
+  .splide & {
+    opacity: 0.7;
+    transform: scale(0.9);
+
+    transition: 0.15s var(--ease-smooth);
+  }
+  .splide .is-visible & {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 // Product Grid
