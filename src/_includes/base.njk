@@ -1,48 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="{{ description | default('Modern SCSS Template - Professional Component Library') }}" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="{{ description | default('Modern SCSS Template - Professional Component Library') }}"/>
     <title>{{ title }}</title>
-
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
-    <link rel="icon" type="image/png" href="/assets/favicon.png" />
-
-    <!-- Compiled CSS -->
-    <link rel="stylesheet" href="/css/main.css" />
-
-    <!-- Splide.js CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" />
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg"/>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
-      rel="stylesheet" />
-
+    rel="icon" type="image/png" href="./assets/favicon.png"/> <!-- Compiled CSS -->
+    <link
+    rel="stylesheet" href="./css/main.css"/>
+    <link
+    rel="stylesheet" href="./css/splide-core.min.css"/>
+    <!-- Splide.js CSS -->
     {% if extra_css %}
-    <style>
-      {{ extra_css | safe }}
-    </style>
+      <style>
+        {{extra_css | safe}}</style>
     {% endif %}
   </head>
   <body>
- 
     {% include "header.njk" %}
-
     {{ content | safe }}
-
     {% include "footer.njk" %}
-
     {% include "svg-sprite.njk" %}
-
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-    <script src="/js/main.js"></script>
+    <script src="./js/splide.min.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>

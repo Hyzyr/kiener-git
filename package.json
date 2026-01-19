@@ -3,14 +3,19 @@
   "version": "1.0.0",
   "scripts": {
     "clean": "node -e \"require('fs').rmSync('dist', {recursive: true, force: true})\"",
-    "start": "npm-run-all --parallel dev:*",
+    "start": "npm-run-all copy:js copy:css --parallel dev:*",
 
     "// --- DEVELOPMENT (WATCH) ---": "",
     "dev:scss": "sass src/scss:dist/css --watch --style=expanded",
     "dev:eleventy": "eleventy --serve",
+    "dev:js": "node scripts/watch-js.js",
+
+    "// --- COPY TASKS ---": "",
+    "copy:js": "node -e \"const fs = require('fs'); if (!fs.existsSync('dist/js')) fs.mkdirSync('dist/js', {recursive: true}); const jsFiles = fs.readdirSync('src/js').filter(f => f.endsWith('.js')); jsFiles.forEach(f => fs.copyFileSync(`src/js/${f}`, `dist/js/${f}`)); console.log('✅ JS files copied')\"",
+    "copy:css": "node -e \"const fs = require('fs'); if (!fs.existsSync('dist/css')) fs.mkdirSync('dist/css', {recursive: true}); const cssFiles = fs.readdirSync('src/css').filter(f => f.endsWith('.css')); cssFiles.forEach(f => fs.copyFileSync(`src/css/${f}`, `dist/css/${f}`)); console.log('✅ CSS files copied')\"",
 
     "// --- BUILD: READABLE (For Client) ---": "",
-    "build": "npm-run-all clean build:scss:dev build:js:dev build:html:eleventy build:html:format",
+    "build": "npm-run-all clean build:scss:dev copy:js copy:css build:html:eleventy build:html:format",
     "build:scss:dev": "sass src/scss/main.scss dist/css/main.css --no-source-map --style=expanded",
     "build:js:dev": "node -e \"const fs = require('fs'); if (!fs.existsSync('dist/js')) fs.mkdirSync('dist/js', {recursive: true}); fs.copyFileSync('src/js/main.js', 'dist/js/main.js')\"",
     "build:html:format": "prettier --write \"dist/**/*.html\"",

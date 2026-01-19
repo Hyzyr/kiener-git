@@ -85,3 +85,23 @@
     }
   }
 }
+
+.text-link {
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  color: var(--color-charcoal-grey);
+  text-decoration: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+
+  &:hover {
+    color: var(--color-black);
+    text-decoration: underline;
+  }
+
+  &--xl {
+    font-size: var(--font-size-xl);
+  }
+}

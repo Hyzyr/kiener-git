@@ -1,0 +1,96 @@
+// ============================================
+// Splide Custom Styles
+// ============================================
+// These styles ensure Splide works correctly with core CSS
+
+.splide {
+  visibility: visible !important;
+  
+  &__track {
+    overflow: hidden;
+  }
+  
+  &__list {
+    display: flex !important;
+    flex-direction: row !important; // Force horizontal layout
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  &__slide {
+    flex-shrink: 0;
+    list-style: none;
+    margin: 0;
+    position: relative;
+    
+    img {
+      vertical-align: bottom;
+    }
+  }
+  
+  // Basic arrow styles (minimal)
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: var(--color-white);
+    border: 1px solid var(--color-charcoal-grey);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: var(--color-charcoal-grey);
+      color: var(--color-white);
+    }
+    
+    &--prev {
+      left: 1rem;
+    }
+    
+    &--next {
+      right: 1rem;
+    }
+    
+    svg {
+      width: 1.2rem;
+      height: 1.2rem;
+      fill: currentColor;
+    }
+  }
+  
+  // Basic pagination styles
+  &__pagination {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    z-index: 1;
+    
+    &__page {
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: all 0.3s ease;
+      
+      &.is-active {
+        background: var(--color-white);
+        width: 1.5rem;
+        border-radius: 0.25rem;
+      }
+    }
+  }
+}

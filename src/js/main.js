@@ -8,6 +8,7 @@ console.log('SCSS Template loaded successfully!');
 // Hamburger Menu Toggle
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
+  console.log('dom loaded');
   const hamburger = document.getElementById('menu-toggle');
 
   if (hamburger) {
@@ -25,48 +26,165 @@ document.addEventListener('DOMContentLoaded', () => {
       // mobileMenu.classList.toggle('is-open');
     });
   }
-  
+
   // ============================================
   // Splide Carousel Initialization
   // ============================================
-  const supportSplide = document.getElementById('support-splide');
-  
-  if (supportSplide && typeof Splide !== 'undefined') {
-    new Splide('#support-splide', {
-      type: 'loop',
-      perPage: 2,
-      perMove: 1,
-      gap: '1.5rem',
-      padding: { left: 0, right: '10%' },
-      breakpoints: {
-        1024: {
-          perPage: 1,
-          padding: { left: 0, right: '5%' },
-        },
-        768: {
-          perPage: 1,
-          gap: '1rem',
-          padding: 0,
-        },
-      },
-    }).mount();
+
+  // Check if Splide is loaded
+  if (typeof Splide === 'undefined') {
+    console.error('❌ Splide library is not loaded!');
+  } else {
+    console.log('✅ Splide library loaded successfully');
   }
-  
+
+  // Support Carousel
+  const supportCarousel = document.getElementById('splide-support');
+  if (supportCarousel) {
+    console.log('✅ Support carousel element found');
+
+    if (typeof Splide !== 'undefined') {
+      const supportSplide = new Splide(supportCarousel, {
+        type: 'loop',
+        perPage: 2,
+        perMove: 1,
+        gap: '1.5rem',
+        padding: { left: 0, right: '10%' },
+        breakpoints: {
+          1024: {
+            perPage: 1,
+            padding: { left: 0, right: '5%' },
+          },
+          768: {
+            perPage: 1,
+            gap: '1rem',
+            padding: 0,
+          },
+        },
+      });
+
+      supportSplide.mount();
+      console.log('✅ Support Carousel Mounted');
+    }
+  } else {
+    console.error('❌ Support carousel element not found');
+  }
+  // const supportSplide = document.getElementById('support-splide');
+
+  // if (supportSplide && typeof Splide !== 'undefined') {
+  //   new Splide('#support-splide', {
+  //     type: 'loop',
+  //     perPage: 2,
+  //     perMove: 1,
+  //     gap: '1.5rem',
+  //     padding: { left: 0, right: '10%' },
+  //     breakpoints: {
+  //       1024: {
+  //         perPage: 1,
+  //         padding: { left: 0, right: '5%' },
+  //       },
+  //       768: {
+  //         perPage: 1,
+  //         gap: '1rem',
+  //         padding: 0,
+  //       },
+  //     },
+  //   }).mount();
+  // }
+
+  // // ============================================
+  // // Personal Service Carousel Initialization
+  // // ============================================
+  // const serviceSplide = document.getElementById('service-splide');
+
+  // if (serviceSplide && typeof Splide !== 'undefined') {
+  //   new Splide('#service-splide', {
+  //     type: 'loop',
+  //     perPage: 1,
+  //     perMove: 1,
+  //     gap: '2rem',
+  //     padding: 0,
+  //     arrows: true,
+  //     pagination: false,
+  //     autoplay: false,
+  //   }).mount();
+  // }
+
   // ============================================
-  // Personal Service Carousel Initialization
+  // Product Carousels Initialization
   // ============================================
-  const serviceSplide = document.getElementById('service-splide');
-  
-  if (serviceSplide && typeof Splide !== 'undefined') {
-    new Splide('#service-splide', {
-      type: 'loop',
-      perPage: 1,
-      perMove: 1,
-      gap: '2rem',
-      padding: 0,
-      arrows: true,
-      pagination: false,
-      autoplay: false,
-    }).mount();
+
+  // New Products Carousel
+  const productsNewCarousel = document.getElementById('splide-products-new');
+  if (productsNewCarousel) {
+    console.log('✅ New products carousel element found');
+
+    if (typeof Splide !== 'undefined') {
+      const productsNewSplide = new Splide(productsNewCarousel, {
+        type: 'loop',
+        perPage: 5,
+        perMove: 1,
+        gap: '1.5rem',
+        pagination: false,
+        arrows: true,
+        breakpoints: {
+          1280: {
+            perPage: 4,
+          },
+          1024: {
+            perPage: 3,
+          },
+          768: {
+            perPage: 2,
+          },
+          480: {
+            perPage: 1,
+          },
+        },
+      });
+
+      productsNewSplide.mount();
+      console.log('✅ New Products Carousel Mounted');
+    }
+  } else {
+    console.error('❌ New products carousel element not found');
+  }
+
+  // Trusted Products Carousel
+  const productsTrustedCarousel = document.getElementById(
+    'splide-products-trusted',
+  );
+  if (productsTrustedCarousel) {
+    console.log('✅ Trusted products carousel element found');
+
+    if (typeof Splide !== 'undefined') {
+      const productsTrustedSplide = new Splide(productsTrustedCarousel, {
+        type: 'loop',
+        perPage: 5,
+        perMove: 1,
+        gap: '1.5rem',
+        pagination: false,
+        arrows: true,
+        breakpoints: {
+          1280: {
+            perPage: 4,
+          },
+          1024: {
+            perPage: 3,
+          },
+          768: {
+            perPage: 2,
+          },
+          480: {
+            perPage: 1,
+          },
+        },
+      });
+
+      productsTrustedSplide.mount();
+      console.log('✅ Trusted Products Carousel Mounted');
+    }
+  } else {
+    console.error('❌ Trusted products carousel element not found');
   }
 });
