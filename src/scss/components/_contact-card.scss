@@ -1,14 +1,12 @@
 @use '../abstracts/mixins' as *;
 
 .contact-card {
-  // Base font size for em-based scaling
   font-size: var(--font-size-xl); // 20px base
 
-  // Layout only - no decorative styles
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: 1.2em; // 24px at 20px base
+  gap: 1.12em;
 
   &__avatar {
     width: 4em; // 80px at 20px base
@@ -37,33 +35,27 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0; // No gap between title and subtitle
-  }
-
-  &__title {
-    font-family: var(--font-family-primary);
-    font-style: normal;
-    font-weight: 494; // Medium weight from Figma
-    font-size: 1em; // 20px (inherits from parent)
-    line-height: 1.2; // 24px
+    gap: 0;
     color: var(--color-black);
-    margin: 0;
-  }
 
-  &__subtitle {
-    font-family: var(--font-family-primary);
-    font-style: normal;
-    font-weight: var(--font-weight-regular); // 375 from Figma
-    font-size: 1em; // 20px
-    line-height: 1.2; // 24px
-    color: var(--color-black);
-    margin: 0;
+    strong {
+      font-style: normal;
+      font-weight: var(--font-weight-medium);
+      font-size: inherit;
+      color: inherit;
+      line-height: 1.2; // 24px
+    }
+    span {
+      font-family: var(--font-family-primary);
+      font-style: normal;
+      font-weight: var(--font-weight-regular); // 375 from Figma
+      font-size: 1em; // 20px
+      line-height: 1.2; // 24px
+      color: inherit;
+    }
   }
-
-  // Button inside contact card
   .btn {
     align-self: stretch; // Full width of content area
-    font-size: 0.8em; // 16px at 20px base
   }
 }
 

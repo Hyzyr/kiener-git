@@ -245,14 +245,17 @@
       gap: 1rem;
       padding: 0.75rem 0;
     }
-  }
+    &__contact {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
 
-  // Contact card instance styling (applies decoration to structural component)
-  .contact-card {
-    margin-top: 2rem;
-    padding: 1.5rem;
-    background: var(--color-mellow-apricot);
-    border-radius: 0.5rem;
+      .contact-card {
+        &__content {
+          max-width: 250px;
+        }
+      }
+    }
   }
 }
 
