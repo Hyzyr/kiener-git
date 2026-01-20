@@ -69,7 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     console.error('❌ Support carousel element not found');
   }
- 
 
   // New Products Carousel
   const productsNewCarousel = document.getElementById('splide-products-new');
@@ -143,5 +142,41 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   } else {
     console.error('❌ Trusted products carousel element not found');
+  }
+
+  // ============================================
+  // Accordion Functionality
+  // ============================================
+  const accordions = document.querySelectorAll('.accordion');
+
+  if (accordions.length > 0) {
+    console.log(`✅ Found ${accordions.length} accordion(s)`);
+
+    accordions.forEach((accordion) => {
+      const items = accordion.querySelectorAll('.accordion__item');
+      const allowMultiple = accordion.hasAttribute('data-allow-multiple');
+
+      items.forEach((item) => {
+        const header = item.querySelector('.accordion__header');
+
+        if (header) {
+          header.addEventListener('click', () => {
+            const isActive = item.classList.contains('is-active');
+
+            // If only one can be open at a time, close all others
+            if (!allowMultiple && !isActive) {
+              items.forEach((otherItem) => {
+                if (otherItem !== item) {
+                  otherItem.classList.remove('is-active');
+                }
+              });
+            }
+
+            // Toggle current item
+            item.classList.toggle('is-active');
+          });
+        }
+      });
+    });
   }
 });

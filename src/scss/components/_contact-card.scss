@@ -3,97 +3,73 @@
 // ============================================
 // Contact Card Component
 // ============================================
+// Reusable contact card component - purely structural, no decoration
+// Apply background, border-radius, padding to specific instances as needed
 
 .contact-card {
-  background: var(--color-white);
-  border: var(--border-width-thin) solid var(--color-grey-200);
-  border-radius: var(--border-radius-lg);
-  padding: 2rem;
-  text-align: center;
-  box-shadow: var(--shadow-sm);
+  // Base font size for em-based scaling
+  font-size: var(--font-size-xl); // 20px base
+
+  // Layout only - no decorative styles
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1.2em; // 24px at 20px base
 
   &__avatar {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 1rem;
-    border-radius: var(--border-radius-full);
+    width: 4em; // 80px at 20px base
+    height: 4em; // 80px at 20px base
+    flex-shrink: 0;
+    border-radius: 50%;
     overflow: hidden;
-    border: 3px solid var(--color-primary-100);
 
     img {
-      @include cover-image;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4em; // 8px at 20px base
+    flex: 1;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0; // No gap between title and subtitle
   }
 
   &__title {
-    font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-bold);
-    margin-bottom: 0.5rem;
+    font-family: var(--font-family-primary);
+    font-style: normal;
+    font-weight: 494; // Medium weight from Figma
+    font-size: 1em; // 20px (inherits from parent)
+    line-height: 1.2; // 24px
+    color: var(--color-black);
+    margin: 0;
   }
 
   &__subtitle {
-    font-size: var(--font-size-sm);
-    color: var(--color-grey-600);
-    margin-bottom: 1.5rem;
+    font-family: var(--font-family-primary);
+    font-style: normal;
+    font-weight: var(--font-weight-regular); // 375 from Figma
+    font-size: 1em; // 20px
+    line-height: 1.2; // 24px
+    color: var(--color-black);
+    margin: 0;
   }
 
-  &__info {
-    @include reset-list;
-    margin-bottom: 1.5rem;
-    text-align: left;
-
-    li {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 0.75rem;
-      margin-bottom: 0.5rem;
-      background: var(--color-grey-50);
-      border-radius: var(--border-radius-md);
-
-      .icon {
-        width: 20px;
-        color: var(--color-primary-600);
-        flex-shrink: 0;
-      }
-
-      a {
-        color: var(--color-grey-900);
-        
-        &:hover {
-          color: var(--color-primary-600);
-        }
-      }
-    }
-  }
-
-  &__link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--color-primary-600);
-    font-weight: var(--font-weight-medium);
-    transition: var(--transition-fast);
-
-    &:hover {
-      gap: 0.75rem;
-    }
-  }
-
-  // Horizontal variant
-  &--horizontal {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 1.5rem;
-    text-align: left;
-
-    .contact-card__avatar {
-      margin: 0;
-    }
-
-    .contact-card__info {
-      margin-bottom: 0;
-    }
+  // Button inside contact card
+  .btn {
+    align-self: stretch; // Full width of content area
+    font-size: 0.8em; // 16px at 20px base
   }
 }
 

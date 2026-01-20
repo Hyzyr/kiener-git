@@ -57,6 +57,10 @@ h3,
 .h3 {
   font-size: var(--font-size-3xl);
   letter-spacing: -0.02em;
+
+  &._lg{
+    font-size: var(--font-size-3xl-extra)
+  }
 }
 h4,
 .h4 {

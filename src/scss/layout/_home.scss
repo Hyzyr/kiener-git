@@ -464,24 +464,8 @@
     gap: 1rem;
   }
 
-  &__avatar-row {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-
-    img {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    div {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-    }
-  }
+  // Contact card with avatar styles moved to components/_contact-card.scss
+  // Use .contact-card class for reusable contact card component
 
   &__showroom-details {
     display: grid;

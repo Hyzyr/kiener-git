@@ -167,3 +167,102 @@
     }
   }
 }
+.icon {
+  color: inherit;
+  font-size: 1rem;
+  width: 1em;
+  height: 1em;
+
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+.accordion {
+  font-size: var(--font-size-base);
+
+  &__item {
+    border-bottom: var(--border-width-thin) solid var(--color-cloud-dancer);
+
+    &:first-child {
+      border-top: var(--border-width-thin) solid var(--color-cloud-dancer);
+    }
+  }
+
+  &__header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 0;
+    gap: 1em;
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 1em;
+    font-weight: var(--font-weight-regular);
+    color: var(--color-black);
+    cursor: pointer;
+    text-align: left;
+    transition: color var(--transition-fast);
+
+    &:hover {
+      color: var(--color-ocean-blue);
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 1.5em;
+    height: 1.5em;
+    transition: transform var(--transition-base);
+    color: currentColor;
+
+    // Rotate icon when accordion is open
+    .accordion__item.is-active & {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__content {
+    padding: 0 0 1em 0;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition:
+      max-height var(--transition-base),
+      opacity var(--transition-fast),
+      padding var(--transition-base);
+
+    // Open state
+    .accordion__item.is-active & {
+      max-height: 1000px;
+      opacity: 1;
+      padding-bottom: 1em;
+    }
+  }
+}
+.stars {
+  color: var(--color-slate-blue); // Example blue-ish star color from screenshot
+  display: flex;
+  gap: 2px;
+}
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--font-size-sm);
+
+  &-count {
+    font-style: normal;
+    font-weight: 400;
+    font-size: inherit;
+    line-height: 1;
+    text-decoration-line: underline;
+
+    color: var(--color-charcoal-grey);
+  }
+}

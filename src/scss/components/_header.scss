@@ -62,7 +62,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
-    padding: 1.5rem 0;
+    padding: 1.35rem 0;
 
     @include tablet-up {
       gap: 1rem;
@@ -133,7 +133,7 @@
   &--dark {
     background: transparent;
     box-shadow: none;
-    
+
     .nav__nav-link,
     .header__secondary-link {
       color: var(--color-charcoal-grey);

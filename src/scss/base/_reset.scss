@@ -173,7 +173,8 @@ button,
   @include reset-button;
 
   &:disabled {
-    cursor: not-allowed;
+    pointer-events: none;
+    cursor: default;
     opacity: 0.6;
   }
 }

@@ -7,57 +7,46 @@
 .breadcrumb {
   @include reset-list;
   display: flex;
+  flex-direction: row;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  padding: 1rem 0;
-  font-size: var(--font-size-sm);
+  padding: 0;
+
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm); // 14px
+  line-height: 1.14;
+  color: var(--color-charcoal-grey);
+
+  &__wrapper {
+    padding-bottom: 1.15rem; // 20px
+  }
 
   &__item {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
 
     a {
-      color: var(--color-grey-600);
+      color: var(--color-charcoal-grey);
+      font-weight: var(--font-weight-medium); // Matches ~494
+      text-decoration: underline;
+      text-underline-offset: 0.2em; // Optional polish
       transition: var(--transition-fast);
 
       &:hover {
-        color: var(--color-primary-600);
+        color: var(--color-primary);
+        text-decoration: none;
       }
     }
 
     &--active {
-      color: var(--color-grey-900);
-      font-weight: var(--font-weight-medium);
+      font-weight: var(--font-weight-light);
+      text-decoration: none;
+      color: var(--color-charcoal-grey);
     }
 
-    &:not(:last-child)::after {
-      content: '/';
-      color: var(--color-grey-400);
-      margin-left: 0.5rem;
-    }
-  }
-
-  // Icon separator variant
-  &--icon {
-    .breadcrumb__item:not(:last-child)::after {
-      content: '›';
-      font-size: 1.25em;
-    }
-  }
-
-  // Compact variant
-  &--compact {
-    font-size: var(--font-size-xs);
-    gap: 0.25rem;
-
-    .breadcrumb__item {
-      gap: 0.25rem;
-
-      &:not(:last-child)::after {
-        margin-left: 0.25rem;
-      }
+    .icon {
+      font-size: 0.71em;
+      margin: 0 0.4em;
+      color: var(---color-mid-grey);
     }
   }
 }
