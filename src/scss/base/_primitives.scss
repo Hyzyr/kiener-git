@@ -1,15 +1,5 @@
 @use '../abstracts/mixins' as *;
 
-// ============================================
-// Primitives - Basic Reusable Components
-// ============================================
-// Foundational building blocks for layouts and images
-
-// ============================================
-// Background Image Component
-// ============================================
-// Usage: <div class="bg"><img src="..." alt="..."></div>
-
 .bg {
   @include absolute-cover;
   overflow: hidden;
@@ -75,13 +65,6 @@
     }
   }
 }
-
-// ============================================
-// Ratio Image Component
-// ============================================
-// Maintains aspect ratio using padding-bottom technique
-// Works in all browsers including older ones
-
 .ratio-image {
   position: relative;
   width: 100%;
@@ -177,74 +160,6 @@
   stroke: currentColor;
 }
 
-.accordion {
-  font-size: var(--font-size-base);
-
-  &__item {
-    border-bottom: var(--border-width-thin) solid var(--color-cloud-dancer);
-
-    &:first-child {
-      border-top: var(--border-width-thin) solid var(--color-cloud-dancer);
-    }
-  }
-
-  &__header {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1em 0;
-    gap: 1em;
-    background: none;
-    border: none;
-    font-family: inherit;
-    font-size: 1em;
-    font-weight: var(--font-weight-regular);
-    color: var(--color-black);
-    cursor: pointer;
-    text-align: left;
-    transition: color var(--transition-fast);
-
-    &:hover {
-      color: var(--color-ocean-blue);
-    }
-  }
-
-  &__icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    width: 1.5em;
-    height: 1.5em;
-    transition: transform var(--transition-base);
-    color: currentColor;
-
-    // Rotate icon when accordion is open
-    .accordion__item.is-active & {
-      transform: rotate(180deg);
-    }
-  }
-
-  &__content {
-    padding: 0 0 1em 0;
-    overflow: hidden;
-    max-height: 0;
-    opacity: 0;
-    transition:
-      max-height var(--transition-base),
-      opacity var(--transition-fast),
-      padding var(--transition-base);
-
-    // Open state
-    .accordion__item.is-active & {
-      max-height: 1000px;
-      opacity: 1;
-      padding-bottom: 1em;
-    }
-  }
-}
 .stars {
   color: var(--color-slate-blue); // Example blue-ish star color from screenshot
   display: flex;
@@ -264,5 +179,104 @@
     text-decoration-line: underline;
 
     color: var(--color-charcoal-grey);
+  }
+}
+.variant-picker {
+  display: flex;
+  font-size: 20px;
+  flex-direction: row;
+  gap: 0.75rem;
+
+  &__item {
+    position: relative;
+    font-size: inherit;
+
+    input {
+      cursor: pointer;
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    span {
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      font-size: inherit;
+      width: 3em;
+      height: 3em;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      z-index: 0;
+      isolation: isolate;
+
+      background: var(--color-mellow-apricot);
+      transition: 0.3s var(--transition-base);
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        transform: translate(-50%, -50%) scale(0.98);
+        border-radius: 50%;
+        border: 2px solid var(--color-ocean-blue);
+        opacity: 0;
+        transition: 0.13s var(--ease-smooth);
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        transform: scale(0.98);
+        object-fit: contain;
+      }
+    }
+
+    input:checked + span {
+      img {
+        transform: scale(1.02);
+      }
+      &:after {
+        opacity: 1;
+        border-color: var(--color-ocean-blue);
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+    }
+  }
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 1.5rem;
+  border: 1px solid var(--color-charcoal-grey);
+  border-radius: 50px;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: 1;
+  color: var(--color-black);
+
+  min-height: 2em;
+  min-width: 100px;
+  text-align: center;
+}
+.progress-bar {
+  flex: 1;
+  height: 4px;
+  background-color: var(--color-cloud-dancer);
+  border-radius: 2px;
+  overflow: hidden;
+
+  &__fill {
+    height: 100%;
+    background-color: var(--color-charcoal-grey); // Black fill
   }
 }

@@ -52,14 +52,17 @@ h2,
 .h2 {
   font-size: var(--font-size-4xl);
   letter-spacing: -0.03em;
+  &._lg {
+    font-size: var(--font-size-4xl-extra);
+  }
 }
 h3,
 .h3 {
   font-size: var(--font-size-3xl);
   letter-spacing: -0.02em;
 
-  &._lg{
-    font-size: var(--font-size-3xl-extra)
+  &._lg {
+    font-size: var(--font-size-3xl-extra);
   }
 }
 h4,
@@ -87,8 +90,11 @@ h6,
   &--lg {
     font-size: var(--font-size-2xl);
   }
-  &--xlg {
+  &--2xl {
     font-size: var(--font-size-3xl);
+  }
+  &--3xl {
+    font-size: var(--font-size-4xl);
   }
 }
 
@@ -176,46 +182,65 @@ blockquote {
 }
 
 // Text alignment
-.text-left {
-  text-align: left;
-}
-.text-center {
-  text-align: center;
-}
-.text-right {
-  text-align: right;
-}
-
-// Text weight
-.fw-extralight {
-  font-weight: var(--font-weight-extralight);
-}
-.fw-light {
-  font-weight: var(--font-weight-light);
-}
-.fw-regular {
-  font-weight: var(--font-weight-regular);
-}
-.fw-medium {
-  font-weight: var(--font-weight-medium);
-}
-.fw-semibold {
-  font-weight: var(--font-weight-semibold);
-}
-.fw-bold {
-  font-weight: var(--font-weight-bold);
+.align {
+  &-left {
+    text-align: left;
+  }
+  &-center {
+    text-align: center;
+  }
+  &-right {
+    text-align: right;
+  }
 }
 
+.fw {
+  &-extralight {
+    font-weight: var(--font-weight-extralight);
+  }
+  &-light {
+    font-weight: var(--font-weight-light);
+  }
+  &-regular {
+    font-weight: var(--font-weight-regular);
+  }
+  &-medium {
+    font-weight: var(--font-weight-medium);
+  }
+  &-semibold {
+    font-weight: var(--font-weight-semibold);
+  }
+  &-bold {
+    font-weight: var(--font-weight-bold);
+  }
+}
 // Text utilities
-.text-truncate {
-  @include truncate(1);
+.text {
+  &-truncate {
+    @include truncate(1);
+  }
+  &-uppercase {
+    text-transform: uppercase;
+  }
+  &-lowercase {
+    text-transform: lowercase;
+  }
 }
-.text-bold {
-  font-weight: var(--font-weight-bold);
-}
-.text-uppercase {
-  text-transform: uppercase;
-}
-.text-lowercase {
-  text-transform: lowercase;
+
+.color {
+  &-primary {
+    color: var(--color-primary);
+  }
+  &-secondary {
+    color: var(--color-secondary);
+  }
+  &-black {
+    color: var(--color-white);
+  }
+  &-white {
+    color: var(--color-black);
+  }
+  &-grey {
+    color: var(--color-grey);
+  }
 }

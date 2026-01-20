@@ -464,8 +464,12 @@
     gap: 1rem;
   }
 
-  // Contact card with avatar styles moved to components/_contact-card.scss
-  // Use .contact-card class for reusable contact card component
+  // Contact card instance styling (applies decoration to structural component)
+  .contact-card {
+    padding: 1.5rem;
+    background: var(--color-mellow-apricot);
+    border-radius: 0.5rem;
+  }
 
   &__showroom-details {
     display: grid;

@@ -55,27 +55,13 @@ header_class: 'header--dark'
 
           <div class="pdp-hero__gallery-nav">
             <button aria-label="Previous image">
-              <svg
-                class="icon"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2">
-                <polyline points="15 18 9 12 15 6"></polyline>
+              <svg class="icon" width="12" height="8">
+                <use xlink:href="#icon-arrow-2"></use>
               </svg>
             </button>
             <button aria-label="Next image">
-              <svg
-                class="icon"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2">
-                <polyline points="9 18 15 12 9 6"></polyline>
+              <svg class="icon" width="12" height="8">
+                <use xlink:href="#icon-arrow-2"></use>
               </svg>
             </button>
           </div>
@@ -186,44 +172,52 @@ header_class: 'header--dark'
           </div>
         </div>
 
-        <div class="pdp-hero__variants">
-          <span class="pdp-hero__variants-label">Varianten</span>
-          <div class="pdp-hero__variants-list">
-            <div
-              class="pdp-hero__info__variant pdp-hero__info__variant--active"
-              title="Terra">
-              <img
-                src="./assets/images/banner-sale-chair-1.png"
-                alt="Terra color" />
-            </div>
-            <div class="pdp-hero__info__variant" title="Olive">
-              <img
-                src="./assets/images/banner-sale-chair-2.png"
-                alt="Olive color" />
-            </div>
-            <div class="pdp-hero__info__variant" title="Grey">
-              <img
-                src="./assets/images/banner-sale-chair-3.png"
-                alt="Grey color" />
-            </div>
-          </div>
+        <div class="pdp-hero__info__variants">
+          <span class="pdp-hero__info__variants-label">Varianten</span>
+          <ul class="variant-picker">
+            <li class="variant-picker__item is-active" title="Terra">
+              <input type="radio" name="variant" value="terra" checked />
+              <span>
+                <img
+                  src="./assets/images/banner-sale-chair-1.png"
+                  alt="Terra color" />
+              </span>
+            </li>
+            <li class="variant-picker__item" title="Olive">
+              <input type="radio" name="variant" value="olive" />
+              <span>
+                <img
+                  src="./assets/images/banner-sale-chair-2.png"
+                  alt="Olive color" />
+              </span>
+            </li>
+            <li class="variant-picker__item" title="Grey">
+              <input type="radio" name="variant" value="grey" />
+              <span>
+                <img
+                  src="./assets/images/banner-sale-chair-3.png"
+                  alt="Grey color" />
+              </span>
+            </li>
+          </ul>
         </div>
 
         <div class="pdp-hero__info__price">
-          <strong>€ 293,-</strong>
-          <small>€ 320,-</small>
+          <div class="pdp-hero__info__price-group">
+            <strong>€ 293,-</strong>
+            <small class="color-grey">€ 320,-</small>
+          </div>
+          <p>
+            <strong class="color-primary">Bespaar 10%</strong> Korting verloopt
+            op 31-12-25
+          </p>
+          <button class="btn btn--filled btn--primary btn--full btn--lg">
+            Voeg toe aan winkelwagen
+            <svg class="icon" width="20" height="20" style="margin-left: 8px">
+              <use xlink:href="#icon-cart"></use>
+            </svg>
+          </button>
         </div>
-        <div class="pdp-hero__info__discount">
-          <strong>Bespaar 10%</strong> Korting verloopt op 31-12-25
-        </div>
-
-        <!-- Add to Cart (Full width button) -->
-        <button class="btn btn--filled btn--primary btn--full btn--lg">
-          Voeg toe aan winkelwagen
-          <svg class="icon" width="20" height="20" style="margin-left: 8px">
-            <use xlink:href="#icon-cart"></use>
-          </svg>
-        </button>
 
         <!-- USPs -->
         <ul class="pdp-hero__info__usps">
@@ -241,18 +235,15 @@ header_class: 'header--dark'
           </li>
         </ul>
 
-        <!-- Accordions -->
-        <div class="accordion">
+        <div class="pdp-hero__info__accordion accordion">
           <div class="accordion__item">
-            <button class="accordion__header">
+            <button class="accordion__item-header">
               <span>Materialen</span>
-              <span class="accordion__icon">
-                <svg class="icon" width="12" height="8">
-                  <use xlink:href="#icon-arrow-down"></use>
-                </svg>
-              </span>
+              <svg class="icon" width="12" height="8">
+                <use xlink:href="#icon-arrow-2"></use>
+              </svg>
             </button>
-            <div class="accordion__content">
+            <div class="accordion__item-content">
               <p>
                 Deze stoel is gemaakt van hoogwaardige materialen voor
                 langdurige duurzaamheid en comfort. De bekleding is vervaardigd
@@ -262,15 +253,13 @@ header_class: 'header--dark'
             </div>
           </div>
           <div class="accordion__item">
-            <button class="accordion__header">
+            <button class="accordion__item-header">
               <span>Service & Garantie</span>
-              <span class="accordion__icon">
-                <svg class="icon" width="12" height="8">
-                  <use xlink:href="#icon-arrow-down"></use>
-                </svg>
-              </span>
+              <svg class="icon" width="12" height="8">
+                <use xlink:href="#icon-arrow-2"></use>
+              </svg>
             </button>
-            <div class="accordion__content">
+            <div class="accordion__item-content">
               <p>
                 Op deze stoel krijgt u 10 jaar garantie. Wij bieden ook gratis
                 levering op afspraak en montage service. Voor vragen of
@@ -279,15 +268,13 @@ header_class: 'header--dark'
             </div>
           </div>
           <div class="accordion__item">
-            <button class="accordion__header">
+            <button class="accordion__item-header">
               <span>Reviews (12)</span>
-              <span class="accordion__icon">
-                <svg class="icon" width="12" height="8">
-                  <use xlink:href="#icon-arrow-down"></use>
-                </svg>
-              </span>
+              <svg class="icon" width="12" height="8">
+                <use xlink:href="#icon-arrow-2"></use>
+              </svg>
             </button>
-            <div class="accordion__content">
+            <div class="accordion__item-content">
               <p>
                 Lees wat onze klanten zeggen over deze stoel. Scroll naar
                 beneden naar de beoordelingen sectie voor alle reviews.
@@ -316,98 +303,92 @@ header_class: 'header--dark'
   </div>
 </section>
 
-<!-- Separate JS for this page's slider (as requested) -->
-<script src="/js/product-details.js"></script>
-
 <!-- Features Section -->
 <section class="pdp-features section">
   <div class="container">
-    <div class="pdp-features__header text-center mb-5">
-      <span class="badge badge--outline badge--rounded mb-3">Functies</span>
-      <h2 class="h2 fw-medium mb-2">Slim comfort dat met u meebeweegt</h2>
-      <p class="p _lg text-muted">
-        Ontworpen om u dagelijks net dat beetje extra ondersteuning te geven.
-      </p>
-    </div>
-
     <div class="pdp-features__inner">
-      <!-- Left: Interactive Image -->
-      <div class="pdp-features__image-col">
-        <div class="pdp-features__image-wrapper">
-          <img
-            src="./assets/images/product/product-stock-image-7.png"
-            alt="Comfort Features"
-            class="img-fluid" />
+      <div class="pdp-features__header text-center mb-5">
+        <span class="badge">Functies</span>
+        <h3 class="h2 _lg">Slim comfort dat met u meebeweegt</h3>
+        <p class="subtitle subtitle--2xl">
+          Ontworpen om u dagelijks net dat beetje extra ondersteuning te geven.
+        </p>
+      </div>
+      <div class="pdp-features__row">
+        <div class="pdp-features__image">
+          <div class="ratio-image">
+            <img
+              src="./assets/images/product/product-stock-image-7.png"
+              alt="Comfort Features"
+              class="img-fluid" />
+          </div>
 
           <!-- Hotspots -->
-          <button
-            class="hotspot"
+          <span
+            class="pdp-features__image-hotspot"
             style="top: 30%; left: 40%"
             aria-label="Headrest feature">
             <svg class="icon"><use xlink:href="#icon-plus"></use></svg>
-          </button>
-          <button
-            class="hotspot"
+          </span>
+          <span
+            class="pdp-features__image-hotspot"
             style="top: 60%; left: 65%"
             aria-label="Armrest feature">
             <svg class="icon"><use xlink:href="#icon-plus"></use></svg>
-          </button>
-          <button
-            class="hotspot"
+          </span>
+          <span
+            class="pdp-features__image-hotspot"
             style="top: 80%; left: 45%"
             aria-label="Base feature">
             <svg class="icon"><use xlink:href="#icon-plus"></use></svg>
-          </button>
+          </span>
         </div>
-      </div>
-
-      <!-- Right: Feature List -->
-      <div class="pdp-features__content-col">
-        <div class="feature-list">
-          <!-- Feature 1 -->
-          <div class="feature-card">
-            <div class="feature-card__image">
-              <img
-                src="./assets/images/product/product-details-image-1.png"
-                alt="Sta-op functie" />
+        <div class="pdp-features__list">
+          <div class="pdp-features__card">
+            <div class="pdp-features__card__image">
+              <div class="ratio-image ratio-image--3x4">
+                <img
+                  src="./assets/images/product/product-details-image-1.png"
+                  alt="Sta-op functie" />
+              </div>
             </div>
-            <div class="feature-card__content">
-              <h3 class="h4 fw-bold mb-2">Sta-op functie die met u meedenkt</h3>
-              <p class="text-muted">
+            <div class="pdp-features__card__content">
+              <h3 class="h3">Sta-op functie die met u meedenkt</h3>
+              <p class="_lg">
                 Met één druk op de knop helpt de stoel u rustig overeind. Geen
                 plotselinge beweging, geen kracht zetten. Gewoon veilig opstaan,
                 op uw eigen tempo.
               </p>
             </div>
           </div>
-
-          <!-- Feature 2 -->
-          <div class="feature-card">
-            <div class="feature-card__image">
-              <img
-                src="./assets/images/product/product-details-image-2.png"
-                alt="Verstelbaar" />
+          <div class="pdp-features__card">
+            <div class="pdp-features__card__image">
+              <div class="ratio-image ratio-image--3x4">
+                <img
+                  src="./assets/images/product/product-details-image-2.png"
+                  alt="Verstelbaar" />
+              </div>
             </div>
-            <div class="feature-card__content">
-              <h3 class="h4 fw-bold mb-2">Verstelbaar zit- en ligcomfort</h3>
-              <p class="text-muted">
+            <div class="pdp-features__card__content">
+              <h3 class="h3">Verstelbaar zit- en ligcomfort</h3>
+              <p class="_lg">
                 Van rechtop zitten tot ontspannen achterover. De rugleuning en
                 voetensteun bewegen precies zoals u dat wilt. Ideaal om te
                 lezen, tv te kijken of even te rusten.
               </p>
             </div>
           </div>
-
-          <!-- Feature 3 -->
-          <div class="feature-card">
-            <div class="feature-card__image">
-              <img
-                src="./assets/images/product/product-details-image-3.png"
-                alt="Ergonomisch" />
+          <div class="pdp-features__card">
+            <div class="pdp-features__card__image">
+              <div class="ratio-image ratio-image--3x4">
+                <img
+                  src="./assets/images/product/product-details-image-3.png"
+                  alt="Ergonomisch" />
+              </div>
             </div>
-            <div class="feature-card__content">
-              <h3 class="h4 fw-bold mb-2">Comfort dat elke dag ondersteunt</h3>
-              <p class="text-muted">
+            <div class="pdp-features__card__content">
+              <h3 class="h3">Comfort dat elke dag ondersteunt</h3>
+              <p class="_lg">
                 De ergonomische vorm en zachte ondersteuning zorgen ervoor dat u
                 ook bij langer zitten comfortabel blijft. Minder spanning, meer
                 ontspanning. Dag in, dag uit.
@@ -419,277 +400,11 @@ header_class: 'header--dark'
     </div>
   </div>
 </section>
-
-<!-- Reviews Section -->
-<section class="pdp-reviews section" id="reviews">
-  <div class="container">
-    <h2 class="h2 fw-bold mb-5">Beoordelingen</h2>
-
-    <div class="pdp-reviews__inner">
-      <!-- Left: Summary -->
-      <div class="pdp-reviews__summary-col">
-        <div class="review-summary">
-          <div class="review-summary__score-display">
-            <span class="score">4,7 / 5</span>
-          </div>
-          <a href="#" class="text-link text-link--underline mb-4 d-inline-block"
-            >Lees 15 beoordelingen</a
-          >
-
-          <div class="review-breakdown">
-            <!-- 5 Stars -->
-            <div class="review-breakdown__row">
-              <span class="label"
-                >5
-                <svg class="icon icon--sm">
-                  <use xlink:href="#icon-star"></use></svg
-              ></span>
-              <div class="progress-bar">
-                <div class="progress-bar__fill" style="width: 80%"></div>
-              </div>
-              <span class="count">9</span>
-            </div>
-            <!-- 4 Stars -->
-            <div class="review-breakdown__row">
-              <span class="label"
-                >4
-                <svg class="icon icon--sm">
-                  <use xlink:href="#icon-star"></use></svg
-              ></span>
-              <div class="progress-bar">
-                <div class="progress-bar__fill" style="width: 15%"></div>
-              </div>
-              <span class="count">2</span>
-            </div>
-            <!-- 3 Stars -->
-            <div class="review-breakdown__row">
-              <span class="label"
-                >3
-                <svg class="icon icon--sm">
-                  <use xlink:href="#icon-star"></use></svg
-              ></span>
-              <div class="progress-bar">
-                <div class="progress-bar__fill" style="width: 0%"></div>
-              </div>
-              <span class="count">0</span>
-            </div>
-            <!-- 2 Stars -->
-            <div class="review-breakdown__row">
-              <span class="label"
-                >2
-                <svg class="icon icon--sm">
-                  <use xlink:href="#icon-star"></use></svg
-              ></span>
-              <div class="progress-bar">
-                <div class="progress-bar__fill" style="width: 0%"></div>
-              </div>
-              <span class="count">0</span>
-            </div>
-            <!-- 1 Star -->
-            <div class="review-breakdown__row">
-              <span class="label"
-                >1
-                <svg class="icon icon--sm">
-                  <use xlink:href="#icon-star"></use></svg
-              ></span>
-              <div class="progress-bar">
-                <div class="progress-bar__fill" style="width: 0%"></div>
-              </div>
-              <span class="count">0</span>
-            </div>
-          </div>
-
-          <div class="mt-4">
-            <a
-              href="#"
-              class="btn btn--outlined btn--sm d-flex align-items-center gap-2">
-              <svg class="icon"><use xlink:href="#icon-info"></use></svg>
-              Meer over beoordelingen
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right: Review List -->
-      <div class="pdp-reviews__list-col">
-        <div class="review-list">
-          <!-- Review Item 1 -->
-          <article class="review-card">
-            <div class="review-card__rating mb-2">
-              <div class="stars text-primary">
-                <svg class="icon"><use xlink:href="#icon-star"></use></svg>
-                <svg class="icon"><use xlink:href="#icon-star"></use></svg>
-                <svg class="icon"><use xlink:href="#icon-star"></use></svg>
-                <svg class="icon"><use xlink:href="#icon-star"></use></svg>
-                <svg class="icon"><use xlink:href="#icon-star"></use></svg>
-              </div>
-            </div>
-            <h3 class="h4 fw-bold mb-2">Geweldige stoel, zit heerlijk!</h3>
-            <p class="review-card__text text-muted mb-3">
-              Deze stoel is echt een aanrader. De stof is zacht, de
-              ondersteuning is goed en hij staat prachtig in mijn woonkamer. Ik
-              kan urenlang comfortabel zitten lezen of tv kijken. Een
-              topaankoop!
-            </p>
-            <div class="review-card__meta text-sm text-grey-500">
-              Femke Dekker, Amsterdam <span class="separator">|</span> 2 dagen
-              geleden
-            </div>
-          </article>
-
-          <!-- Review Item 2 -->
-          <article class="review-card">
-            <div class="review-card__rating mb-2">
-              <div class="stars text-primary">
-                <svg class="icon"><use xlink:href="#icon-star"></use></svg>
-                <svg class="icon"><use xlink:href="#icon-star"></use></svg>
-                <svg class="icon"><use xlink:href="#icon-star"></use></svg>
-                <svg class="icon"><use xlink:href="#icon-star"></use></svg>
-                <svg class="icon"><use xlink:href="#icon-star"></use></svg>
-              </div>
-            </div>
-            <h3 class="h4 fw-bold mb-2">Super aankoop, zeer tevreden</h3>
-            <p class="review-card__text text-muted mb-3">
-              De stoel is precies wat ik zocht. Stevig, maar toch comfortabel.
-              Ideaal voor mijn rugklachten. De levering was snel en de stoel was
-              makkelijk in elkaar te zetten. Ik ben er erg blij mee.
-            </p>
-            <div class="review-card__meta text-sm text-grey-500">
-              Joris van Dijk, Utrecht <span class="separator">|</span> 5 dagen
-              geleden
-            </div>
-          </article>
-
-          <!-- Review Item 3 -->
-          <article class="review-card">
-            <div class="review-card__rating mb-2">
-              <div class="stars text-primary">
-                <svg class="icon"><use xlink:href="#icon-star"></use></svg>
-                <svg class="icon"><use xlink:href="#icon-star"></use></svg>
-                <svg class="icon"><use xlink:href="#icon-star"></use></svg>
-                <svg class="icon"><use xlink:href="#icon-star"></use></svg>
-                <svg class="icon"><use xlink:href="#icon-star"></use></svg>
-              </div>
-            </div>
-            <h3 class="h4 fw-bold mb-2">Mooie en comfortabele stoel</h3>
-            <p class="review-card__text text-muted mb-3">
-              De stoel ziet er niet alleen mooi uit, maar zit ook nog eens
-              fantastisch. De kleur is precies zoals op de foto en hij past
-              perfect bij mijn interieur. Een echte eyecatcher!
-            </p>
-            <div class="review-card__meta text-sm text-grey-500">
-              Lotte de Vries, Den Haag <span class="separator">|</span> 1 week
-              geleden
-            </div>
-          </article>
-
-          <div class="mt-4">
-            <a href="#" class="text-link text-link--underline fw-bold">
-              Toon alle beoordelingen &rarr;
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="categories section">
-  <div class="container">
-    <div class="categories__inner">
-      <div class="categories__title section__title">
-        <h3 class="h2 fw-medium">Bekijk onze categorieen</h3>
-        <button class="btn btn--outlined btn--md">
-          Bekijk alle producten
-          <svg class="icon" width="22" height="15">
-            <use xlink:href="#icon-arrow-1"></use>
-          </svg>
-        </button>
-      </div>
-      <div class="category-grid">
-        <div class="category-card">
-          <div class="category-card__image">
-            <img src="./assets/images/kiener-stock-photo-1.png" alt="" />
-          </div>
-          <div class="category-card__content">
-            <div class="category-card__title">Scootmobielen</div>
-          </div>
-        </div>
-        <div class="category-card">
-          <div class="category-card__image">
-            <img src="./assets/images/kiener-stock-photo-2.png" alt="" />
-          </div>
-          <div class="category-card__content">
-            <div class="category-card__title">Trapliften</div>
-          </div>
-        </div>
-        <div class="category-card">
-          <div class="category-card__image">
-            <img src="./assets/images/kiener-stock-photo-3.png" alt="" />
-          </div>
-          <div class="category-card__content">
-            <div class="category-card__title">Rolstoelen</div>
-          </div>
-        </div>
-        <div class="category-card">
-          <div class="category-card__image">
-            <img src="./assets/images/kiener-stock-photo-5.png" alt="" />
-          </div>
-          <div class="category-card__content">
-            <div class="category-card__title">Bedden</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="sale section">
-  <div class="container">
-    <div class="sale__inner">
-      <div class="sale__content">
-        <div class="subtitle">SALE</div>
-        <h2 class="h2 fw-semibold">
-          Tot 20% Korting <br />
-          op alle sta-op stoelen
-        </h2>
-        <a href="#" class="btn btn--outlined btn--xlg"> Bekijk het aanbod </a>
-      </div>
-      <div class="sale__label">
-        <span>
-          Korting Tot 20% Korting Tot 20% Korting Tot 20% Korting Tot 20%
-          Korting Tot 20% Korting Tot 20% Korting Tot 20% Korting Tot 20%
-        </span>
-        <span>
-          Korting Tot 20% Korting Tot 20% Korting Tot 20% Korting Tot 20%
-          Korting Tot 20% Korting Tot 20% Korting Tot 20% Korting Tot 20%
-        </span>
-      </div>
-      <div class="sale__banner">
-        <div class="ratio-image">
-          <img
-            src="./assets/images/banner-sale-chair-1.png"
-            alt="banner-sale-chair-1" />
-          <img
-            src="./assets/images/banner-sale-chair-2.png"
-            alt="banner-sale-chair-2" />
-          <img
-            src="./assets/images/banner-sale-chair-3.png"
-            alt="banner-sale-chair-3" />
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 <section class="products section">
   <div class="container">
     <div class="products__inner">
       <div class="products__title section__title">
-        <h3 class="h3 fw-medium">Ontdek onze nieuwste producten</h3>
-        <button class="btn btn--outlined btn--md">
-          Shop nu
-          <svg class="icon" width="22" height="15">
-            <use xlink:href="#icon-arrow-1"></use>
-          </svg>
-        </button>
+        <h3 class="h3 fw-medium">Handige accessoires</h3>
       </div>
       <div id="splide-products-new" class="splide">
         <div class="splide__track">
@@ -842,41 +557,158 @@ header_class: 'header--dark'
     </div>
   </div>
 </section>
-<section class="support-section section">
+<!-- Reviews Section -->
+<section class="pdp-reviews section" id="reviews">
   <div class="container">
-    <div class="support-section__inner">
-      <div class="support-section__grid">
-        <div class="support-section__item">
-          <div class="support-section__item__image">
-            <div class="ratio-image ratio-image--16x9">
-              <img
-                src="./assets/images/kiener-stock-photo-9.png"
-                alt="Ondersteuning voor onderweg" />
-            </div>
+    <div class="pdp-reviews__inner">
+      <h2 class="h2">Beoordelingen</h2>
+      <div class="pdp-reviews__inner-row">
+        <!-- Left: Summary -->
+        <div class="pdp-reviews__summary">
+          <div class="pdp-reviews__summary-score">
+            <strong>4,7 / 5</strong>
+            <a href="#" class="text-link text-link--underline"
+              >Lees 15 beoordelingen</a
+            >
           </div>
-          <div class="support-section__item__content">
-            <h4>Ondersteuning voor onderweg</h4>
-            <a href="#" class="icon-btn icon-btn--white icon-btn--lg">
-              <svg class="icon" width="22" height="15">
-                <use xlink:href="#icon-arrow-1"></use>
-              </svg>
+          <div class="pdp-reviews__summary-breakdown">
+            <!-- 5 Stars -->
+            <ul>
+              <li>
+                <span>5</span>
+                <svg class="icon">
+                  <use xlink:href="#icon-star"></use>
+                </svg>
+                <div class="progress-bar">
+                  <div class="progress-bar__fill" style="width: 80%"></div>
+                </div>
+                <span>9</span>
+              </li>
+              <li>
+                <span>4</span>
+                <svg class="icon">
+                  <use xlink:href="#icon-star"></use>
+                </svg>
+                <div class="progress-bar">
+                  <div class="progress-bar__fill" style="width: 50%"></div>
+                </div>
+                <span>2</span>
+              </li>
+              <li>
+                <span>3</span>
+                <svg class="icon">
+                  <use xlink:href="#icon-star"></use>
+                </svg>
+                <div class="progress-bar">
+                  <div class="progress-bar__fill" style="width: 0%"></div>
+                </div>
+                <span>0</span>
+              </li>
+              <li>
+                <span>2</span>
+                <svg class="icon">
+                  <use xlink:href="#icon-star"></use>
+                </svg>
+                <div class="progress-bar">
+                  <div class="progress-bar__fill" style="width: 0%"></div>
+                </div>
+                <span>0</span>
+              </li>
+              <li>
+                <span>1</span>
+                <svg class="icon">
+                  <use xlink:href="#icon-star"></use>
+                </svg>
+                <div class="progress-bar">
+                  <div class="progress-bar__fill" style="width: 0%"></div>
+                </div>
+                <span>0</span>
+              </li>
+            </ul>
+          </div>
+          <div class="pdp-reviews__summary-link">
+            <a href="#" class="text-link text-link--underline fw-semibold">
+              Meer over beoordelingen
+              <svg class="icon"><use xlink:href="#icon-info"></use></svg>
             </a>
           </div>
         </div>
-        <div class="support-section__item">
-          <div class="support-section__item__image">
-            <div class="ratio-image ratio-image--16x9">
-              <img
-                src="./assets/images/kiener-stock-photo-10.png"
-                alt="Ondersteuning in huis" />
+        <!-- Right: Review List -->
+        <div class="pdp-reviews__list">
+          <!-- Review Item 1 -->
+          <article class="review-card">
+            <div class="review-card__rating">
+              <div class="stars color-primary">
+                <svg class="icon"><use xlink:href="#icon-star"></use></svg>
+                <svg class="icon"><use xlink:href="#icon-star"></use></svg>
+                <svg class="icon"><use xlink:href="#icon-star"></use></svg>
+                <svg class="icon"><use xlink:href="#icon-star"></use></svg>
+                <svg class="icon"><use xlink:href="#icon-star"></use></svg>
+              </div>
             </div>
-          </div>
-          <div class="support-section__item__content">
-            <h4>Ondersteuning in huis</h4>
-            <a href="#" class="icon-btn icon-btn--white icon-btn--lg">
-              <svg class="icon" width="22" height="15">
-                <use xlink:href="#icon-arrow-1"></use>
-              </svg>
+            <h3 class="h4">Geweldige stoel, zit heerlijk!</h3>
+            <p class="_lg">
+              Deze stoel is echt een aanrader. De stof is zacht, de
+              ondersteuning is goed en hij staat prachtig in mijn woonkamer. Ik
+              kan urenlang comfortabel zitten lezen of tv kijken. Een
+              topaankoop!
+            </p>
+            <div class="review-card__meta">
+              <span>Femke Dekker, Amsterdam </span
+              ><span class="separator">|</span> <span>2 dagen geleden</span>
+            </div>
+          </article>
+
+          <!-- Review Item 2 -->
+          <article class="review-card">
+            <div class="review-card__rating">
+              <div class="stars color-primary">
+                <svg class="icon"><use xlink:href="#icon-star"></use></svg>
+                <svg class="icon"><use xlink:href="#icon-star"></use></svg>
+                <svg class="icon"><use xlink:href="#icon-star"></use></svg>
+                <svg class="icon"><use xlink:href="#icon-star"></use></svg>
+                <svg class="icon"><use xlink:href="#icon-star"></use></svg>
+              </div>
+            </div>
+            <h3 class="h4">Super aankoop, zeer tevreden</h3>
+            <p class="_lg">
+              De stoel is precies wat ik zocht. Stevig, maar toch comfortabel.
+              Ideaal voor mijn rugklachten. De levering was snel en de stoel was
+              makkelijk in elkaar te zetten. Ik ben er erg blij mee.
+            </p>
+            <div class="review-card__meta">
+              <span>Joris van Dijk, Utrecht </span
+              ><span class="separator">|</span> <span>5 dagen geleden</span>
+            </div>
+          </article>
+
+          <!-- Review Item 3 -->
+          <article class="review-card">
+            <div class="review-card__rating">
+              <div class="stars color-primary">
+                <svg class="icon"><use xlink:href="#icon-star"></use></svg>
+                <svg class="icon"><use xlink:href="#icon-star"></use></svg>
+                <svg class="icon"><use xlink:href="#icon-star"></use></svg>
+                <svg class="icon"><use xlink:href="#icon-star"></use></svg>
+                <svg class="icon"><use xlink:href="#icon-star"></use></svg>
+              </div>
+            </div>
+            <h3 class="h4">Mooie en comfortabele stoel</h3>
+            <p class="_lg">
+              De stoel ziet er niet alleen mooi uit, maar zit ook nog eens
+              fantastisch. De kleur is precies zoals op de foto en hij past
+              perfect bij mijn interieur. Een echte eyecatcher!
+            </p>
+            <div class="review-card__meta">
+              <span>Lotte de Vries, Den Haag </span
+              ><span class="separator">|</span> <span>1 week geleden</span>
+            </div>
+          </article>
+
+          <div class="pdp-reviews__list-link">
+            <a href="#" class="text-link text-link--underline">
+              Toon alle beoordelingen
+              <svg class="icon"><use xlink:href="#icon-arrow-1"></use></svg>
             </a>
           </div>
         </div>
@@ -884,17 +716,12 @@ header_class: 'header--dark'
     </div>
   </div>
 </section>
+
 <section class="products section">
   <div class="container">
     <div class="products__inner">
       <div class="products__title section__title">
-        <h3 class="h3 fw-medium">Vertrouwde keuzes</h3>
-        <button class="btn btn--outlined btn--md">
-          Shop nu
-          <svg class="icon" width="22" height="15">
-            <use xlink:href="#icon-arrow-1"></use>
-          </svg>
-        </button>
+        <h3 class="h3 fw-medium">Anderen bekeken ook</h3>
       </div>
       <div id="splide-products-trusted" class="splide">
         <div class="splide__track">
@@ -1044,46 +871,6 @@ header_class: 'header--dark'
     </div>
   </div>
 </section>
-<section class="service section">
-  <div class="container">
-    <div class="service__inner">
-      <div class="service__list">
-        <div class="service__block">
-          <div class="service__block__image">
-            <img
-              src="./assets/images/kiener-stock-photo-7.png"
-              alt="Kiener showroom" />
-          </div>
-          <div class="service__block__content">
-            <h2 class="h2 fw-medium">
-              Persoonlijke service.
-              <br />
-              Slimme oplossingen.
-            </h2>
-            <p class="p _xl">
-              Kiener levert zorgvuldig geselecteerde producten die het dagelijks
-              leven makkelijker en comfortabeler maken. Met persoonlijk advies,
-              thuis of in onze showroom, zorgen we dat je elk product met
-              vertrouwen kunt gebruiken.
-            </p>
-            <p class="p _xl">
-              Altijd met garantie, duidelijke service en aandacht voor wat echt
-              bij je past.
-            </p>
-            <div class="service__block__cta">
-              <a href="#" class="btn btn--outlined btn--lg">
-                Lees meer over ons
-              </a>
-              <a href="#" class="text-link text-link--xl">
-                of bezoek onze showroom
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 <section class="contact-cta section">
   <div class="container">
     <div class="contact-cta__inner">
@@ -1135,3 +922,6 @@ header_class: 'header--dark'
     </div>
   </div>
 </section>
+
+<!-- Separate JS for this page's slider (as requested) -->
+<script src="/js/product-details.js"></script>

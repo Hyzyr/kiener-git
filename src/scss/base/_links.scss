@@ -104,4 +104,15 @@
   &--xl {
     font-size: var(--font-size-xl);
   }
+  &--underline {
+    font-style: normal;
+    font-weight: var(--font-weight-regular);
+    line-height: 1;
+    text-decoration-line: underline;
+
+    &:hover {
+      color: var(--color-black);
+      text-decoration: none;
+    }
+  }
 }

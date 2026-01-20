@@ -1,11 +1,5 @@
 @use '../abstracts/mixins' as *;
 
-// ============================================
-// Contact Card Component
-// ============================================
-// Reusable contact card component - purely structural, no decoration
-// Apply background, border-radius, padding to specific instances as needed
-
 .contact-card {
   // Base font size for em-based scaling
   font-size: var(--font-size-xl); // 20px base

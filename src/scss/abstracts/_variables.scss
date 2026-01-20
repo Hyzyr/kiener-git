@@ -27,6 +27,7 @@
   --color-white: #ffffff;
   --color-black: #000000;
   --color-mid-grey: #868686;
+  --color-grey: #757575;
   --color-white-15: rgba(#ffffff, 15%);
 
   // // Semantic Colors
@@ -51,9 +52,10 @@
   --font-size-lg: 1.125rem; // 18px
   --font-size-xl: 1.25rem; // 20px
   --font-size-2xl: 1.5rem; // 24px
-  --font-size-3xl: 2rem; // 36px 
+  --font-size-3xl: 2rem; // 32px 
   --font-size-3xl-extra: 2.5rem; // 40px 
   --font-size-4xl: 3rem; // 48px
+  --font-size-4xl-extra: 4rem; // 64px
   --font-size-5xl: 6.875rem; // 110px
 
   // Font Weights (200-700 supported by Author Variable)
@@ -97,7 +99,7 @@
   // ============================================
   // BORDERS & RADIUS
   // ============================================
-  --border-radius-sm: 0.25rem;
+  --border-radius-sm: 0.25rem; 
   --border-radius-md: 0.375rem;
   --border-radius-lg: 0.5rem;
   --border-radius-xl: 0.75rem;

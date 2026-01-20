@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const allowMultiple = accordion.hasAttribute('data-allow-multiple');
 
       items.forEach((item) => {
-        const header = item.querySelector('.accordion__header');
+        const header = item.querySelector('.accordion__item-header');
 
         if (header) {
           header.addEventListener('click', () => {
