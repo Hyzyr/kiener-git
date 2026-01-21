@@ -4,15 +4,15 @@
 // ============================================
 
 @use 'variables' as *;
-@use "sass:map";
+@use 'sass:map';
 
 // ============================================
-// 1. RESPONSIVE & MEDIA QUERIES
+// 1. RESPONSIVE & MEDIA QUERIES (Desktop-First)
 // ============================================
 
 @mixin respond-to($breakpoint) {
   @if map.has-key($breakpoints, $breakpoint) {
-    @media (min-width: map.get($breakpoints, $breakpoint)) {
+    @media (max-width: map.get($breakpoints, $breakpoint)) {
       @content;
     }
   } @else {
@@ -21,28 +21,44 @@
 }
 
 @mixin mobile-only {
-  @media (max-width: 639px) { @content; }
-}
-
-@mixin tablet-up {
-  @media (min-width: 768px) { @content; }
-}
-
-@mixin desktop-up {
-  @media (min-width: 1024px) { @content; }
-}
-
-// Container Query Support
-@mixin container($name: null, $type: inline-size) {
-  @if $name {
-    container: #{$name} / #{$type};
-  } @else {
-    container-type: $type;
+  @media (max-width: 639px) {
+    @content;
   }
 }
 
-@mixin container-query($size) {
-  @container (min-width: #{$size}) {
+@mixin tablet-down {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin mobile-menu {
+  @media (max-width: 980px) {
+    @content;
+  }
+}
+
+@mixin desktop-down {
+  @media (max-width: 1023px) {
+    @content;
+  }
+}
+
+// Desktop-first aliases for clarity
+@mixin below-tablet {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin below-desktop {
+  @media (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin below-xl {
+  @media (max-width: 1279px) {
     @content;
   }
 }
@@ -178,7 +194,7 @@
   cursor: pointer;
   border: none;
   padding: 0;
-  
+
   &:focus {
     outline: none;
   }
@@ -202,7 +218,7 @@
 
 @mixin hide-scrollbar {
   scrollbar-width: none;
-  
+
   &::-webkit-scrollbar {
     display: none;
   }
@@ -229,7 +245,7 @@
   &::-webkit-scrollbar-thumb {
     background: $thumb-color;
     border-radius: calc($size / 2);
-    
+
     &:hover {
       opacity: 0.8;
     }

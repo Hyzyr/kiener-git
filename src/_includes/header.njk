@@ -41,6 +41,9 @@
                 <span class="hamburger-line"></span>
               </span>
               Categorieën
+              <svg class="icon" width="16" height="16">
+                <use xlink:href="#icon-arrow-2"></use>
+              </svg>  
             </a>
           </li>
           <li class="nav__item">
@@ -61,7 +64,7 @@
         <div class="header__search search search--md">
           <input type="search" class="search__input" placeholder="Search..." aria-label="Search"/>
           <button type="submit" class="search__button" aria-label="Submit search">
-            <svg class="search__icon" width="16" height="16">
+            <svg class="icon" width="16" height="16">
               <use xlink:href="#icon-search"></use>
             </svg>
           </button>
@@ -77,3 +80,63 @@
   </div>
 </header>
 <div class="headerspace"></div>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-menu__header">
+    <div class="logo">
+      <img src="/assets/kiener-logo-dark.svg" alt="Logo" class="logo__image logo__image--dark"/>
+    </div>
+    <button class="mobile-menu__close" id="mobile-menu-close" aria-label="Close menu">
+      <svg class="icon" width="24" height="24">
+        <use xlink:href="#icon-close"></use>
+      </svg>
+    </button>
+  </div>
+  <nav class="mobile-menu__nav" aria-label="Mobile navigation">
+    <ul class="mobile-menu__nav-list">
+      <li>
+        <a href="/" class="mobile-menu__nav-link">
+          Home
+          <svg class="icon" width="16" height="16">
+            <use xlink:href="#icon-arrow-2"></use>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="mobile-menu__nav-link">
+          Categorieën
+          <svg class="icon" width="16" height="16">
+            <use xlink:href="#icon-arrow-2"></use>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="mobile-menu__nav-link">
+          Service
+          <svg class="icon" width="16" height="16">
+            <use xlink:href="#icon-arrow-2"></use>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="mobile-menu__nav-link">
+          Over ons
+          <svg class="icon" width="16" height="16">
+            <use xlink:href="#icon-arrow-2"></use>
+          </svg>
+        </a>
+      </li>
+      <li><div class="mobile-menu__divider"></div></li>
+      <li>
+        <a href="#" class="mobile-menu__nav-link">
+          Login
+          <svg class="icon" width="16" height="16">
+            <use xlink:href="#icon-arrow-2"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+<div class="mobile-menu-backdrop" id="mobile-menu-backdrop"></div>

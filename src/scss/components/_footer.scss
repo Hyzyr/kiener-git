@@ -63,9 +63,6 @@
     font-size: var(--font-size-sm);
   }
 
-  // ============================================
-  // Right Section: Columns
-  // ============================================
   &__columns {
     flex: 1;
     display: grid;
@@ -140,19 +137,72 @@
     }
   }
 
+  &__social {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+
+    .social-links {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+
+      .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-charcoal-grey);
+        font-size: 1rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        background: var(--color-soft-alabaster);
+        border-radius: 50%;
+
+        &:hover {
+          color: var(--color-primary);
+        }
+      }
+    }
+  }
+
+  // ============================================
+  // Newsletter Form
+  // ============================================
   .newsletter-form {
     display: flex;
     gap: 0;
-    margin-bottom: 2rem;
+    margin-bottom: var(--spacing-xl);
     max-width: 400px;
 
     input {
       flex: 1;
       padding: 0.75rem 1rem;
-      border: 1px solid rgba(0, 0, 0, 0.1);
+      font-family: var(--font-family-primary);
+      font-style: normal;
+      font-weight: var(--font-weight-regular);
+      font-size: var(--font-size-sm);
+      line-height: var(--line-height-normal);
+      letter-spacing: 0;
+      color: var(--color-charcoal-grey);
+      background-color: var(--color-white);
+      // border: var(--border-width-thin) solid var(--color-charcoal-grey);
       border-right: none;
       border-radius: var(--border-radius-sm) 0 0 var(--border-radius-sm);
-      font-size: var(--font-size-sm);
+      transition: var(--transition-base);
+
+      &::placeholder {
+        color: var(--color-mid-grey);
+        opacity: 1;
+      }
+
+      &:focus {
+        outline: none;
+        border-color: var(--color-ocean-blue);
+      }
+
+      &:hover {
+        border-color: var(--color-black);
+      }
     }
 
     .btn {
@@ -162,24 +212,7 @@
       white-space: nowrap;
     }
   }
-
-  &__social {
-    .social-links {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-
-      .social-link {
-        color: var(--color-charcoal-grey);
-
-        &:hover {
-          color: var(--color-primary);
-        }
-      }
-    }
-  }
 }
-
 // ============================================
 // Sub Footer Component
 // ============================================
