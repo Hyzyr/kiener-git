@@ -157,7 +157,7 @@
 
       input {
         max-width: 165px;
-        transition: 0.5s var(--ease-smooth) 0.5s;
+        transition: max-width 0.5s var(--ease-smooth) 0.5s;
         padding: 0.4em 1.2em 0.4em 2.5em;
 
         &:focus {
@@ -499,6 +499,109 @@
     }
     .logo {
       font-size: 12px;
+    }
+  }
+}
+
+// ============================================
+// Mega Menu
+// ============================================
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: var(--color-white);
+  border-top: 1px solid var(--color-cloud-dancer);
+  box-shadow: var(--shadow-xl);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s var(--ease-smooth);
+  z-index: -1; // Behind header content until active
+  padding: 3rem 0;
+
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    z-index: 100;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-cloud-dancer);
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.25rem;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-decoration: none;
+
+    &-image {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4/3;
+      border-radius: var(--border-radius-md);
+      overflow: hidden;
+      background: var(--color-cloud-dancer);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s var(--ease-smooth);
+      }
+    }
+
+    &-title {
+      font-size: var(--font-size-base);
+      font-weight: var(--font-weight-medium);
+      color: var(--color-charcoal-grey);
+      transition: color 0.3s var(--ease-smooth);
+    }
+
+    &:hover {
+      .mega-menu__item-image img {
+        transform: scale(1.05);
+      }
+      .mega-menu__item-title {
+        color: var(--color-primary); // Using primary color on hover
+      }
+      text-decoration: none;
+    }
+  }
+}
+
+// Rotate arrow icon when menu is active
+.nav__item {
+  .icon-rotate {
+    transform: rotate(90deg);
+    transition: transform 0.3s var(--ease-smooth);
+  }
+
+  &.is-active {
+    .icon-rotate {
+      transform: rotate(-90deg);
+    }
+    .nav__nav-link {
+      text-decoration: underline; // Highlight link when active
     }
   }
 }
