@@ -22,15 +22,6 @@
   &--wide {
     max-width: var(--container-max-width-lg);
   }
-  @include respond-to('xl') {
-    padding: 0 3.5rem;
-  }
-  @include respond-to('lg') {
-    padding: 0 2.5rem;
-  }
-  @include respond-to('md') {
-    padding: 0 2.5rem;
-  }
 }
 
 .section {
@@ -45,5 +36,35 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
+  }
+}
+@include respond-to('xl') {
+  .container {
+    padding: 0 3.5rem;
+  }
+}
+@include respond-to('lg') {
+  .container {
+    padding: 0 2.5rem;
+  }
+}
+@include respond-to('md') {
+  .container {
+    padding: 0 2rem;
+  }
+}
+@include respond-to('sm') {
+  .container {
+    padding: 0 1.5rem;
+  }
+  .section {
+    &__title {
+      display: contents;
+      .btn {
+        order: 1;
+        align-self: center;
+      }
+    }
   }
 }

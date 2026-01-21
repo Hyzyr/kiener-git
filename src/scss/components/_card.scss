@@ -149,19 +149,21 @@
 
 // Product Grid
 .product-grid {
-  @include grid(2, 1.5rem);
+  @include grid(4, 1.5rem);
 
-  @include respond-to('md') {
+  @include respond-to('lg') {
     @include grid(3, 1.5rem);
   }
 
-  @include respond-to('lg') {
-    @include grid(4, 1.5rem);
+  @include respond-to('md') {
+    @include grid(2, 1.5rem);
   }
 
   &--5-cols {
+    @include grid(5, 1.5rem);
+
     @include respond-to('xl') {
-      @include grid(5, 1.5rem);
+      @include grid(4, 1.5rem);
     }
   }
 }

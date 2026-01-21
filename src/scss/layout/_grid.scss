@@ -5,45 +5,45 @@
 // ============================================
 
 .grid {
-  @include grid(1);
+  @include grid(3);
 
-  @include respond-to('sm') {
+  @include respond-to('lg') {
     @include grid(2);
   }
 
-  @include respond-to('lg') {
-    @include grid(3);
+  @include respond-to('sm') {
+    @include grid(1);
   }
 
   &--2-cols {
-    @include grid(1);
-    
+    @include grid(2);
+
     @include respond-to('md') {
-      @include grid(2);
+      @include grid(1);
     }
   }
 
   &--3-cols {
-    @include grid(1);
-    
-    @include respond-to('sm') {
+    @include grid(3);
+
+    @include respond-to('lg') {
       @include grid(2);
     }
-    
-    @include respond-to('lg') {
-      @include grid(3);
+
+    @include respond-to('sm') {
+      @include grid(1);
     }
   }
 
   &--4-cols {
-    @include grid(1);
-    
-    @include respond-to('sm') {
+    @include grid(4);
+
+    @include respond-to('lg') {
       @include grid(2);
     }
-    
-    @include respond-to('lg') {
-      @include grid(4);
+
+    @include respond-to('sm') {
+      @include grid(1);
     }
   }
 
