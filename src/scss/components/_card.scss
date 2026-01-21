@@ -84,7 +84,7 @@
 
   background: var(--color-white);
   border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-md);
 
   &__image {
     width: 100%;
@@ -125,7 +125,7 @@
   }
 
   &:hover {
-    box-shadow: var(--shadow-xl);
+    box-shadow: var(--shadow-lg);
     border-color: var(--color-grey-300);
 
     .product-card__image img {
