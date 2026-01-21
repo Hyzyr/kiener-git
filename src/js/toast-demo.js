@@ -1,31 +1,45 @@
 // Toast Demo Initialization
-// Adds click handlers to product cards for toast demonstrations
+// Shows toast notifications when clicking on any product card
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Find all add-to-cart buttons in the toast demo section
-  const addToCartButtons = document.querySelectorAll(
-    '.toast-demo .add-to-cart-btn',
-  );
+  // Find all product cards on the page
+  const productCards = document.querySelectorAll('.product-card');
 
-  addToCartButtons.forEach((button) => {
-    button.addEventListener('click', (e) => {
+  productCards.forEach((card) => {
+    card.addEventListener('click', (e) => {
+      // Don't interfere with link navigation
+      if (e.target.tagName === 'A') {
+        return;
+      }
+
       e.preventDefault();
 
-      // Get product data from parent card
-      const productCard = button.closest('.product-card--interactive');
-      const productName = productCard.dataset.productName;
-      const productDescription = productCard.dataset.productDescription;
-      const productImage = productCard.dataset.productImage;
+      // Extract product info from the card
+      const productImage = card.querySelector('.product-card__image img');
+      const productInfo = card.querySelector('.product-card__info-group');
+
+      if (!productInfo || !window.toastManager) {
+        return;
+      }
+
+      // Get product name and category
+      const strongElements = productInfo.querySelectorAll('strong');
+      const spanElement = productInfo.querySelector('span');
+
+      const productName = strongElements[0]?.textContent || 'Product';
+      const productCategory = spanElement?.textContent || '';
+      const productPrice = strongElements[1]?.textContent || '';
+
+      // Get image source
+      const imageSrc = productImage?.src || '';
 
       // Show toast notification
-      if (window.toastManager) {
-        window.toastManager.show({
-          message: '✓ Toegevoegd aan winkelwagen',
-          image: productImage,
-          description: `${productName} - ${productDescription}`,
-          duration: 4000,
-        });
-      }
+      window.toastManager.show({
+        message: '✓ Toegevoegd aan winkelwagen',
+        image: imageSrc,
+        description: `${productName} - ${productCategory} ${productPrice}`,
+        duration: 4000,
+      });
     });
   });
 });
