@@ -20,9 +20,11 @@
     {% endif %}
   </head>
   <body>
-    {% include "header.njk" %}
+  <main class="main">
+   {% include "header.njk" %}
     {{ content | safe }}
     {% include "footer.njk" %}
+    </main>
     {% include "svg-sprite.njk" %}
     <!-- Scripts -->
     <script src="./js/splide.min.js"></script>
