@@ -164,6 +164,7 @@
 }
 
 .icon-btn {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -176,9 +177,27 @@
   @include no-select;
 
   font-size: 1rem;
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
 
+  &:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: currentColor;
+    border-radius: inherit;
+    transition: 0.3s var(--ease-snap);
+  }
+
+  &:hover {
+    &:after {
+      opacity: 0.12;
+    }
+  }
   &:disabled {
     cursor: default;
     pointer-events: none;
@@ -198,13 +217,7 @@
 
   &--white {
     background-color: transparent;
-    border-color: var(--color-white);
+    border-color: transparent;
     color: var(--color-white);
-
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.2);
-      color: var(--color-white);
-      border-color: var(--color-white);
-    }
   }
 }

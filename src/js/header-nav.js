@@ -73,8 +73,9 @@
   let lastScrollY = window.scrollY;
   let ticking = false;
 
-  const SCROLL_THRESHOLD = 30; // Min scroll distance to trigger show/hide
-  const TOP_THRESHOLD = 150; // Distance from top (increased to hide position transition)
+  const SCROLL_THRESHOLD = 10; // Min scroll distance to trigger show/hide
+  const TOP_THRESHOLD = 350; // Distance from top for final at-top state
+  const FADE_THRESHOLD = TOP_THRESHOLD * 2; // Distance to start fade animation (700px)
 
   function updateHeaderState() {
     const currentScrollY = window.scrollY;
@@ -89,6 +90,10 @@
         'header--scrolled',
       );
 
+      if (header.classList.contains('header--has-scrolled')) {
+        header.classList.remove('header--has-scrolled');
+      }
+
       // Restore original variant classes
       if (header.hasAttribute('data-original-white')) {
         header.classList.add('header--white');
@@ -97,9 +102,34 @@
         header.classList.add('header--dark');
       }
     }
-    // Scrolling down - hide header
-    else if (scrollDelta > 0 && currentScrollY > TOP_THRESHOLD) {
-      header.classList.add('header--hidden', 'header--scrolled');
+    // Between TOP_THRESHOLD and FADE_THRESHOLD - transition zone
+    else if (
+      currentScrollY >= TOP_THRESHOLD &&
+      currentScrollY < FADE_THRESHOLD
+    ) {
+      header.classList.add('header--at-top');
+
+      if (scrollDelta < 0) {
+        // Scrolling up in transition zone - prepare for fade
+        header.classList.add(
+          'header--visible',
+          'header--scrolled',
+          'header--has-scrolled',
+        );
+        header.classList.remove('header--hidden');
+      } else {
+        // Scrolling down in transition zone
+        header.classList.add('header--hidden', 'header--scrolled');
+        header.classList.remove('header--visible', 'header--has-scrolled');
+      }
+    }
+    // Scrolling down - hide header (past FADE_THRESHOLD)
+    else if (scrollDelta > 0 && currentScrollY >= FADE_THRESHOLD) {
+      header.classList.add(
+        'header--hidden',
+        'header--scrolled',
+        'header--has-scrolled',
+      );
       header.classList.remove('header--visible', 'header--at-top');
 
       // Store and remove white/dark variants for proper logo visibility
@@ -112,9 +142,16 @@
         header.classList.remove('header--dark');
       }
     }
-    // Scrolling up - show header
-    else if (scrollDelta < -SCROLL_THRESHOLD) {
-      header.classList.add('header--visible', 'header--scrolled');
+    // Scrolling up - show header (past FADE_THRESHOLD)
+    else if (
+      scrollDelta < -SCROLL_THRESHOLD &&
+      currentScrollY >= FADE_THRESHOLD
+    ) {
+      header.classList.add(
+        'header--visible',
+        'header--scrolled',
+        'header--has-scrolled',
+      );
       header.classList.remove('header--hidden', 'header--at-top');
 
       // Keep variants removed when scrolled

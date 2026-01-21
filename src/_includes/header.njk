@@ -61,16 +61,29 @@
         </a>
       </div>
       <div class="header__actions">
-        <div class="header__search search search--md">
-          <input type="search" class="search__input" placeholder="Search..." aria-label="Search"/>
-          <button type="submit" class="search__button" aria-label="Submit search">
+        <div class="header__search">
+        <div class="input input--btn-left">
+          <input type="search" name="search"  placeholder="Zoek" aria-label="Search"/>
+          <button class="input__btn" type="submit" aria-label="Submit search">
             <svg class="icon" width="16" height="16">
               <use xlink:href="#icon-search"></use>
             </svg>
           </button>
         </div>
+        </div>
+      <a  href="#" class="nav__nav-link">Login</a>
+      <button class="icon-btn icon-btn--white">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 2C9.1 2 10 2.9 10 4C10 5.1 9.1 6 8 6C6.9 6 6 5.1 6 4C6 2.9 6.9 2 8 2ZM8 12C10.7 12 13.8 13.29 14 14H2C2.23 13.28 5.31 12 8 12ZM8 0C5.79 0 4 1.79 4 4C4 6.21 5.79 8 8 8C10.21 8 12 6.21 12 4C12 1.79 10.21 0 8 0ZM8 10C5.33 10 0 11.34 0 14V16H16V14C16 11.34 10.67 10 8 10Z" fill="currentColor"/>
+        </svg>
+      </button>
+      <button class="icon-btn icon-btn--white">
+        <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 4H12C12 1.79 10.21 0 8 0C5.79 0 4 1.79 4 4H2C0.9 4 0 4.9 0 6V18C0 19.1 0.9 20 2 20H14C15.1 20 16 19.1 16 18V6C16 4.9 15.1 4 14 4ZM8 2C9.1 2 10 2.9 10 4H6C6 2.9 6.9 2 8 2ZM14 18H2V6H4V8C4 8.55 4.45 9 5 9C5.55 9 6 8.55 6 8V6H10V8C10 8.55 10.45 9 11 9C11.55 9 12 8.55 12 8V6H14V18Z" fill="currentColor"/>
+        </svg>
+      </button>
       </div>
-      <a href="#" class="nav__nav-link">Login</a>
+      
       <button id="menu-toggle" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>

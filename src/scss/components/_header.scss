@@ -30,7 +30,7 @@
   }
 }
 .header {
-  position: fixed;
+  position: absolute;
   top: 32px; // Match preheader height on desktop
   width: 100%;
   z-index: var(--z-sticky);
@@ -72,34 +72,36 @@
 
   // Scrolled state (adds shadow when scrolled past threshold)
   &.header--scrolled {
+    position: fixed;
     top: 0;
     box-shadow: var(--shadow-sm);
+
+    .header__search {
+      .input {
+        color: var(--color-charcoal-grey);
+      }
+    }
+    .header__actions {
+      .icon-btn {
+        color: var(--color-charcoal-grey);
+      }
+    }
   }
 
   // At top state (no scrolling animation)
   &.header--at-top {
     transform: translateY(0);
-    transition: box-shadow 0.3s var(--ease-smooth);
-  }
+    transition: box-shadow 0.13s var(--ease-smooth);
 
-  // Top announcement bar
-  &__topbar {
-    background: var(--color-grey-900);
-    color: var(--color-white);
-    padding: 0.5rem 0;
-    font-size: var(--font-size-sm);
-    text-align: center;
-
-    @include mobile-only {
-      font-size: 12px;
+    // Fade-up animation when returning to top (only after scrolling)
+    &.header--scrolled {
+      position: fixed; // Keep fixed during animation to prevent jump
+      top: 0;
+      transform: translateY(-100%);
+      transition: 0s ease-out;
     }
-    a {
-      color: var(--color-white);
-      text-decoration: underline;
-
-      &:hover {
-        opacity: 0.8;
-      }
+    &.header--has-scrolled {
+      transition: 0.5s ease-out;
     }
   }
 
@@ -143,27 +145,30 @@
 
   &__actions {
     width: calc(50% - 80px);
-  }
-
-  &__actions {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 1rem; // Default gap
   }
 
-  &__secondary-nav {
-    @include mobile-menu {
-      display: none;
-    }
-  }
-
   // ============================================
   // Search Component - Hide on tablets/mobile
   // ============================================
   &__search {
-    @include mobile-menu {
-      display: none;
+    margin: 0 0.75em;
+    .input {
+      font-size: 20px;
+
+      input {
+        max-width: 165px;
+        transition: 0.5s var(--ease-smooth) 0.5s;
+        padding: 0.4em 1.2em 0.4em 2.5em;
+
+        &:focus {
+          max-width: 250px;
+          transition-delay: 0.12s;
+        }
+      }
     }
   }
 
@@ -174,8 +179,7 @@
     background: transparent;
     box-shadow: none;
 
-    .nav__nav-link,
-    .header__secondary-link {
+    .nav__nav-link {
       color: var(--color-white);
     }
 
@@ -183,8 +187,7 @@
       background: var(--color-white);
       box-shadow: var(--shadow-sm);
 
-      .nav__nav-link,
-      .header__secondary-link {
+      .nav__nav-link {
         color: var(--color-charcoal-grey);
       }
     }
@@ -197,8 +200,7 @@
     background: transparent;
     box-shadow: none;
 
-    .nav__nav-link,
-    .header__secondary-link {
+    .nav__nav-link {
       color: var(--color-charcoal-grey);
     }
 
@@ -229,7 +231,7 @@
     display: flex;
     align-items: center;
     gap: 0.8em;
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-xl);
     font-weight: var(--font-weight-medium);
     color: var(--color-charcoal-grey);
     text-decoration: none;
@@ -398,5 +400,19 @@
   &.is-open {
     opacity: 1;
     visibility: visible;
+  }
+}
+
+// ============================================
+// Keyframe Animations
+// ============================================
+@keyframes headerFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
